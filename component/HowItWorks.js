@@ -1,12 +1,12 @@
 import Image from 'next/image'
 function HowItWorks() {
     return (
-        <div className='howitworks flex flex-col align-center bg-[#f3f5f7] border-2 border-yellow-600 w-full h-[600px]'>
-            <div className='flex justify-center w-full h-auto mt-10 text-3xl font-semibold align-center'>
-                <h1>How Tutorcept works</h1>
+        <div className='howitworks flex flex-col align-center bg-[#f3f5f7] border-2 w-full h-[700px]'>
+            <div className='flex justify-center w-full h-auto mt-20 text-3xl font-semibold align-center'>
+                <h1 className='text-4xl font-bold'>How Tutorcept Works</h1>
             </div>
-            <div className='flex mt-10'>
-                <div className='text-center lg:px-[70px] px-3'>
+            <div className='lg:flex justify-around mt-10 item-center lg:px-[40px]'>
+                <div className='bg-[#fff] shadow-2xl lg:p-[30px] p-[10px] rounded-xl text-center lg:w-[350px] w-52'>
                     <Image src='/Tutor.jpg'
                     width={200}
                     height={200}
@@ -14,7 +14,7 @@ function HowItWorks() {
                     <h1 className='mt-10'>1. Request</h1>
                     <p>Tell us what you need help with and our smart matching system will connect you with an online tutor. Sign up for a free trial using a debit/credit card.</p>
                 </div>
-                <div className='text-center lg:px-[70px] px-3'>
+                <div className='bg-[#fff] relative top-14 shadow-2xl lg:p-[30px] p-[10px] rounded-xl text-center lg:w-[350px] w-52'>
                     <Image src='/Tutor.jpg'
                     width={200}
                     height={200}
@@ -25,7 +25,7 @@ lesson space. Use a virtual whiteboard,
 audio/video chat, screen sharing, text
 editor and much more.</p>
                 </div>
-                <div className='text-center lg:px-[70px] px-3'>
+                <div className='bg-[#fff] shadow-2xl lg:p-[30px] p-[10px] rounded-xl text-center lg:w-[350px] w-52'>
                     <Image src='/Tutor.jpg'
                     width={200}
                     height={200}

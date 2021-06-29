@@ -3,6 +3,7 @@ import Banner from '../component/Banner'
 import Footer from '../component/Footer'
 import Header from '../component/Header'
 import HowItWorks from '../component/HowItWorks'
+
 import WhyUs from '../component/WhyUs'
 
 export default function Home() {
@@ -11,8 +12,7 @@ export default function Home() {
       <Head>
         <title>Tutorcept</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
-      
+      </Head>        
      <Header/>
      <Banner/>
      <HowItWorks/>

@@ -21,7 +21,7 @@ function Header() {
   ];
   const [clr, setClr] = useState(false);
   const changeColor = () => {
-    if (window.pageYOffset > 100) {
+    if (window.pageYOffset > 10) {
       setClr(true);
     } else {
       setClr(false);
@@ -38,8 +38,8 @@ function Header() {
   return (
     <div
       className={`${
-        clr ? "bg-white transition duration-700 ease-in-out header" : ""
-      } lg:px-5 font-semibold text-base w-full flex items-center justify-between bg-aqua-500 fixed top-0 z-20 `}
+        clr ? "fixed top-0 bg-white transition duration-700 ease-in-out header" : "absolute top-[50px]"
+      } lg:px-5 font-semibold text-base w-full flex items-center justify-between z-20 `}
     >
       <div className="flex">
         <Link href="/">
@@ -81,7 +81,7 @@ function Header() {
         </div>
       </div>
 
-      <div className="lg:pl-10 flex justify-around items-center">
+      <div className="flex items-center justify-around lg:pl-10">
         {Cred.map((item, i) => (
           <div
             key={i}
