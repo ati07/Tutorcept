@@ -5,10 +5,11 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TelegramIcon from '@material-ui/icons/Telegram';
 import Link from 'next/link'
+import PhoneForwardedIcon from '@material-ui/icons/PhoneForwarded';
 function TopHeader() {
     return (
         <div className='flex items-center justify-between w-full h-10 bg-[#1e56a0]'>
-            <div className='px-4 font-bold text-white'><span className='px-1 text-white'>Call US:</span> 7565091186, 8181060600</div>
+            <div className='px-4 font-bold text-white'><PhoneForwardedIcon/><span className='px-1 text-white'>Call US:</span> 7565091186, 8181060600</div>
             <div className='flex px-4 font-bold text-white '>
                  <div className='px-2 animate-bounce'> <a href='https://www.facebook.com/tutorcept' target="_blank" rel="noreferrer"><FacebookIcon/> </a></div>
                  <div className='px-2 hover:animate-bounce'>  <a href='https://www.linkedin.com/company/tutorcept' target="_blank" rel="noreferrer">  <LinkedInIcon/> </a></div>

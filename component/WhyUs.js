@@ -1,7 +1,7 @@
 import {Button} from '@material-ui/core'
 function WhyUs() {
   return (
-    <div className="whyus w-full bg-[#becdda] border-2 h-[800px]">
+    <div className="whyus w-full bg-[#becdda] border-2 h-[900px] relative top-[-96px]">
       <div className="flex justify-center w-full h-auto mt-20 text-3xl font-semibold align-center">
         <h1 className="text-4xl font-bold">Why use Tutorcept?</h1>
       </div>

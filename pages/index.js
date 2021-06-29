@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Banner from '../component/Banner'
+import CurriculumSlider from '../component/CurriculumSlider'
 import Footer from '../component/Footer'
 import Header from '../component/Header'
 import HowItWorks from '../component/HowItWorks'
-
 import WhyUs from '../component/WhyUs'
 
 export default function Home() {
@@ -17,6 +17,7 @@ export default function Home() {
      <Banner/>
      <HowItWorks/>
      <WhyUs/>
+     <CurriculumSlider/>
      <Footer/>
      
     </div>

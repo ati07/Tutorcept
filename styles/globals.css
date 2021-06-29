@@ -18,10 +18,10 @@
   background-size: cover;
   height: 700px;
 }
-.howitworks{
-  clip-path: polygon(0% 10%,100% 0%,100% 90%,0 100%)
+.c_slider{
+  clip-path: polygon(0% 12%,100% 0%,100% 90%,0 100%)
 }
 
 .whyus{
-  clip-path: polygon(0% 0%,100% 10%,100% 100%,0 90%)
+  clip-path: polygon(0% 0%,100% 10%,100% 100%,0 100%)
 }

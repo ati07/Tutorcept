@@ -1,7 +1,7 @@
 import Image from 'next/image'
 function HowItWorks() {
     return (
-        <div className='howitworks flex flex-col align-center bg-[#f3f5f7] border-2 w-full h-[700px]'>
+        <div className='howitworks flex flex-col align-center bg-[#f3f5f7] border-2 w-full h-[900px]'>
             <div className='flex justify-center w-full h-auto mt-20 text-3xl font-semibold align-center'>
                 <h1 className='text-4xl font-bold'>How Tutorcept Works</h1>
             </div>
