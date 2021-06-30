@@ -19,7 +19,7 @@
   height: 700px;
 }
 .c_slider{
-  clip-path: polygon(0% 12%,100% 0%,100% 90%,0 100%)
+  clip-path: polygon(0% 12%,100% 0%,100% 100%,0% 100%)
 }
 
 .whyus{
@@ -60,5 +60,5 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
