@@ -23,11 +23,11 @@ const CurriculumSlider = () => {
   return (
     <div className="c_slider flex flex-col align-center bg-[#0a2540] w-full h-[1000px] mt-[-150px]">
       <div className="flex flex-col justify-center items-center mt-[170px] h-[600px]">
-        <div className='pb-5'>
+        <div className='flex pb-5'>
         
-
+            <Flags.IN title="India" className="w-[60px] px-2"/>
           <h1 className="flex text-4xl text-white uppercase">
-          <Flags.IN title="India" className="..."/>Indian Curriculum</h1>
+          Indian Curriculum</h1>
         </div>
         <Swiper
         // Autoplay={true}
@@ -50,7 +50,7 @@ const CurriculumSlider = () => {
         ))}
         </Swiper>
         <div className='flex pb-5 mt-10 '>
-        <Flags.US title="United States" className="..."/>
+        <Flags.US title="United States" className="w-[60px] px-2"/>
           <h1 className="text-4xl text-white uppercase">
           
               USA Curriculum</h1>
