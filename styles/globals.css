@@ -42,10 +42,38 @@
   color: white;
   opacity: 1;
 }
+
+.ptopr{
+  clip-path: polygon(16% 45%, 0% 100%, 100% 100%);
+}
+.ptopl{
+  clip-path: polygon(59% 0, 0 69%, 38% 100%);
+}
+.pl{
+  clip-path: polygon(25% 0, 43% 100%, 99% 70%);
+}
+.pr{
+  clip-path: polygon(40% 0, 70% 100%, 100% 0);
+}
+.pb{
+  clip-path: polygon(77% 55%, 0 100%, 100% 100%);
+}
 /* swiper js */
 .swiper-container {
-  width: 100%;
+  width: 80%;
   height: 80%;
+}
+.slider>div>.swiper-button-prev{
+/* left:-52px; */
+/* margin-top:-50px;
+margin-left:52px; */
+/* color:white; */
+}
+/* .slider>div{
+  position:initial;
+} */
+.swiper-button-prev{
+
 }
 
 .swiper-slide {

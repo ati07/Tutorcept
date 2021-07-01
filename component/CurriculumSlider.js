@@ -13,6 +13,7 @@ import "swiper/components/navigation/navigation.min.css";
 
 // import Swiper core and required modules
 import SwiperCore, { Autoplay,Pagination, Navigation } from "swiper/core";
+import Pentagon from "./Pentagon";
 
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
@@ -22,22 +23,23 @@ const CurriculumSlider = () => {
                     '/Board/ICSE.jpg','/Board/IGCSE.jpg','/Board/NIOP.jpg']
   return (
     <div className="c_slider flex flex-col align-center bg-[#0a2540] w-full h-[1000px] mt-[-150px]">
-      <div className="flex flex-col justify-center items-center mt-[170px] h-[600px]">
+      <Pentagon/>
+      {/* <div className="flex flex-col justify-center items-center mt-[170px] h-[600px]">
         <div className='flex pb-5'>
-        
             <Flags.IN title="India" className="w-[60px] px-2"/>
           <h1 className="flex text-4xl text-white uppercase">
           Indian Curriculum</h1>
         </div>
+        <div className='slider w-[100%]'>
         <Swiper
-        // Autoplay={true}
+        Autoplay={true}
         autoplay={{
             "delay": 2500,
             "disableOnInteraction": false
           }}
           slidesPerView={3}
           spaceBetween={30}
-          slidesPerGroup={3}
+          slidesPerGroup={2}
           loop={true}
           loopFillGroupWithBlank={true}
           pagination={{
@@ -49,6 +51,7 @@ const CurriculumSlider = () => {
             <SwiperSlide key={i}><Image src={img} width={200} height={300} alt='imgboard'/></SwiperSlide>
         ))}
         </Swiper>
+        </div>
         <div className='flex pb-5 mt-10 '>
         <Flags.US title="United States" className="w-[60px] px-2"/>
           <h1 className="text-4xl text-white uppercase">
@@ -82,7 +85,7 @@ const CurriculumSlider = () => {
           <SwiperSlide>Slide 8</SwiperSlide>
           <SwiperSlide>Slide 9</SwiperSlide>
         </Swiper>
-      </div>
+      </div> */}
     </div>
   );
 };
