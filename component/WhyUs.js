@@ -1,4 +1,5 @@
 import {Button} from '@material-ui/core'
+import Image from 'next/image'
 function WhyUs() {
   return (
     <div className="whyus flex flex-col items-center justify-center w-full bg-[#becdda] border-2 h-[1300px] mt-[-200px]">
@@ -12,7 +13,7 @@ function WhyUs() {
           <div className="w-full col-span-3">LOGO</div>
             <div className="w-full col-span-9">
               <h1 className='text-2xl font-medium uppercase opacity-70'>Quality Tutors</h1>
-              <p className='opacity-50'>
+              <p className='opacity-60'>
               Good grades are not a distant dream anymore. Our well-qualified instructors will help you achieve them in your learning style.
               </p>
             </div>
@@ -77,6 +78,8 @@ function WhyUs() {
 
         </div>
         </div>
+      <Image src="/pentagon.jpg" width={300} height={300} alt='image'/>
+
     </div>
   );
 }

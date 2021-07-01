@@ -44,19 +44,19 @@
 }
 
 .ptopr{
-  clip-path: polygon(16% 45%, 0% 100%, 100% 100%);
+  clip-path: polygon(19% 15%, 0% 100%, 100% 100%);
 }
 .ptopl{
-  clip-path: polygon(59% 0, 0 69%, 38% 100%);
+  clip-path: polygon(63% 0, 0 56%, 40% 100%);
 }
 .pl{
-  clip-path: polygon(25% 0, 43% 100%, 99% 70%);
+  clip-path: polygon(11% 0, 43% 100%, 90% 67%);
 }
 .pr{
-  clip-path: polygon(40% 0, 70% 100%, 100% 0);
+  clip-path: polygon(40% 0, 72% 100%, 96% 0);
 }
 .pb{
-  clip-path: polygon(77% 55%, 0 100%, 100% 100%);
+  clip-path: polygon(82% 15%, 0 100%, 100% 100%);
 }
 /* swiper js */
 .swiper-container {

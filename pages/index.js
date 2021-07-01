@@ -4,6 +4,7 @@ import CurriculumSlider from '../component/CurriculumSlider'
 import Footer from '../component/Footer'
 import Header from '../component/Header'
 import HowItWorks from '../component/HowItWorks'
+import Testing from '../component/Testing'
 import WhyUs from '../component/WhyUs'
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
      <HowItWorks/>
      <WhyUs/>
      <CurriculumSlider/>
+     <Testing/>
      <Footer/>
      
     </div>

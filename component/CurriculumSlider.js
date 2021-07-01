@@ -22,7 +22,7 @@ const CurriculumSlider = () => {
     const board = ['/Board/UP.jpg','/Board/Bihar.jpg','/Board/CBSE.jpg','/Board/IB.jpg',
                     '/Board/ICSE.jpg','/Board/IGCSE.jpg','/Board/NIOP.jpg']
   return (
-    <div className="c_slider flex flex-col align-center bg-[#0a2540] w-full h-[1000px] mt-[-150px]">
+    <div className="c_slider flex flex-col justify-center items-center bg-[#eaeced] w-full h-[1000px] mt-[-150px]">
       <Pentagon/>
       {/* <div className="flex flex-col justify-center items-center mt-[170px] h-[600px]">
         <div className='flex pb-5'>
