@@ -6,6 +6,7 @@ import Header from '../component/Header'
 import HowItWorks from '../component/HowItWorks'
 import Testing from '../component/Testing'
 import WhyUs from '../component/WhyUs'
+import TopHeader from '../component/TopHeader'
 
 export default function Home() {
   return (
@@ -13,9 +14,10 @@ export default function Home() {
       <Head>
         <title>Tutorcept</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head>        
+      </Head>   
+      <TopHeader/>     
      <Header/>
-     <Banner/>
+     <Banner Title="Comming Soon"/>
      <HowItWorks/>
      <WhyUs/>
      <CurriculumSlider/>

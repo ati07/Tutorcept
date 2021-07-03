@@ -1,7 +1,9 @@
+import LoginComponent from "../component/LoginComponent"
+
 function login() {
     return (
-        <div>
-            <h1>Login Page</h1>
+        <div className="overflow-hidden py-4 ">
+            <LoginComponent/>
         </div>
     )
 }

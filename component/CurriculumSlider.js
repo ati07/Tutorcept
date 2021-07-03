@@ -22,10 +22,18 @@ const CurriculumSlider = () => {
     const board = ['/Board/UP.jpg','/Board/Bihar.jpg','/Board/CBSE.jpg','/Board/IB.jpg',
                     '/Board/ICSE.jpg','/Board/IGCSE.jpg','/Board/NIOP.jpg']
   return (
-    <div className="c_slider flex flex-col justify-center items-center bg-[#eaeced] w-full h-[1000px] mt-[-150px]">
-      <div className="grid grid-cols-12 gap-12">
+    <div className="c_slider flex flex-cols-12 gap-4 px-4 justify-center items-center bg-[#eaeced] w-full h-[1000px] mt-[-150px]">
+      <div className="grid grid-cols-6 gap-4">
         {board.map((img,i)=>(
-          <div key={i} className="col-span-3">
+          <div key={i} className="col-span-2">
+          <Image src={img} width={250} height={200} alt='board'/>
+          </div>
+        ))}
+
+      </div>
+      <div className="grid grid-cols-6 gap-4">
+        {board.map((img,i)=>(
+          <div key={i} className="col-span-2">
           <Image src={img} width={250} height={200} alt='board'/>
           </div>
         ))}
