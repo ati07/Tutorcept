@@ -78,7 +78,7 @@ function WhyUs() {
 
         </div>
         </div>
-      <Image src="/pentagon.jpg" width={300} height={300} alt='image'/>
+      {/* <Image src="/pentagon.jpg" width={300} height={300} alt='image'/> */}
 
     </div>
   );

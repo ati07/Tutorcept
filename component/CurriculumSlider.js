@@ -23,7 +23,17 @@ const CurriculumSlider = () => {
                     '/Board/ICSE.jpg','/Board/IGCSE.jpg','/Board/NIOP.jpg']
   return (
     <div className="c_slider flex flex-col justify-center items-center bg-[#eaeced] w-full h-[1000px] mt-[-150px]">
-      <Pentagon/>
+      <div className="grid grid-cols-12 gap-12">
+        {board.map((img,i)=>(
+          <div key={i} className="col-span-3">
+          <Image src={img} width={250} height={200} alt='board'/>
+          </div>
+        ))}
+
+      </div>
+      
+      
+      {/* <Pentagon/> */}
       {/* <div className="flex flex-col justify-center items-center mt-[170px] h-[600px]">
         <div className='flex pb-5'>
             <Flags.IN title="India" className="w-[60px] px-2"/>

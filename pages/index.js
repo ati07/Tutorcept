@@ -19,7 +19,7 @@ export default function Home() {
      <HowItWorks/>
      <WhyUs/>
      <CurriculumSlider/>
-     <Testing/>
+     {/* <Testing/> */}
      <Footer/>
      
     </div>
