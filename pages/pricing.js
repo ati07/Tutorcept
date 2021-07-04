@@ -1,15 +1,17 @@
 import TopHeader from '../component/TopHeader'
 import Header from '../component/Header'
 import Banner from '../component/Banner'
+import ComingSoon from '../component/ComingSoon'
+import WhiteHeader from "../component/WhiteHeader";
 
 const pricing = () => {
     return (
-        <div className='bg-gray-300 w-full h-full'>
-            <TopHeader/>     
-     <Header/>
-     <Banner Title="Comming Soon"/>
+        <div className="w-full h-[500px]">
+            {/* <TopHeader />      */}
+            <WhiteHeader/>
 
-            {/* <h1>Comming SOON..........</h1> */}
+     <ComingSoon/>
+
         </div>
     )
 }

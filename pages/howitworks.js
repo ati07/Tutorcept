@@ -1,18 +1,19 @@
 import Header from '../component/Header'
 import TopHeader from '../component/TopHeader'
 import Banner from '../component/Banner'
+import ComingSoon from '../component/ComingSoon'
+import WhiteHeader from "../component/WhiteHeader";
 
-
-const howitworks = () => {
+const howItWorks = () => {
     return (
-        <div className='bg-gray-300 w-full h-[600px]'>
-            <TopHeader/>     
-     {/* <Header/> */}
-     <Header/>
-     <Banner Title="Comming Soon"/>
-            <h1>Comming SOON..........</h1>
-        </div>
+        <div className="w-full h-[500px]">
+      {/* <TopHeader /> */}
+      <WhiteHeader/>
+
+     <ComingSoon/>
+
+    </div>
     )
 }
 
-export default howitworks
+export default howItWorks

@@ -1,5 +1,10 @@
 import React, { useRef, useState } from "react";
-import Image from 'next/image'
+import Image from 'next/image';
+import {Button} from '@material-ui/core'
+import {useEffect} from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import Flags from 'country-flag-icons/react/3x2'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,27 +24,50 @@ import Pentagon from "./Pentagon";
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const CurriculumSlider = () => {
+  useEffect(()=> {
+    AOS.init({duration:3000});
+  })
     const board = ['/Board/UP.jpg','/Board/Bihar.jpg','/Board/CBSE.jpg','/Board/IB.jpg',
                     '/Board/ICSE.jpg','/Board/IGCSE.jpg','/Board/NIOP.jpg']
   return (
-    <div className="c_slider flex flex-cols-12 gap-4 px-4 justify-center items-center bg-[#eaeced] w-full h-[1000px] mt-[-150px]">
-      <div className="grid grid-cols-6 gap-4">
-        {board.map((img,i)=>(
-          <div key={i} className="col-span-2">
-          <Image src={img} width={250} height={200} alt='board'/>
-          </div>
-        ))}
-
+    <div className="c_slider  justify-center items-center bg-[#d6dce2] w-full h-[1000px] mt-[-150px]">
+      <div className="grid grid-cols-12 gap-4 px-4 mt-52">
+        
+      <div data-aos="fade-right" className="col-span-6">
+      <Image src='/Indian Boards.png' width={700} height={600} alt='board'/>
       </div>
-      <div className="grid grid-cols-6 gap-4">
-        {board.map((img,i)=>(
-          <div key={i} className="col-span-2">
-          <Image src={img} width={250} height={200} alt='board'/>
-          </div>
-        ))}
-
-      </div>
+      <div  data-aos="fade-left" className="col-span-6">
+      <Image src='/Indian Boards.png' width={700} height={600} alt='board'/>
       
+      </div>
+      <div data-aos="fade-right" className='col-span-2 col-start-5'>
+      <Button variant="contained" color="primary">
+        And Many More...
+      </Button>
+      </div>
+      <div  data-aos="fade-left" className='col-span-2 col-start-11'>
+      <Button variant="contained" color="primary">
+        And Many More...
+      </Button>
+      </div>
+      </div>
+      {/* <div className="grid grid-cols-6 gap-4">
+        {board.map((img,i)=>(
+          <div key={i} className="col-span-2">
+          <Image src={img} width={250} height={200} alt='board'/>
+          </div>
+        ))}
+
+      </div>
+      <div className="grid grid-cols-6 gap-4">
+        {board.map((img,i)=>(
+          <div key={i} className="col-span-2">
+          <Image src={img} width={250} height={200} alt='board'/>
+          </div>
+        ))}
+
+      </div>
+       */}
       
       {/* <Pentagon/> */}
       {/* <div className="flex flex-col justify-center items-center mt-[170px] h-[600px]">

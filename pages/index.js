@@ -16,14 +16,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>   
       <TopHeader/>     
-     <Header/>
+     <Header cr={false}/>
      <Banner Title="Comming Soon"/>
      <HowItWorks/>
      <WhyUs/>
      <CurriculumSlider/>
      {/* <Testing/> */}
      <Footer/>
-     
     </div>
   )
 }

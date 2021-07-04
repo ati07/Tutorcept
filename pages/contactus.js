@@ -1,16 +1,16 @@
 import TopHeader from '../component/TopHeader'
 import Header from '../component/Header'
 import Banner from '../component/Banner'
-
+import ComingSoon from '../component/ComingSoon'
+import ContactUs from '../component/ContactUs'
+import WhiteHeader from "../component/WhiteHeader";
 
 function contactus() {
     return (
-        <div className='bg-gray-300 w-full h-[600px]'>
+        <div className='bg-white w-full h-[600px]'>
             <TopHeader/>     
-     <Header/>
-     <Banner Title="Comming Soon"/>
-
-            {/* <h1>Comming SOON..........</h1> */}
+            <WhiteHeader/>
+            <ContactUs/>
         </div>
     )
 }

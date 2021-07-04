@@ -7,6 +7,8 @@ module.exports = {
       backgroundImage: theme => ({
         'banner': "url('/banner_new.jpg')",
         'login-baaner': "url('/Login_Banner.png')",
+        'contact-us': "url('/contact us_Prancheta 1.jpg')",
+
     }),
     },
   },

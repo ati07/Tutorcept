@@ -23,7 +23,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-function Header() {
+function WhiteHeader() {
   const router = useRouter()
   const [open, setOpen] = React.useState(false);
 
@@ -50,7 +50,7 @@ function Header() {
     "SchoolIcon",
     "MenuBookOutlinedIcon",
   ];
-  const [clr, setClr] = useState(false);
+  const [clr, setClr] = useState(true);
 
   // useEffect(()=>{
   //   if(cr===true){
@@ -175,4 +175,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default WhiteHeader;
