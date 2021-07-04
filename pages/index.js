@@ -15,7 +15,7 @@ export default function Home() {
         <title>Tutorcept</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>   
-      <TopHeader/>     
+      {/* <TopHeader/>      */}
      <Header cr={false}/>
      <Banner Title="Comming Soon"/>
      <HowItWorks/>

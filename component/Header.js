@@ -43,7 +43,7 @@ function Header() {
   }
   const HeaderItems = ["Home", "Pricing", "How It Works", "Contact Us"];
   const Cred = ["Sign In", "Become A Tutor", "FAQs"];
-  const Headerlink = ["/", "/pricing", "/howitworks", "/contactus"];
+  const Headerlink = ["/", "/pricing", "", "/contactus"];
   const RightHeaderlink = ["/", "/becometutor", "/faqs"];
   const Icons = [
     "CreditCardOutlinedIcon",
@@ -69,10 +69,16 @@ function Header() {
     window.addEventListener("scroll", changeColor);
   }, []);
 
+  const scrollToHw =()=>{
+    window.scrollTo(0, 800);
+  }
+  const handleError=()=>{
+
+  }
   return (
     <div
       className={`${
-        clr ? "fixed top-0 bg-white transition duration-700 ease-in-out header" : "absolute top-[50px]"
+        clr ? "fixed top-0 bg-white transition duration-700 ease-in-out header" : "absolute top-[0px]"
       } lg:px-5 font-semibold text-base w-full flex items-center justify-between z-20`}
     >
       <div className="flex">
@@ -101,6 +107,7 @@ function Header() {
         >
           {HeaderItems.map((item, i) => (
             <div
+            onClick={i==2?scrollToHw:handleError}
               key={i}
               className={
                 clr
@@ -109,7 +116,7 @@ function Header() {
               }
             >
               {/* < {...Icons[i]} /> */}
-              <Link href={Headerlink[i]}>{item}</Link>
+              <Link href={Headerlink[i]} >{item}</Link>
             </div>
           ))}
         </div>

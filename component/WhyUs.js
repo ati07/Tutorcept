@@ -5,7 +5,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 function WhyUs() {
   useEffect(()=> {
-    AOS.init({duration:3000});
+    AOS.init({duration:3000,
+      once: true});
 })
   return (
     <div className="whyus flex flex-col items-center justify-center w-full bg-[#becdda] border-2 h-[1300px] mt-[-200px]">

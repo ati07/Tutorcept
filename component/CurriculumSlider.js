@@ -25,7 +25,8 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const CurriculumSlider = () => {
   useEffect(()=> {
-    AOS.init({duration:3000});
+    AOS.init({duration:3000,
+      once: true});
   })
     const board = ['/Board/UP.jpg','/Board/Bihar.jpg','/Board/CBSE.jpg','/Board/IB.jpg',
                     '/Board/ICSE.jpg','/Board/IGCSE.jpg','/Board/NIOP.jpg']
