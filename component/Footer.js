@@ -72,7 +72,7 @@ function Footer() {
   const classes = useStyles();
   return (
     <div className="relative z-10 footer flex flex-col justify-center align-center w-full h-auto bg-[#1f4c70]">
-      <div className="flex justify-between w-full mt-10 text-white lg:mt-10 lg:px-20">
+      <div className="flex justify-between w-full text-white lg:px-20">
         <div className="w-full px-2 mt-20 lg:px-5">
           <h1 className="pb-3 font-bold lg:text-2xl text-1xl">
             CONNECT WITH US

@@ -9,7 +9,7 @@ function WhyUs() {
       once: true});
 })
   return (
-    <div className="whyus flex flex-col items-center justify-center w-full bg-[#becdda] border-2 h-[1300px] mt-[-200px]">
+    <div className="whyus flex flex-col items-center justify-center w-full bg-[#becdda] border-2 h-[1300px] mt-[-270px]">
       <div className='flex flex-col relative top-[-150px] items-center'>
       <div data-aos="flip-left" className="advantage flex w-[300px] pt-12 justify-center h-[250px] font-semibold bg-[#2c5698] relative top-[350px]">
         <h1 className="mt-6 text-3xl font-bold leading-10 text-center text-white uppercase">Advantage <br/>of <br/>Tutorcept</h1>
