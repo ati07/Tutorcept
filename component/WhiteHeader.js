@@ -59,37 +59,39 @@ function WhiteHeader() {
   // },[])
   
   const changeColor = () => {
-    if (window.pageYOffset > 10) {
+    if (window.pageYOffset === 0) {
       setClr(true);
     } else {
-      setClr(false);
+      setClr(true);
     }
   };
-  useEffect(() => {
-    window.addEventListener("scroll", changeColor);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", changeColor);
+  // }, []);
 
   return (
     <div
       className={`${
-        clr ? "fixed top-0 bg-white transition duration-700 ease-in-out header" : "absolute top-[50px]"
-      } lg:px-5 font-semibold text-base w-full flex items-center justify-between z-20`}
+        clr ? "fixed top-0 lg:pl-5 bg-white transition duration-700 ease-in-out header" : "absolute top-[50px]"
+      } lg:py-5 font-semibold text-base w-full flex items-center justify-between z-20`}
     >
       <div className="flex">
         <Link href="/">
+        <h1 className={clr?'text-[#1e56a0] font-bold text-3xl':'text-white font-bold text-3xl'}>Tutorcept</h1>
+
           {/* <div> */}
           {/* <LogoSvg width={300} height={100} fill={'red'}/> */}
           {/* <ReactLogo /> */}
           {/* </div> */}
           {/* <ReactLogo/> */}
           {/* <img src={ReactLogo} className='w-[200px] h-[80px] min-h-[100px] text-5xl white'/> */}
-          <Image
+          {/* <Image
             className="min-h-[100px] text-5xl white cursor-pointer"
             src={clr?'/logo4.png':"/Log3.png"}
             width={200}
             height={60}
             alt="logo"
-          />
+          /> */}
         </Link>
 
         <div
@@ -150,7 +152,7 @@ function WhiteHeader() {
       >
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-          <div className="grid grid-cols-12 w-full gap-y-10 gap-6 text-center">
+          <div className="grid w-full grid-cols-12 gap-6 text-center gap-y-10">
             <div  className='col-span-12'>
               <Button variant="contained" onClick={handleClose} color="secondary">
             Continue As A Student

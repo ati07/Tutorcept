@@ -31,7 +31,7 @@ const CurriculumSlider = () => {
     const board = ['/Board/UP.jpg','/Board/Bihar.jpg','/Board/CBSE.jpg','/Board/IB.jpg',
                     '/Board/ICSE.jpg','/Board/IGCSE.jpg','/Board/NIOP.jpg']
   return (
-    <div className="c_slider  justify-center items-center bg-[#d6dce2] w-full h-[1000px] mt-[-150px]">
+    <div className="c_slider  justify-center items-center bg-[#d6dce2] w-full h-[1000px] mt-[-180px]">
       <div className="grid grid-cols-12 gap-4 px-4 mt-52">
         
       <div data-aos="fade-right" className="col-span-6">

@@ -3,6 +3,7 @@ import Header from '../component/Header'
 import Banner from '../component/Banner'
 import ComingSoon from '../component/ComingSoon'
 import WhiteHeader from "../component/WhiteHeader";
+import Footer from '../component/Footer'
 
 const pricing = () => {
     return (
@@ -11,6 +12,7 @@ const pricing = () => {
             <WhiteHeader/>
 
      <ComingSoon/>
+     <Footer/>
 
         </div>
     )

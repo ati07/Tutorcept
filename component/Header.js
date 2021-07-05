@@ -70,7 +70,7 @@ function Header() {
   }, []);
 
   const scrollToHw =()=>{
-    window.scrollTo(0, 800);
+    window.scrollTo(0, 700);
   }
   const handleError=()=>{
 
@@ -78,24 +78,25 @@ function Header() {
   return (
     <div
       className={`${
-        clr ? "fixed top-0 bg-white transition duration-700 ease-in-out header" : "absolute top-[0px]"
-      } lg:px-5 font-semibold text-base w-full flex items-center justify-between z-20`}
+        clr ? "w-full lg:pl-5 fixed top-0 bg-white transition duration-700 ease-in-out header" : "absolute top-[0px] w-[96%]"
+      } lg:py-4 border-b-[1px] border-[#ababab] font-semibold text-base flex items-center justify-between z-20`}
     >
       <div className="flex">
         <Link href="/">
+          <h1 className={clr?'text-[#1e56a0] font-bold text-3xl':'text-white font-bold text-3xl'}>Tutorcept</h1>
           {/* <div> */}
           {/* <LogoSvg width={300} height={100} fill={'red'}/> */}
           {/* <ReactLogo /> */}
           {/* </div> */}
           {/* <ReactLogo/> */}
           {/* <img src={ReactLogo} className='w-[200px] h-[80px] min-h-[100px] text-5xl white'/> */}
-          <Image
+          {/* <Image
             className="min-h-[100px] text-5xl white cursor-pointer"
             src={clr?'/logo4.png':"/Log3.png"}
             width={200}
             height={60}
             alt="logo"
-          />
+          /> */}
         </Link>
 
         <div
@@ -107,16 +108,28 @@ function Header() {
         >
           {HeaderItems.map((item, i) => (
             <div
-            onClick={i==2?scrollToHw:handleError}
+            
               key={i}
               className={
                 clr
                   ? "lg:px-5 pl-2 m-1 uppercase text-[#1e56a0]"
                   : "lg:px-5 pl-2 m-1 uppercase text-[#fff] "
               }
-            >
+            >{i===2?
+              <button className='font-semibold uppercase' onClick={i===2?scrollToHw:handleError} >
+              {item}
+              </button>
+              :
+              <Link href={Headerlink[i]} >
+              {item}
+              </Link>
+            }
               {/* < {...Icons[i]} /> */}
-              <Link href={Headerlink[i]} >{item}</Link>
+              {/* <button onClick={i===2?scrollToHw:handleError}> */}
+              {/* <Link href={i===2?'':Headerlink[i]} >
+                {item}
+                </Link> */}
+                {/* </button> */}
             </div>
           ))}
         </div>
@@ -157,7 +170,7 @@ function Header() {
       >
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-          <div className="grid grid-cols-12 w-full gap-y-10 gap-6 text-center">
+          <div className="grid w-full grid-cols-12 gap-6 text-center gap-y-10">
             <div  className='col-span-12'>
               <Button variant="contained" onClick={handleClose} color="secondary">
             Continue As A Student

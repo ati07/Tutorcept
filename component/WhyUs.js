@@ -10,9 +10,9 @@ function WhyUs() {
 })
   return (
     <div className="whyus flex flex-col items-center justify-center w-full bg-[#becdda] border-2 h-[1300px] mt-[-200px]">
-      <div className='flex flex-col relative top-[-130px] items-center'>
+      <div className='flex flex-col relative top-[-150px] items-center'>
       <div data-aos="flip-left" className="advantage flex w-[300px] pt-12 justify-center h-[250px] font-semibold bg-[#2c5698] relative top-[350px]">
-        <h1 className="text-3xl mt-6 leading-10 font-bold text-center text-white uppercase">Advantage <br/>of <br/>Tutorcept</h1>
+        <h1 className="mt-6 text-3xl font-bold leading-10 text-center text-white uppercase">Advantage <br/>of <br/>Tutorcept</h1>
       </div>
       <div className="w-full grid grid-cols-8 gap-10 gap-y-20 justify-center item-center lg:px-[150px]">
         <div data-aos="fade-right" className="w-full col-span-3 bg-white shadow-lg rounded-xl h-50 gap-y-20">
@@ -75,7 +75,7 @@ function WhyUs() {
       
         </div>    
       </div>
-        <div className='h-[50px] flex items-center justify-around w-full mt-10'>
+        <div className='h-[50px] flex items-center justify-around w-full mt-20'>
             <div className='whyusbutton flex px-10 text-white text-center justify-center w-[280px] h-[60px] uppercase bg-blue-600 rounded-lg'>
                 <Button className='w-full text-white'>Request A Tutor</Button>
             </div>
