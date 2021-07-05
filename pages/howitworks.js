@@ -3,6 +3,7 @@ import TopHeader from '../component/TopHeader'
 import Banner from '../component/Banner'
 import ComingSoon from '../component/ComingSoon'
 import WhiteHeader from "../component/WhiteHeader";
+import Footer from '../component/Footer'
 
 const howItWorks = () => {
     return (
@@ -10,8 +11,8 @@ const howItWorks = () => {
       {/* <TopHeader /> */}
       <WhiteHeader/>
 
-     <ComingSoon/>
-
+     <ComingSoon content='it'/>
+     <Footer/>
     </div>
     )
 }

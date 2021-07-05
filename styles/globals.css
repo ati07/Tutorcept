@@ -34,7 +34,15 @@ body {
   /* clip-path:polygon(0% 0%, 100% 0%, 50% 100%); */
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 }
-
+.lgsquare{
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.lgshape{
+  clip-path: polygon(0 0, 45% 0, 100% 56%, 100% 100%);
+}
+.lgcircle{
+  clip-path: circle(46.6% at 0 100%);
+}
 .whyusbutton>button{
   color:#fff;
   min-width: 280px;

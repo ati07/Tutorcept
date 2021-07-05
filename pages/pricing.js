@@ -11,7 +11,7 @@ const pricing = () => {
             {/* <TopHeader />      */}
             <WhiteHeader/>
 
-     <ComingSoon/>
+     <ComingSoon content='pricing plan'/>
      <Footer/>
 
         </div>

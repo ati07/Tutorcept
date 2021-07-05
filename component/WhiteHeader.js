@@ -77,7 +77,7 @@ function WhiteHeader() {
     >
       <div className="flex">
         <Link href="/">
-        <h1 className={clr?'text-[#1e56a0] font-bold text-3xl':'text-white font-bold text-3xl'}>Tutorcept</h1>
+        <h1 className={clr?'text-[#1e56a0] font-bold text-3xl cursor-pointer':'text-white cursor-pointer font-bold text-3xl'}>Tutorcept</h1>
 
           {/* <div> */}
           {/* <LogoSvg width={300} height={100} fill={'red'}/> */}
