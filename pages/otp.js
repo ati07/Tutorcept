@@ -1,8 +1,10 @@
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const LoginComponent = () => {
+    const router =useRouter()
   const [email, setEmail] = useState("");
   const [show, setShow] = useState(false);
 
@@ -18,14 +20,17 @@ const LoginComponent = () => {
     console.log("INside");
   };
   console.log(email);
+  const goToLogin=()=>{
+      router.push('/login');
+  }
   return (
     <div className="h-[580px] flex flex-col">
-      <div className="login bg-login-baaner object-cover h-[560px] bg-no-repeat overflow-hidden px-50 w-full grid grid-cols-12">
+      <div className="login bg-login-baaner object-cover h-[560px] bg-no-repeat overflow-hidden px-50 py-28 w-full grid grid-cols-12">
         {/* <div className='lgshape w-[100px] h-[100px] bg-red-400'></div> */}
 
         {/* <div className='animate-spin lgsquare w-[100px] h-[100px] bg-gray-400'></div> */}
         <div className="col-span-4 col-start-8 rounded-2xl w-full h-[560px]">
-          <div className="grid grid-col-12 px-3 py-5 h-[400px] gap-y-5 text-center">
+          <div className="grid grid-col-12 px-3 py-5 h-[400px] gap-y- text-center">
             <div className="col-span-12 w-full h-[100px]">
               <Link href="/">
                 {/* <h1 className='text-[#1e56a0] font-bold text-5xl cursor-pointer uppercase'>Tutorcept</h1> */}
@@ -39,7 +44,10 @@ const LoginComponent = () => {
               </Link>
             </div>
             <div className="col-span-12 w-full h-[20px]">
-              <p className='text-black text-xl font-semibold'>Dive in your Tutorcept Account</p>
+              <p className='text-black text-xl font-semibold'>Verify your Email</p>
+            </div>
+            <div className="col-span-12 w-full h-[20px]">
+              <p className='text-black text-bold'>We have sent a 6-digit OTP to your email, kindly verify it.</p>
             </div>
             <div className="col-span-12 w-full h-[30px]">
               <input
@@ -52,61 +60,25 @@ const LoginComponent = () => {
                 Please Enter Valid Email
               </p>
             </div>
-            <div className="col-span-12 w-full h-[30px]">
-              <input
-                type="password"
-                Placeholder="Password"
-                className="pl-5 border-b-2 w-full h-10 border-[#dde0e4] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
-              ></input>
-            </div>
-            <div className="col-span-12 w-full h-[20px]">
+            {/* <div className="col-span-6 w-full h-[20px]">
               <button className="text-[#1e56a0] text-left w-full h-5 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 ...">
-                Forgot Password?
+                Already have an account?
               </button>
             </div>
+            <div className="col-span-3 w-full h-[20px]">
+              <button onClick={goToLogin} className="text-[#1e56a0] text-lg font-bold text-left w-full h-5 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 ...">
+                Log In
+              </button>
+            </div> */}
             <div className="col-span-12 w-full h-[30px]">
               <button
                 onClick={submit}
                 className="bg-[#1e56a0] w-full text-xl font-semibold h-10 rounded-lg text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 ..."
               >
-                Sign In
+                Verify OTP
               </button>
             </div>
-            <div className="col-span-12 w-full h-[20px]">
-              <h1 className='text-black text-2xl font-bold'>Or,</h1>
-            </div>
-            <div className="col-span-12 w-full h-[20px] text-black text-lg font-semibold'">
-              <p>Sign In with your social media account</p>
-            </div>
-            <div className="col-span-5 col-start-1 w-[200px] h-10 mt-[-4px]">
-              <Link href="/">
-                <button className="bg-blue-500 w-full h-10 rounded-lg text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50">
-                  Facebook
-                </button>
-              </Link>
-            </div>
-            <div className="col-span-5 col-start-7 w-[220px] h-10 mt-[-4px]">
-              <Link href="/">
-                <button className="bg-red-500 w-full h-10 rounded-lg text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50">
-                  Google
-                </button>
-              </Link>
-            </div>
-            <div className="col-span-6 w-full h-10 text-black text-lg font-bold'">
-              <h1>New to Tutorcept?</h1>
-            </div>
-            <div className="col-span-6 w-full h-[20px] font-bold text-lg">
-              <Link href="/signup">
-                <p  className="w-full h-10 rounded-lg text-[#1e56a0] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 cursor-pointer">
-                  Create a New Account
-                </p>
-              </Link>
-            </div>
-            {/* <div className="bg-white text-xl text-left col-span-3 w-full h-[25px] mt-[-8px]">
-              <p>Sign in with</p>
-            </div> */}
-            
-            
+                  
           </div>
         </div>
       </div>
