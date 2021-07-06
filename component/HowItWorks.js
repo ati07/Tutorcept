@@ -11,8 +11,8 @@ function HowItWorks() {
     })
     return (
         <div className='howitworks flex flex-col align-center bg-[#f3f5f7] border-2 w-full h-[900px]'>
-            <div className='flex justify-center w-full h-auto mt-10 text-3xl font-semibold align-center'>
-                <h1 className='text-4xl font-bold text-[#1e56a0] uppercase'>How Tutorcept Works</h1>
+            <div className='flex justify-center w-full h-auto mt-16 text-3xl font-semibold align-center'>
+                <h1 className='text-4xl font-bold text-[#316ab4] uppercase'>How Tutorcept Works</h1>
             </div>
             <div className='lg:flex justify-around mt-10 item-center lg:px-[40px]'>
                 <div data-aos="fade-right" className='bg-[#fff] shadow-2xl lg:p-[30px] p-[10px] rounded-xl text-center lg:w-[350px] w-52'>
