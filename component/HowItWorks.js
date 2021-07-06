@@ -11,8 +11,8 @@ function HowItWorks() {
     })
     return (
         <div className='howitworks flex flex-col align-center bg-[#f3f5f7] border-2 w-full h-[900px]'>
-            <div className='flex justify-center w-full h-auto mt-16 text-3xl font-semibold align-center'>
-                <h1 className='text-4xl font-bold text-[#316ab4] uppercase'>How Tutorcept Works</h1>
+            <div className='flex justify-center w-full h-auto mt-16 lg:text-3xl font-semibold align-center'>
+                <h1 className='lg:text-4xl text-2xl font-bold text-[#316ab4] uppercase'>How Tutorcept Works</h1>
             </div>
             <div className='lg:flex justify-around mt-10 item-center lg:px-[40px]'>
                 <div data-aos="fade-right" className='bg-[#fff] shadow-2xl lg:p-[30px] p-[10px] rounded-xl text-center lg:w-[350px] w-52'>
@@ -23,7 +23,7 @@ function HowItWorks() {
                     <h1 className='mt-5 text-4xl uppercase opacity-70'>1. Request</h1>
                     <p>Tell us what you need help with and our smart matching system will connect you with an online tutor. Sign up for a free trial using a debit/credit card.</p>
                 </div>
-                <div data-aos="fade-down" className='bg-[#fff] relative top-14 shadow-2xl lg:p-[30px] p-[10px] rounded-xl text-center lg:w-[350px] w-52'>
+                <div data-aos="fade-down" className='bg-[#fff] relative top-14 shadow-2xl lg:p-[30px] p-[40px] rounded-xl text-center lg:w-[350px] w-52'>
                     <Image src='/Tutor.jpg'
                     width={350}
                     height={275}

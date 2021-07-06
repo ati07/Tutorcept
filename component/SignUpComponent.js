@@ -27,11 +27,11 @@ const LoginComponent = () => {
   }
   return (
     <div className="h-[580px] flex flex-col">
-      <div className="login bg-login-baaner object-cover h-[560px] bg-no-repeat overflow-hidden px-50 py-28 w-full grid grid-cols-12">
+      <div className="login lg:bg-login-baaner object-cover h-[560px] bg-no-repeat overflow-hidden px-50 py-28 w-full grid grid-cols-12">
         {/* <div className='lgshape w-[100px] h-[100px] bg-red-400'></div> */}
 
         {/* <div className='animate-spin lgsquare w-[100px] h-[100px] bg-gray-400'></div> */}
-        <div className="col-span-4 col-start-8 rounded-2xl w-full h-[560px]">
+        <div className="lg:col-span-4 lg:col-start-8 col-span-12 rounded-2xl w-full h-[560px]">
           <div className="grid grid-col-12 px-3 py-5 h-[400px] gap-y-5 text-center">
             <div className="col-span-12 w-full h-[100px]">
               <Link href="/">

@@ -60,7 +60,7 @@ body {
 }
 /* loginpage */
 .login {
-  /* background-position-x: 140px; */
+  background-position-x: 100px;
   /* object-fit: contain; */
   background-size: contain;
 }

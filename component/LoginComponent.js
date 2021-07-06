@@ -19,12 +19,12 @@ const LoginComponent = () => {
   };
   console.log(email);
   return (
-    <div className="h-[580px] flex flex-col">
-      <div className="login bg-login-baaner object-cover h-[560px] bg-no-repeat overflow-hidden px-50 w-full grid grid-cols-12">
+    <div className="lg:h-[580px] h-[600px] flex flex-col">
+      <div className="login lg:bg-login-baaner lg:bg-white object-cover lg:h-[560px] bg-no-repeat overflow-hidden px-50 w-full grid grid-cols-12">
         {/* <div className='lgshape w-[100px] h-[100px] bg-red-400'></div> */}
 
         {/* <div className='animate-spin lgsquare w-[100px] h-[100px] bg-gray-400'></div> */}
-        <div className="col-span-4 col-start-8 rounded-2xl w-full h-[560px]">
+        <div className="lg:col-span-4 col-span-12 lg:col-start-8 rounded-2xl w-full h-[560px]">
           <div className="grid grid-col-12 px-3 py-5 h-[400px] gap-y-5 text-center">
             <div className="col-span-12 w-full h-[100px]">
               <Link href="/">
@@ -73,29 +73,29 @@ const LoginComponent = () => {
               </button>
             </div>
             <div className="col-span-12 w-full h-[20px]">
-              <h1 className='text-black text-2xl font-bold'>Or,</h1>
+              <h1 className='text-black text-2xl font-bold'>OR,</h1>
             </div>
             <div className="col-span-12 w-full h-[20px] text-black text-lg font-semibold'">
               <p>Sign In with your social media account</p>
             </div>
-            <div className="col-span-5 col-start-1 w-[200px] h-10 mt-[-4px]">
+            <div className="lg:col-span-5 lg:col-start-1 col-start-1 col-span-4 lg:w-[200px] w-full h-10 mt-[-4px]">
               <Link href="/">
                 <button className="bg-blue-500 w-full h-10 rounded-lg text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50">
                   Facebook
                 </button>
               </Link>
             </div>
-            <div className="col-span-5 col-start-7 w-[220px] h-10 mt-[-4px]">
+            <div className="lg:col-span-5 lg:col-start-7 col-start-8 col-span-4 lg:w-[220px] w-full h-10 mt-[-4px]">
               <Link href="/">
                 <button className="bg-red-500 w-full h-10 rounded-lg text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50">
                   Google
                 </button>
               </Link>
             </div>
-            <div className="col-span-6 w-full h-10 text-black text-lg font-bold'">
+            <div className="lg:col-span-6 col-span-4 w-full h-10 text-black text-lg font-bold'">
               <h1>New to Tutorcept?</h1>
             </div>
-            <div className="col-span-6 w-full h-[20px] font-bold text-lg">
+            <div className="lg:col-span-6 col-span-4 w-full h-[20px] font-bold text-lg">
               <Link href="/signup">
                 <p  className="w-full h-10 rounded-lg text-[#1e56a0] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 cursor-pointer">
                   Create a New Account
