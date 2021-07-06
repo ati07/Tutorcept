@@ -35,10 +35,10 @@ const CurriculumSlider = () => {
       <div className="grid grid-cols-12 gap-4 px-4 mt-52">
         
       <div data-aos="fade-right" className="col-span-6">
-      <Image src='/Indian Boards.png' width={700} height={600} alt='board'/>
+      <Image src='/Indian Boards1.png' width={700} height={600} alt='board'/>
       </div>
       <div  data-aos="fade-left" className="col-span-6">
-      <Image src='/Indian Boards.png' width={700} height={600} alt='board'/>
+      <Image src='/Indian Boards1.png' width={700} height={600} alt='board'/>
       
       </div>
       <div data-aos="fade-right" className='col-span-2 col-start-5'>
