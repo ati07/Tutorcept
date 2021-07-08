@@ -24,13 +24,16 @@ const LoginComponent = () => {
       router.push('/login');
   }
   return (
-    <div className="h-[580px] flex flex-col">
-      <div className="login lg:bg-login-baaner object-cover h-[560px] bg-no-repeat overflow-hidden px-50 py-28 w-full grid grid-cols-12">
+    <div className="flex flex-col items-center justify-center h-auto lg:md:flex lg:md:items-center lg:md:justify-center">
+      <div className="grid w-full h-auto grid-cols-12 py-24 overflow-hidden md:py-12 lg:py-0 px-50">
         {/* <div className='lgshape w-[100px] h-[100px] bg-red-400'></div> */}
 
         {/* <div className='animate-spin lgsquare w-[100px] h-[100px] bg-gray-400'></div> */}
-        <div className="lg:col-span-4 col-span-12 lg:col-start-8 rounded-2xl w-full h-[560px]">
-          <div className="grid grid-col-12 px-3 py-5 h-[400px] gap-y- text-center">
+        <div className='w-0 h-0 md:w-auto md:auto lg:w-auto lg:h-auto md:col-span-7 md:col-start-1 lg:col-span-7'>
+          <Image src='/otp.png' className='' width={800} height={600} alt='otpImage'/>
+        </div>
+        <div className="flex items-center justify-center w-full h-auto col-span-12 lg:md:flex lg:md:items-center lg:md:justify-center md:col-span-4 lg:col-start-8 rounded-2xl">
+          <div className="grid h-[400px] px-3 py-2 text-center grid-col-12">
             <div className="col-span-12 w-full h-[100px]">
               <Link href="/">
                 {/* <h1 className='text-[#1e56a0] font-bold text-5xl cursor-pointer uppercase'>Tutorcept</h1> */}
@@ -44,7 +47,7 @@ const LoginComponent = () => {
               </Link>
             </div>
             <div className="col-span-12 w-full h-[20px]">
-              <p className='text-black text-xl font-semibold'>Verify your Email</p>
+              <p className='text-lg font-semibold text-black lg:text-xl'>Verify your Email</p>
             </div>
             <div className="col-span-12 w-full h-[20px]">
               <p className='text-black text-bold'>We have sent a 6-digit OTP to your email, kindly verify it.</p>
