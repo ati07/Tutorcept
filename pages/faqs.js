@@ -13,19 +13,47 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 function Faqs() {
+  const data = [
+    {
+      qid: 1,
+      question: "Is your tutoring 1:1 or with a group?",
+      answer:
+        "Yes, Tutorcept provides both 1:1 as well as tutoring of a small group (1:10). Our tutors are trained to deliver lessons for an individual’s need and a group too.",
+    },
+    {
+      qid: 2,
+      question: "Who are the tutors?",
+      answer:
+        "Our tutors come from diverse backgrounds including current and former teachers, experienced professionals from the medical, engineering, and humanities field. We recruit tutors from top colleges and universities who are experts in their respective academic subjects and passionate about helping students achieve their goals.",
+    },
+    {
+      qid: 3,
+      question: "Can I learn in any other language besides English?",
+      answer:
+        "We offer tutoring in English as students find it the most comfortable language. Besides, we also have the option of Tutoring in Hindi for the students following Indian Curriculums. Very soon we shall be expanding our tutoring services in several other languages too.",
+    },
+  ];
   const useStyles = makeStyles((theme) => ({
     root: {
       width: "80%",
       height: 600,
     },
     heading: {
-      fontSize: theme.typography.pxToRem(30),
-      flexBasis: "33.33%",
+      fontSize: theme.typography.pxToRem(20),
+      // flexBasis: "33.33%",
       flexShrink: 0,
+      color:'#1e56a0',
+    },
+    headingWithNoColor: {
+      fontSize: theme.typography.pxToRem(20),
+      // flexBasis: "33.33%",
+      flexShrink: 0,
+      // color:'#1e56a0',
     },
     secondaryHeading: {
       fontSize: theme.typography.pxToRem(15),
       color: theme.palette.text.secondary,
+      opacity:1,
     },
   }));
   const classes = useStyles();
@@ -35,99 +63,42 @@ function Faqs() {
     setExpanded(isExpanded ? panel : false);
   };
   return (
-    <div className="w-full h-[500px]">
+    <div className="w-full h-auto">
       {/* <TopHeader /> */}
       <WhiteHeader />
-      
-      <div className="w-full h-[500px] flex flex-col mt-[150px] px-52">
-        <div className='text-center pb-10'>
-        <h1 className='text-5xl text-[#1e56a0] font-bold pb-7'>Frequently Asked Questions</h1>
-        <p className='text-xl'>Please reach us at <u>tutorcept@gmail.com</u> if you cannot find an answer to your question.</p>
-      </div>
-        <Accordion
-          expanded={expanded === "panel1"}
-          onChange={handleChange("panel1")}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1bh-content"
-            id="panel1bh-header"
+
+      <div className="w-full h-auto flex flex-col mt-[150px] px-52 py-8">
+        <div className="text-center pb-10">
+          <h1 className="text-5xl text-[#1e56a0] font-bold pb-7">
+            Frequently Asked Questions
+          </h1>
+          <p className="text-xl">
+            Please reach us at <u>tutorcept@gmail.com</u> if you cannot find an
+            answer to your question.
+          </p>
+        </div>
+        {data.map((item, i) => (
+          <Accordion
+          key={i}
+            expanded={expanded === `panel${i + 1}`}
+            onChange={handleChange(`panel${i + 1}`)}
           >
-            <Typography className={classes.heading}>
-              Q1
-            </Typography>
-            {/* <Typography className={classes.secondaryHeading}>I am an accordion</Typography> */}
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel2"}
-          onChange={handleChange("panel2")}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2bh-content"
-            id="panel2bh-header"
-          >
-            <Typography className={classes.heading}>Q2</Typography>
-            {/* <Typography className={classes.secondaryHeading}>
-            You are currently not an owner
-          </Typography> */}
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Donec placerat, lectus sed mattis semper, neque lectus feugiat
-              lectus, varius pulvinar diam eros in elit. Pellentesque convallis
-              laoreet laoreet.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel3"}
-          onChange={handleChange("panel3")}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel3bh-content"
-            id="panel3bh-header"
-          >
-            <Typography className={classes.heading}>
-              Q3
-            </Typography>
-            {/* <Typography className={classes.secondaryHeading}>
-            Filtering has been entirely disabled for whole web server
-          </Typography> */}
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel4"}
-          onChange={handleChange("panel4")}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel4bh-content"
-            id="panel4bh-header"
-          >
-            <Typography className={classes.heading}>Q4</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={`panel${i + 1}bh-content`}
+              id={`panel${i}bh-header`}
+            >
+              <Typography className={expanded === `panel${i + 1}`?`${classes.heading}`:`${classes.headingWithNoColor}`}>
+                {item["question"]}
+              </Typography>
+              {/* <Typography >I am an accordion</Typography> */}
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography >{item["answer"]}</Typography>
+            </AccordionDetails>
+          </Accordion>
+  ))}
+
       </div>
       {/* <ComingSoon content='it'/> */}
       <Footer />

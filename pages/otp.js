@@ -20,16 +20,13 @@ const LoginComponent = () => {
     console.log("INside");
   };
   console.log(email);
-  const goToLogin=()=>{
-      router.push('/login');
-  }
   return (
-    <div className="flex flex-col items-center justify-center h-auto lg:md:flex lg:md:items-center lg:md:justify-center">
-      <div className="grid w-full h-auto grid-cols-12 py-24 overflow-hidden md:py-12 lg:py-0 px-50">
+    <div className="m-auto flex flex-col items-center justify-center h-auto lg:md:flex lg:md:items-center lg:md:justify-center py-12">
+      <div className="grid border-2 border-blue-600 lg:md:p-0 lg:md:m-0 w-full h-[500px] grid-cols-12 overflow-hidden px-50">
         {/* <div className='lgshape w-[100px] h-[100px] bg-red-400'></div> */}
 
         {/* <div className='animate-spin lgsquare w-[100px] h-[100px] bg-gray-400'></div> */}
-        <div className='w-0 h-0 md:w-auto md:auto lg:w-auto lg:h-auto md:col-span-7 md:col-start-1 lg:col-span-7'>
+        <div className='w-0 h-0 md:w-auto lg:md:m-0 md:col-span-7 md:col-start-1 lg:col-span-7'>
           <Image src='/otp.png' className='' width={800} height={600} alt='otpImage'/>
         </div>
         <div className="flex items-center justify-center w-full h-auto col-span-12 lg:md:flex lg:md:items-center lg:md:justify-center md:col-span-4 lg:col-start-8 rounded-2xl">

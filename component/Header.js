@@ -78,7 +78,7 @@ function Header() {
   return (
     <div
       className={`${
-        clr ? "w-full lg:pl-5 fixed top-0 bg-white transition duration-700 ease-in-out header" : "absolute top-[0px] w-[96%]"
+        clr ? "w-full lg:max-w-[96%] fixed top-0 bg-white transition duration-700 ease-in-out header" : "absolute top-[0px] lg:w-[96%]"
       } lg:py-4 border-b-[1px] border-[#ababab] font-semibold text-base flex items-center justify-between z-20`}
     >
       <div className="flex">
@@ -161,6 +161,8 @@ function Header() {
         ))}
       </div>
       <Dialog
+      scroll='body'
+        maxWidth='true'
         open={open}
         TransitionComponent={Transition}
         keepMounted
