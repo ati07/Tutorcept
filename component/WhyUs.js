@@ -1,6 +1,11 @@
 import {Button} from '@material-ui/core'
 import Image from 'next/image'
 import {useEffect} from 'react'
+import LanguageIcon from '@material-ui/icons/Language';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import CastForEducationIcon from '@material-ui/icons/CastForEducation';
+import SchoolIcon from '@material-ui/icons/School';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 function WhyUs() {
@@ -8,6 +13,7 @@ function WhyUs() {
     AOS.init({duration:3000,
       once: true});
 })
+
   return (
     <div className="whyus flex flex-col items-center justify-center w-full bg-[#becdda] border-2 h-[1300px] mt-[-270px]">
       <div className='flex flex-col relative top-[-150px] items-center'>
@@ -17,7 +23,7 @@ function WhyUs() {
       <div className="w-full grid grid-cols-8 gap-10 gap-y-20 justify-center item-center lg:px-[150px]">
         <div data-aos="fade-right" className="w-full col-span-3 bg-white shadow-lg rounded-xl h-50 gap-y-20">
           <div className="grid w-full grid-cols-12 p-4">
-          <div className="w-full col-span-3">LOGO</div>
+          <div className="w-full col-span-3"><SchoolIcon style={{fontSize:60,}}/></div>
             <div className="w-full col-span-9">
               <h1 className='text-2xl font-medium uppercase opacity-70'>Quality Tutors</h1>
               <p className='opacity-60'>
@@ -28,7 +34,7 @@ function WhyUs() {
         </div>
         <div data-aos="fade-left" className="w-full col-span-3 col-start-6 bg-white shadow-lg rounded-xl h-50 gap-y-20">
           <div className="grid w-full grid-cols-12 p-4">
-            <div className="w-full col-span-3">LOGO</div>
+            <div className="w-full col-span-3"><AttachMoneyIcon style={{fontSize:60,}}/></div>
               <div className="w-full col-span-9">
                 <h1 className='text-2xl font-medium uppercase opacity-70'>Affordable Price</h1>
                 <p className='opacity-60'>
@@ -40,7 +46,7 @@ function WhyUs() {
         </div>
         <div data-aos="fade-right" className="w-full col-span-3 col-start-1 bg-white shadow-lg rounded-xl h-50 gap-y-20">
           <div className="grid w-full grid-cols-12 p-4">
-            <div className="w-full col-span-3">LOGO</div>
+            <div className="w-full col-span-3"><AccessTimeIcon style={{fontSize:60,}}/></div>
               <div className="w-full col-span-9">
                 <h1 className='text-2xl font-medium uppercase opacity-70'>Learn Anytime</h1>
                 <p className='opacity-60'>
@@ -52,7 +58,7 @@ function WhyUs() {
         </div>
         <div data-aos="fade-left" className="w-full col-span-3 col-start-6 bg-white shadow-lg rounded-xl h-50 gap-y-20">
           <div className="grid w-full grid-cols-12 p-4">
-            <div className="w-full col-span-3">LOGO</div>
+            <div className="w-full col-span-3"><CastForEducationIcon style={{fontSize:60,}}/></div>
             <div className="w-full col-span-9">
               <h1 className='text-2xl font-medium uppercase opacity-70'>Expert&apos;s Resources</h1>
               <p className='opacity-60'>
@@ -64,7 +70,7 @@ function WhyUs() {
         </div>
         <div data-aos="fade-top" className="w-full col-span-4 col-start-3 bg-white shadow-lg h-50 rounded-xl gap-y-20">
           <div className="grid w-full grid-cols-12 p-4">
-            <div className="w-full col-span-3">LOGO</div>
+            <div className="w-full col-span-3"><LanguageIcon style={{fontSize:60,}}/></div>
             <div className="w-full col-span-9">
               <h1 className='text-2xl font-medium uppercase opacity-70'>Break The Barriers</h1>
               <p className='opacity-60'>
