@@ -1,0 +1,62 @@
+[
+    {
+      "qid": 1,
+      "question": "Is your tutoring 1:1 or with a group?",
+      "answer":
+        "Yes, Tutorcept provides both 1:1 as well as tutoring of a small group (1:10). Our tutors are trained to deliver lessons for an individual’s need and a group too."
+    },
+    {
+      "qid": 2,
+      "question": "Who are the tutors?",
+      "answer":
+        "Our tutors come from diverse backgrounds including current and former teachers, experienced professionals from the medical, engineering, and humanities field. We recruit tutors from top colleges and universities who are experts in their respective academic subjects and passionate about helping students achieve their goals."
+    },
+    {
+      "qid": 3,
+      "question": "Can I learn in any other language besides English?",
+      "answer":
+        "We offer tutoring in English as students find it the most comfortable language. Besides, we also have the option of Tutoring in Hindi for the students following Indian Curriculums. Very soon we shall be expanding our tutoring services in several other languages too."
+    },
+    {
+      "qid": 4,
+      "question": "How do I create an account on Tutorcept?",
+      "answer":
+        "Visit <a>tutorcept.com</a> \n Click the Sign-Up button in the top right corner \n Register using your Google, Facebook, or email ID \n <b>•</b>Complete your profile information."
+    },
+    {
+      "qid": 5,
+      "question": "I can not find the subject with which I need help.",
+      "answer":
+        "No worries, we will definitely add new subjects if we get enough requests. Please write us at tutorcept@gmail.com."
+    },
+    {
+      "qid": 6,
+      "question": "Will the tutor just give out the answers or simplify the concepts for me?",
+      "answer":
+        "We have a strict policy on not giving out direct answers. Instead, our tutors help you in understanding the concepts and enable you to reach correct answers through scaffolding, break it down, and various kinds of methodology which meet your learning style."
+    },
+    {
+      "qid": 7,
+      "question": "What if I only want direct answers to my question?",
+      "answer":
+        "We also have an additional ‘Q&A Service’ where you can post your questions and our experts will provide detailed solutions in the prescribed manner."
+    },
+    {
+      "qid": 8,
+      "question": "What if the tutor is not able to help me out with my problems?",
+      "answer":
+        "We’re pretty sure that this kind of situation won’t happen as our tutors are experts in their respective academic subjects. But in any case, your tutor is not able to help with your problems, then the tutor would ask another tutor to join right away and get your questions solved."
+    },
+    {
+      "qid": 9,
+      "question": "What happens if any tutor cancels a session?",
+      "answer":
+        " It is natural that sometimes unexpected situations can arise. In that case, we would inform you about the cancellation immediately and allow you to reschedule the session at a different time."
+    },
+    {
+      "qid": 10,
+      "question": "What are your pricing plans?",
+      "answer":
+        "We appreciate your keen interest in learning at Tutorcept.com. Kindly sign in to Tutorcept.com and we will send you an email with our pricing plan."
+    }
+  ]
