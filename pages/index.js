@@ -22,7 +22,7 @@ export default function Home() {
      <WhyUs/>
      <CurriculumSlider/>
      {/* <Testing/> */}
-     <div className='mt-[-150px] w-full'>
+     <div className='mt-[-80px] w-full'>
        <Footer/>
      </div>
      

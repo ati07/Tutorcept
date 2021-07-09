@@ -1,10 +1,10 @@
-[
-    {
-      "qid": 1,
-      "question": "Is your tutoring 1:1 or with a group?",
-      "answer":
-        "Yes, Tutorcept provides both 1:1 as well as tutoring of a small group (1:10). Our tutors are trained to deliver lessons for an individual’s need and a group too."
-    },
+[{
+  "qid": 1,
+  "question": "How do I create an account on Tutorcept?",
+  "answer":
+    " <b>•</b>  Visit <a href='/login' target='_blank' style='text-decoration: underline;color:#1e56a0;'>tutorcept.com</a> </br> <b>•</b>  Click the Sign-Up button in the top right corner </br> <b>•</b>  Register using your Google, Facebook, or email ID </br> <b>•</b>  Complete your profile information."
+},
+    
     {
       "qid": 2,
       "question": "Who are the tutors?",
@@ -13,19 +13,20 @@
     },
     {
       "qid": 3,
+      "question": "Is your tutoring 1:1 or with a group?",
+      "answer":
+        "Yes, Tutorcept provides both 1:1 as well as tutoring of a small group (1:10). Our tutors are trained to deliver lessons for an individual’s need and a group too."
+    },
+    {
+      "qid": 4,
       "question": "Can I learn in any other language besides English?",
       "answer":
         "We offer tutoring in English as students find it the most comfortable language. Besides, we also have the option of Tutoring in Hindi for the students following Indian Curriculums. Very soon we shall be expanding our tutoring services in several other languages too."
     },
-    {
-      "qid": 4,
-      "question": "How do I create an account on Tutorcept?",
-      "answer":
-        " <b>•</b>  Visit <a href='/login' style='text-decoration: underline;color:#1e56a0;'>tutorcept.com</a> </br> <b>•</b>  Click the Sign-Up button in the top right corner </br> <b>•</b>  Register using your Google, Facebook, or email ID </br> <b>•</b>  Complete your profile information."
-    },
+    
     {
       "qid": 5,
-      "question": "I can not find the subject with which I need help.",
+      "question": "What if I can not find the subject with which I need help.",
       "answer":
         "No worries, we will definitely add new subjects if we get enough requests. Please write us at tutorcept@gmail.com."
     },

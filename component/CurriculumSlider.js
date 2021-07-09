@@ -31,8 +31,8 @@ const CurriculumSlider = () => {
     const board = ['/Board/UP.jpg','/Board/Bihar.jpg','/Board/CBSE.jpg','/Board/IB.jpg',
                     '/Board/ICSE.jpg','/Board/IGCSE.jpg','/Board/NIOP.jpg']
   return (
-    <div className="c_slider  justify-center items-center bg-[#d6dce2] w-full h-[1000px] mt-[-265px]">
-      <div className="grid grid-cols-12 gap-4 px-4 mt-52">
+    <div className="flex flex-col justify-center items-center bg-[#d6dce2] w-full h-[800px] ">
+      {/* <div className="grid grid-cols-12 gap-4 px-4 mt-52">
         
       <div data-aos="fade-right" className="col-span-6">
       <Image src='/Indian Boards1.png' width={700} height={600} alt='board'/>
@@ -51,24 +51,35 @@ const CurriculumSlider = () => {
         And Many More...
       </Button>
       </div>
-      </div>
-      {/* <div className="grid grid-cols-6 gap-4">
+      </div> */}
+      <div className='flex pb-5'>
+            <Flags.IN title="India" className="w-[60px] px-2"/>
+          <h1 className="flex text-4xl text-black">
+          Indian Curriculum, Tutorcept Supports</h1>
+        </div>
+      <div className="grid grid-cols-12 gap-5 px-28">
         {board.map((img,i)=>(
           <div key={i} className="col-span-2">
-          <Image src={img} width={250} height={200} alt='board'/>
+          <Image src={img} width={200} height={125} alt='board'/>
           </div>
         ))}
 
       </div>
-      <div className="grid grid-cols-6 gap-4">
+      <div className='flex pb-5 mt-10 '>
+        <Flags.US title="United States" className="w-[60px] px-2"/>
+          <h1 className="text-4xl text-black">
+          
+              US Curriculum, Tutorcept Supports</h1>
+        </div>
+      <div className="grid grid-cols-12 gap-5 px-28">
         {board.map((img,i)=>(
           <div key={i} className="col-span-2">
-          <Image src={img} width={250} height={200} alt='board'/>
+          <Image src={img} width={200} height={125} alt='board'/>
           </div>
         ))}
 
       </div>
-       */}
+      
       
       {/* <Pentagon/> */}
       {/* <div className="flex flex-col justify-center items-center mt-[170px] h-[600px]">
