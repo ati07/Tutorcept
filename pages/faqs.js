@@ -12,6 +12,18 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import datajson from '../data.json'
+import TextField from '@material-ui/core/TextField';
+import SearchIcon from '@material-ui/icons/Search';
+// import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}));
 function Faqs() {
   // console.log("data",datajson)
   const useStyles = makeStyles((theme) => ({
@@ -29,12 +41,13 @@ function Faqs() {
       fontSize: theme.typography.pxToRem(20),
       // flexBasis: "33.33%",
       flexShrink: 0,
+      opacity:0.9
       // color:'#1e56a0',
     },
     secondaryHeading: {
       fontSize: theme.typography.pxToRem(15),
       color: theme.palette.text.secondary,
-      opacity:1,
+      // opacity:0.8,
     },
   }));
   const classes = useStyles();
@@ -43,6 +56,9 @@ function Faqs() {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+  const email =()=>{
+    window.open('mailto:tutorcept@gmail.com')
+  }
   return (
     <div className="w-full h-auto">
       {/* <TopHeader /> */}
@@ -53,10 +69,17 @@ function Faqs() {
           <h1 className="text-5xl text-[#1e56a0] font-bold pb-7">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl">
-            Please reach us at <u>tutorcept@gmail.com</u> if you cannot find an
+          <p className="text-xl opacity-80">
+            Please reach us at <u onClick={email} style={{color:'#1e56a0',cursor:"pointer"}}>tutorcept@gmail.com</u> if you cannot find an
             answer to your question.
           </p>
+        </div>
+        <div>
+          <div className='flex items-center justify-center pb-10'>
+                  {/* <TextField className='w-[600px] rounded-r-none bg-[#fff]' id="outlined-search" label="Find Out Your Question" type="search" variant="outlined" /> */}
+                  <input placeholder='Find Out Your Question' className="pl-5 w-[600px] h-[54px] shadow border border-transparent focus:outline-none focus:rounded-bl-lg focus:rounded-tl-lg focus:ring-2 focus:ring-[#1e56a0] focus:border-transparent"></input>
+                  <SearchIcon className='bg-[#5cb85c] cursor-pointer rounded-r-md hover:bg-[#1e56a0]' style={{height:58,width:70,color:"white",padding:10}}/>
+          </div>
         </div>
         {datajson.map((item, i) => (
           <Accordion
@@ -75,16 +98,14 @@ function Faqs() {
               {/* <Typography >I am an accordion</Typography> */}
             </AccordionSummary>
             <AccordionDetails>
-              <Typography dangerouslySetInnerHTML={{__html: item["answer"]}}>
-                {}
-                
+              <Typography className='opacity-70' dangerouslySetInnerHTML={{__html: item["answer"]}}>
+               
               </Typography>
             </AccordionDetails>
           </Accordion>
   ))}
 
       </div>
-      {/* <ComingSoon content='it'/> */}
       <Footer />
     </div>
   );

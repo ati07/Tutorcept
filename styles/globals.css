@@ -6,7 +6,7 @@ body {
   /* display: block; */
   position:absolute;
   box-sizing: border-box;
-width: 100vw;
+/* width: 100vw; */
   overflow-x: hidden;
   /* border: solid #5B6DCD 10px;
 padding: 5px;

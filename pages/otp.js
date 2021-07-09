@@ -21,13 +21,13 @@ const LoginComponent = () => {
   };
   console.log(email);
   return (
-    <div className="m-auto flex flex-col items-center justify-center h-auto lg:md:flex lg:md:items-center lg:md:justify-center py-12">
-      <div className="grid border-2 border-blue-600 lg:md:p-0 lg:md:m-0 w-full h-[500px] grid-cols-12 overflow-hidden px-50">
+    <div className="flex flex-col items-center justify-center h-auto py-12 m-auto lg:md:flex lg:md:items-center lg:md:justify-center">
+      <div className="grid lg:md:p-0 lg:md:m-0 w-full h-[500px] grid-cols-12 overflow-hidden px-50">
         {/* <div className='lgshape w-[100px] h-[100px] bg-red-400'></div> */}
 
         {/* <div className='animate-spin lgsquare w-[100px] h-[100px] bg-gray-400'></div> */}
         <div className='w-0 h-0 md:w-auto lg:md:m-0 md:col-span-7 md:col-start-1 lg:col-span-7'>
-          <Image src='/otp.png' className='' width={800} height={600} alt='otpImage'/>
+          <Image src='/otp.png' className='' width={800} height={550} alt='otpImage'/>
         </div>
         <div className="flex items-center justify-center w-full h-auto col-span-12 lg:md:flex lg:md:items-center lg:md:justify-center md:col-span-4 lg:col-start-8 rounded-2xl">
           <div className="grid h-[400px] px-3 py-2 text-center grid-col-12">
