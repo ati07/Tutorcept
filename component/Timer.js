@@ -38,16 +38,16 @@ function Timer() {
         }
     })
     return (
-        <div className="bg-blue-500 flex justify-center items-center h-[300px] w-full">
-            <div className="bg-white h-[50px] grid grid-cols-12 w-[400px] px-10">
+        <div className="flex justify-center items-center h-[300px] w-full bg-timerbg timerbg">
+            <div className="text-white h-[50px] grid grid-cols-12 w-[400px] px-10">
             {/* <Clock endTime={1618237200000} /> */}
-            <div className='col-span-3 text-2xl pt-1 text-center border-2'>{timerDays}</div>
-            <div className='col-span-1 text-2xl pt-1 text-center'>:</div>
-            <div className='col-span-2 text-2xl pt-1 text-center border-2'>{timerHours}</div>
-            <div className='col-span-1 text-2xl pt-1 text-center'>:</div>
-            <div className='col-span-2 text-2xl pt-1 text-center border-2'>{timerMinutes}</div>
-            <div className='col-span-1 text-2xl pt-1 text-center'>:</div>
-            <div className='col-span-2 text-2xl pt-1 text-center border-2'>{timerSeconds}</div>
+            <div className='col-span-3 pt-1 text-2xl text-center border-2'>{timerDays}</div>
+            <div className='col-span-1 pt-1 text-2xl text-center'>:</div>
+            <div className='col-span-2 pt-1 text-2xl text-center border-2'>{timerHours}</div>
+            <div className='col-span-1 pt-1 text-2xl text-center'>:</div>
+            <div className='col-span-2 pt-1 text-2xl text-center border-2'>{timerMinutes}</div>
+            <div className='col-span-1 pt-1 text-2xl text-center'>:</div>
+            <div className='col-span-2 pt-1 text-2xl text-center border-2'>{timerSeconds}</div>
             </div>
         </div>
     )

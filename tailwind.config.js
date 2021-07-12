@@ -8,6 +8,8 @@ module.exports = {
         'banner': "url('/banner_new.jpg')",
         'login-baaner': "url('/login.png')",
         'contact-us': "url('/contact us_Prancheta 1.jpg')",
+        'timerbg': "url('/timer.png')",
+
 
     }),
     },
