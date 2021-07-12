@@ -161,8 +161,9 @@ function Header() {
         ))}
       </div>
       <Dialog
-      scroll='body'
-        maxWidth='true'
+      scroll={'body'}
+      disableScrollLock={ true }
+        // maxWidth='true'
         open={open}
         TransitionComponent={Transition}
         keepMounted
@@ -183,15 +184,10 @@ function Header() {
             Continue As A Tutor
           </Button>
             </div>
-
-          
-          
           </div>
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          
-        </DialogActions>
+
       </Dialog>
     </div>
   );

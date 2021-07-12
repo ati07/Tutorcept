@@ -28,10 +28,12 @@ const CurriculumSlider = () => {
     AOS.init({duration:3000,
       once: true});
   })
-    const board = ['/Board/UP.jpg','/Board/Bihar.jpg','/Board/CBSE.jpg','/Board/IB.jpg',
-                    '/Board/ICSE.jpg','/Board/IGCSE.jpg','/Board/NIOP.jpg']
+    const board = ['/Board/UP.jpg','/Board/Bihar.jpg','/Board/NIOP.jpg','/Board/kv.png','/Board/mhboard.gif','/Board/Delhi Board.png','/Board/AMU logo.png',
+                    '/Board/JMI.jpg','/Board/CBSE.jpg','/Board/IB.jpg',
+                    '/Board/ICSE.jpg','/Board/IGCSE.jpg',]
   return (
-    <div className="flex flex-col justify-center items-center bg-[#d6dce2] w-full h-[800px] ">
+    <div className="flex flex-col justify-center items-center bg-[#fff] w-full h-[800px] ">
+      {/* #d6dce2 */}
       {/* <div className="grid grid-cols-12 gap-4 px-4 mt-52">
         
       <div data-aos="fade-right" className="col-span-6">
@@ -61,6 +63,9 @@ const CurriculumSlider = () => {
         {board.map((img,i)=>(
           <div key={i} className="col-span-2">
           <Image src={img} width={200} height={125} alt='board'/>
+          {i===11?<div className="relative top-[-40px] h-[35px] text-black bg-[#ffffff40] hover:bg-blue-700 hover:text-white cursor-pointer flex justify-center items-center">
+            <button>View More</button>
+          </div>:''}
           </div>
         ))}
 
@@ -75,6 +80,9 @@ const CurriculumSlider = () => {
         {board.map((img,i)=>(
           <div key={i} className="col-span-2">
           <Image src={img} width={200} height={125} alt='board'/>
+          {i===11?<div className="relative top-[-40px] h-[35px] text-black bg-[#ffffff40] hover:bg-blue-700 hover:text-white cursor-pointer flex justify-center items-center">
+            <button>View More</button>
+          </div>:''}
           </div>
         ))}
 

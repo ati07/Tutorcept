@@ -64,8 +64,12 @@ z-index: 10;
   opacity: 0.7;
 
 }
-.lg>svg{
+.ftb>svg{
   font-size:50px;
+  opacity:0.7;
+}
+.ftb>svg:hover{
+  opacity:1;
 }
 .howitworksbtn>button:hover{
   background-color:#2c5698;

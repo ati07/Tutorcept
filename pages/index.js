@@ -7,7 +7,8 @@ import HowItWorks from '../component/HowItWorks'
 import Testing from '../component/Testing'
 import WhyUs from '../component/WhyUs'
 import TopHeader from '../component/TopHeader'
-
+import Testemonial from '../component/Testemonial'
+import Timer from '../component/Timer'
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center">
@@ -22,6 +23,8 @@ export default function Home() {
      <WhyUs/>
      <CurriculumSlider/>
      {/* <Testing/> */}
+     <Timer/>
+     <Testemonial/>
      <div className='mt-[-80px] w-full'>
        <Footer/>
      </div>
