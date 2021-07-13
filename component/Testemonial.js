@@ -1,4 +1,4 @@
-import FormatQuoteIcon from '@material-ui/icons/FormatQuote';
+import FormatQuoteIcon from "@material-ui/icons/FormatQuote";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 // Import Swiper React components
@@ -18,33 +18,57 @@ SwiperCore.use([Navigation]);
 
 export default function Testemonial() {
   return (
-    <div className="h-[500px] w-full bg-[#b8e0be7a] border-2 pt-10">
-      <Swiper  navigation={true} className="mySwiper">
-      {[1,2,3,4,5,6,7,8,9].map((slides,i)=>(
-          
-        <SwiperSlide key={i}>
-          <div className='h-[300px] px-12 flex flex-col items-center justify-center'>
-            <div>
-              <h1 className='text-2xl'>Student says about us</h1>
+    <div className="h-[500px] w-full bg-[#bde2c3] border-2 pt-10">
+      <Swiper navigation={true} loop={true} className="mySwiper">
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((slides, i) => (
+          <SwiperSlide key={i}>
+            <div className="h-[400px] px-12 flex flex-col items-center justify-center">
+              <div className="bg-[#1e56a0] rounded-full h-[60px] w-[60px] flex justify-center items-center">
+                <FormatQuoteIcon
+                  style={{
+                    transform: "rotate(180deg)",
+                    // marginTop: "-15px",
+                    color: "white",
+                    fontSize: "50px",
+                  }}
+                />
+              </div>
+              <div>
+                <h1 className="text-4xl">Student says about us</h1>
+              </div>
+
+              <div className="h-[150px] flex justify-center items-center text-justify w-[615px] mt-[20px]">
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book.
+                  {/* <FormatQuoteIcon
+                    style={{
+                      marginBottom: "6px",
+                      opacity: 0.6,
+                    }}
+                  /> */}
+                </p>
+              </div>
+              <div className="flex items-center justify-center">
+                <Image
+                  src="/free-Logo.png"
+                  width={50}
+                  height={50}
+                  alt="Avatar"
+                />
+                <div className="flex flex-col pl-2 text-left">
+                  <h1 className="text-md">Atiurrahman</h1>
+                  <p className="text-sm">Btech Mechanical engimnerering</p>
+                </div>
+              </div>
             </div>
-            <div className='h-[100px] flex justify-center items-center'
-            ><FormatQuoteIcon style={{
-                transform:'rotate(180deg)' }}/>
-            lorem12zsdfgvsergaegaergeatrg aerg ar g aer g
-            lorem12zsdfgvsergaegaergeatrg aerg ar g aer g<FormatQuoteIcon /></div>
-            <div className='flex items-center justify-center'>
-              <Image src="/free-Logo.png" width={50} height={50} alt="Avatar" />
-              <div className='flex flex-col pl-2 text-left'>
-              <h1 className='text-md'>Atiurrahman</h1>
-              <p className='text-sm'>Btech Mechanical engimnerering</p>
-            </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        
-      ))}
+          </SwiperSlide>
+        ))}
       </Swiper>
-        {/* <SwiperSlide>Slide 2</SwiperSlide>
+      {/* <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
         <SwiperSlide>Slide 5</SwiperSlide>
@@ -52,7 +76,6 @@ export default function Testemonial() {
         <SwiperSlide>Slide 7</SwiperSlide>
         <SwiperSlide>Slide 8</SwiperSlide>
         <SwiperSlide>Slide 9</SwiperSlide> */}
-      
     </div>
   );
 }

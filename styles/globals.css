@@ -105,14 +105,14 @@ z-index: 10;
 /* swiper js */
 
 .swiper-container {
-  width: 50%;
+  width: 80%;
   height: 80%;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #b8e0be7a;
+  background: #bde2c3;
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -128,7 +128,9 @@ z-index: 10;
   -webkit-align-items: center;
   align-items: center;
 }
-
+.swiper-button-next, .swiper-button-prev{
+  color: #1e56a0 !important;
+}
 /* .swiper-slide img {
   display: block;
   width: 100%;

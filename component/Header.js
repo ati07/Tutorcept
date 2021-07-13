@@ -70,7 +70,7 @@ function Header() {
   }, []);
 
   const scrollToHw =()=>{
-    window.scrollTo(0, 700);
+    window.scrollTo(0, 690);
   }
   const handleError=()=>{
 

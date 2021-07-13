@@ -95,50 +95,50 @@ function Footer() {
             <div className="flex items-center justify-around w-full mt-2">
               <Link href="">
                 <a href='https://www.facebook.com/tutorcept' target="_blank" rel="noreferrer">
-                  <div data-aos="fade-up" className="ftb flex flex-col items-center px-10 mr-5 text-lg opacity-70 hover:opacity-100">
+                  <div data-aos="fade-up" data-aos-delay="100" className="flex flex-col items-center px-10 mr-5 text-lg ftb opacity-70 hover:opacity-100">
                     <FacebookIcon fontSize="large" classes={{root: classes.root}} /> <span className='mt-1'>Facebook</span> 
                   </div>
                 </a>
               </Link>
-              <div className='w-[1px] h-[100px] bg-white'></div>
+              <div data-aos="fade-up" data-aos-delay="200" className='w-[1px] h-[100px] bg-white'></div>
               <Link href="">
                 <a href='https://www.linkedin.com/company/tutorcept' target="_blank" rel="noreferrer">
-                  <div data-aos="fade-up" className="ftb flex flex-col items-center justify-center px-10 text-lg opacity-70 hover:opacity-100">
+                  <div data-aos="fade-up" data-aos-delay="300" className="flex flex-col items-center justify-center px-10 text-lg ftb opacity-70 hover:opacity-100">
                     <LinkedInIcon fontSize="large" classes={{root: classes.root}} /> <span className='mt-1' >LinkedIn</span>
                   </div>
                 </a>
               </Link>
-              <div className='w-[1px] h-[100px] bg-white'></div>
+              <div data-aos="fade-up" data-aos-delay="400"  className='w-[1px] h-[100px] bg-white'></div>
 
               <Link href="">
                 <a href='https://twitter.com/tutorcept' target="_blank" rel="noreferrer">
-                  <div data-aos="fade-up" className="ftb flex flex-col items-center justify-center px-10 mr-5 text-lg opacity-70 hover:opacity-100">
+                  <div data-aos="fade-up" data-aos-delay="500" className="flex flex-col items-center justify-center px-10 mr-5 text-lg ftb opacity-70 hover:opacity-100">
                     <TwitterIcon fontSize="large" classes={{root: classes.root}} /> <span className='mt-1'>Twitter</span>
                   </div>
                 </a>
               </Link>
-              <div className='w-[1px] h-[100px] bg-white'></div>
+              <div data-aos="fade-up" data-aos-delay="600"  className='w-[1px] h-[100px] bg-white'></div>
 
               <Link href="">
                 <a href='https://www.youtube.com/channel/UC3iY0YCVHD7UwqZqlDYpEQw' target="_blank" rel="noreferrer">
-                  <div data-aos="fade-up" className="ftb flex flex-col items-center justify-center px-10 text-lg opacity-70 hover:opacity-100">
+                  <div data-aos="fade-up" data-aos-delay="700" className="flex flex-col items-center justify-center px-10 text-lg ftb opacity-70 hover:opacity-100">
                     <YouTubeIcon classes={{root: classes.root}} /> <span className='mt-1'>Youtube</span>
                   </div>
                 </a>
               </Link>
-              <div className='w-[1px] h-[100px] bg-white'></div>
+              <div data-aos="fade-up" data-aos-delay="800" className='w-[1px] h-[100px] bg-white'></div>
               <Link href="">
                 <a href='https://t.me/tutorcept' target="_blank" rel="noreferrer">
-                  <div data-aos="fade-up" className="ftb flex flex-col items-center justify-center px-10 text-lg opacity-70 hover:opacity-100">
+                  <div data-aos="fade-up" data-aos-delay="900" className="flex flex-col items-center justify-center px-10 text-lg ftb opacity-70 hover:opacity-100">
                     <TelegramIcon classes={{root: classes.root}} /> <span className='mt-1'>Telegram</span>
                   </div>
                 </a>
               </Link>
-              <div className='w-[1px] h-[100px] bg-white'></div>
+              <div data-aos="fade-up" data-aos-delay="1000" className='w-[1px] h-[100px] bg-white'></div>
 
               <Link href="">
                 <a href='https://www.instagram.com/tutorcept' target="_blank" rel="noreferrer">
-                  <div  data-aos="fade-up" className="ftb flex flex-col items-center justify-center px-10 text-lg opacity-70 hover:opacity-100">
+                  <div  data-aos="fade-up" data-aos-delay="1100" className="flex flex-col items-center justify-center px-10 text-lg ftb opacity-70 hover:opacity-100">
                     <InstagramIcon fontSize="large" classes={{root: classes.root}}/> <span className='mt-1'>Instagram</span>
                   </div>
                 </a>

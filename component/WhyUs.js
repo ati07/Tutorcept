@@ -16,12 +16,12 @@ function WhyUs() {
 
   return (
     <div className="flex flex-col items-center justify-center w-full bg-[#becdda] border-2 h-[700px] ">
-      <div className='flex flex-col relative items-center'>
-      <div className="advantage flex justify-center font-semibold relative pb-5 ">
+      <div className='relative flex flex-col items-center'>
+      <div className="relative flex justify-center pb-5 font-semibold advantage ">
         <h1 className="text-3xl font-bold leading-10 text-center text-[#316ab4]">What Tutorcept Offers</h1>
       </div>
       <div className="w-full grid grid-cols-9 gap-10 justify-center item-center lg:px-[150px]">
-        <div data-aos="fade-up" className="w-full col-span-3  h-50">
+        <div data-aos="fade-up" className="w-full col-span-3 h-50">
           <div className="grid w-full grid-cols-12 p-4 text-center">
           <div className="w-full col-span-12 pb-5"><SchoolIcon style={{fontSize:60,}}/></div>
             <div className="w-full col-span-12">
@@ -70,7 +70,7 @@ function WhyUs() {
         </div>
         <div data-aos="fade-up" className="w-full col-span-3 col-start-4 h-50 gap-y-20">
           <div className="grid w-full grid-cols-12 p-4 text-center">
-            <div className="w-full col-span-12 pb-5"><LanguageIcon style={{fontSize:60,}}/></div>
+            <div className="w-full col-span-12 pb-5"><Image src='/Break1.png' width={70} height={60} style={{fontSize:60,}}/></div>
             <div className="w-full col-span-12">
               <h1 className='text-2xl font-medium uppercase opacity-70'>Break The Barriers</h1>
               <p className='opacity-60'>

@@ -9,8 +9,6 @@ module.exports = {
         'login-baaner': "url('/login.png')",
         'contact-us': "url('/contact us_Prancheta 1.jpg')",
         'timerbg': "url('/timer.png')",
-
-
     }),
     },
   },
