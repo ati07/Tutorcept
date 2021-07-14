@@ -54,7 +54,7 @@ export default function Testemonial() {
               </div>
               <div className="flex items-center justify-center">
                 <Image
-                  src="/free-Logo.png"
+                  src="/Free-Logo.png"
                   width={50}
                   height={50}
                   alt="Avatar"
