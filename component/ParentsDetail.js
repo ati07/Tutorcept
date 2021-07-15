@@ -19,7 +19,7 @@ import { makeStyles } from "@material-ui/core/styles";
     //   display: 'none',
 //     },
 //   }));
-function PersonalDetail() {
+function ParentsDetail() {
   // const classes = useStyles();
   // The first commit of Material-UI
   const [selectedDate, setSelectedDate] = useState(
@@ -32,7 +32,7 @@ function PersonalDetail() {
   const handleChange = () => {};
 
   return (
-    <div className="grid grid-cols-12 gap-5 pt-2 pb-2 px-8 bg-white h-[400px]">
+    <div className="grid grid-cols-12 gap-5 pt-2 pb-2 px-8 bg-white h-[200px]">
       <div className="col-span-6">
         <input
           onChange={handleChange}
@@ -49,22 +49,7 @@ function PersonalDetail() {
           className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
       </div>
-      <div className="col-span-6">
-        {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <KeyboardDatePicker
-            disableToolbar
-            variant="inline"
-            format="MM/dd/yyyy"
-            margin="normal"
-            id="date-picker-inline"
-            label="Date picker inline"
-            value={selectedDate}
-            onChange={handleDateChange}
-            KeyboardButtonProps={{
-              "aria-label": "change date",
-            }}
-          />
-        </MuiPickersUtilsProvider> */}
+      {/* <div className="col-span-6">
         <lable className='flex items-center justify-between text-sm focus:outline-none '>
             <span>Date of Birth:</span>
         <input
@@ -74,7 +59,7 @@ function PersonalDetail() {
           className="w-[70%] h-8 pl-5 border-b-2 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
         </lable>
-      </div>
+      </div> */}
       <div className="col-span-6">
         <input
           onChange={handleChange}
@@ -95,11 +80,11 @@ function PersonalDetail() {
         <input
           onChange={handleChange}
           type="text"
-          Placeholder="Board"
+          Placeholder="Occupation"
           className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
       </div>
-      <div className="col-span-12">
+      {/* <div className="col-span-12">
         <input
           onChange={handleChange}
           type="text"
@@ -157,7 +142,7 @@ function PersonalDetail() {
           type="file"
           name="contained-button-file"
         />
-        <span className='flex items-center justify-between row-span-2 text-sm focus:outline-none '>Upload your Photo(optional):</span>
+        <span className='flex items-center justify-between row-span-2 text-sm focus:outline-none '>Upload your Photo:</span>
         <label htmlFor="contained-button-file" >
             
           <Button
@@ -174,10 +159,10 @@ function PersonalDetail() {
                        <Image src='/Free-Logo.png' width={80} height={65} alt='photo'/>
  
           </div>
-      </div>
+      </div> */}
       
     </div>
   );
 }
 
-export default PersonalDetail;
+export default ParentsDetail;

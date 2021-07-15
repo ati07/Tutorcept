@@ -1,14 +1,16 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import PersonalDetail from './PersonalDetail'
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Stepper from "@material-ui/core/Stepper";
+import Step from "@material-ui/core/Step";
+import StepLabel from "@material-ui/core/StepLabel";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import PersonalDetail from "./PersonalDetail";
+import ParentsDetail from './ParentsDetail'
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: "100%",
   },
   button: {
     marginRight: theme.spacing(1),
@@ -20,19 +22,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Personal Details', 'Parents/Guardian Details'];
+  return ["Personal Details", "Parents/Guardian Details"];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <PersonalDetail/>;
+      return (
+        <div>
+          <PersonalDetail />
+        </div>
+      );
     case 1:
-      return 'What is an ad group anyways?';
+      return (
+        <div>
+          <ParentsDetail />
+        </div>
+      );;
     case 2:
-      return 'This is the bit I really care about!';
+      return "This is the bit I really care about!";
     default:
-      return 'Unknown step';
+      return "Unknown step";
   }
 }
 
@@ -90,9 +100,11 @@ export default function ApplicationForm() {
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
-          if (isStepOptional(index)) {
-            labelProps.optional = <Typography variant="caption">Optional</Typography>;
-          }
+          // if (isStepOptional(index)) {
+          //   labelProps.optional = (
+          //     <Typography variant="caption">Optional</Typography>
+          //   );
+          // }
           if (isStepSkipped(index)) {
             stepProps.completed = false;
           }
@@ -115,35 +127,44 @@ export default function ApplicationForm() {
           </div>
         ) : (
           <div>
+            <div>
             <Typography className={classes.instructions}>
-              
+              <div>
               {getStepContent(activeStep)}
-              
-              </Typography>
-            <div className='flex justify-end'>
-              <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
-                Back
-              </Button>
-              {isStepOptional(activeStep) && (
+              </div>
+            </Typography>
+            </div>
+            <div>
+              <div className="flex justify-end">
+                <Button
+                  disabled={activeStep === 0}
+                  onClick={handleBack}
+                  className={classes.button}
+                >
+                  Back
+                </Button>
+                {/* {isStepOptional(activeStep) && (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleSkip}
+                    className={classes.button}
+                  >
+                    Skip
+                  </Button>
+                )} */}
+
                 <Button
                   variant="contained"
                   color="primary"
-                  onClick={handleSkip}
+                  onClick={handleNext}
                   className={classes.button}
                 >
-                  Skip
+                  {activeStep === steps.length - 1 ? "Finish" : "Next"}
                 </Button>
-              )}
-
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleNext}
-                className={classes.button}
-              >
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-              </Button>
+              </div>
             </div>
+            
           </div>
         )}
       </div>
