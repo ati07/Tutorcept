@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import PersonalDetail from "./PersonalDetail";
 import ParentsDetail from './ParentsDetail'
+import { useRouter } from 'next/router'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,6 +48,7 @@ function getStepContent(step) {
 }
 
 export default function ApplicationForm() {
+  const router = useRouter()
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
@@ -91,6 +93,7 @@ export default function ApplicationForm() {
   };
 
   const handleReset = () => {
+    router.push('/std/st_dashboard')
     setActiveStep(0);
   };
 
@@ -121,8 +124,9 @@ export default function ApplicationForm() {
             <Typography className={classes.instructions}>
               All steps completed - you&apos;re finished
             </Typography>
-            <Button onClick={handleReset} className={classes.button}>
-              Reset
+            <Button onClick={handleReset} variant="contained"
+                  color="primary" className={classes.button}>
+              Go To Your Dashboard
             </Button>
           </div>
         ) : (

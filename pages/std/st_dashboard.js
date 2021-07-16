@@ -12,6 +12,7 @@ import ExitToAppOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
 import StHome from "../../component/StHome";
 import PermIdentityOutlinedIcon from "@material-ui/icons/PermIdentityOutlined";
 import { useState, useEffect } from "react";
+import Tooltip from '@material-ui/core/Tooltip';
 
 function St_dashboard() {
   const classes = makeStyles((theme) => ({
@@ -28,6 +29,32 @@ function St_dashboard() {
     5: "",
     6:''
   });
+  const rightPage =[
+  {
+    id:1,
+    page:<StHome />,
+  },
+  {
+    id:2,
+    page:'Commming Soon2',
+  },
+  {
+    id:3,
+    page:'Commming Soon3',
+  },
+  {
+    id:4,
+    page:'Commming Soon4',
+  },
+  {
+    id:5,
+    page:'Commming Soon5',
+  },
+  {
+    id:6,
+    page:'Commming Soon6',
+  },
+  ]
   const changebg = () => {};
   return (
     <div className="grid w-full grid-cols-12 pb-8 pt-10 mt-0 bg-[#dbdbdb] px-48">
@@ -41,6 +68,7 @@ function St_dashboard() {
             />
           </div>
           <div className="flex items-center justify-center col-span-12 text-center">
+          <Tooltip title="Home" placement="right-start">
             <IconButton
               style={{ backgroundColor: bgColor["1"] }}
               onClick={() => setBgcolor({ 1: "#f6f6f6" })}
@@ -52,8 +80,11 @@ function St_dashboard() {
                 }}
               />
             </IconButton>
+            </Tooltip>
           </div>
           <div className="flex items-center justify-center col-span-12 text-center">
+          <Tooltip title="Profile" placement="right-start">
+           
             <IconButton
               style={{ backgroundColor: bgColor["2"] }}
               onClick={() => setBgcolor({ 2: "#f6f6f6" })}
@@ -65,8 +96,11 @@ function St_dashboard() {
                 }}
               />
             </IconButton>
+            </Tooltip>
           </div>
           <div className="flex items-center justify-center col-span-12 text-center">
+          <Tooltip title="Calender" placement="right-start">
+            
             <IconButton
               style={{ backgroundColor: bgColor["3"] }}
               onClick={() => setBgcolor({ 3: "#f6f6f6" })}
@@ -78,8 +112,11 @@ function St_dashboard() {
                 }}
               />
             </IconButton>
+            </Tooltip>
           </div>
           <div className="flex items-center justify-center col-span-12 text-center">
+          <Tooltip title="Email" placement="right-start">
+           
             <IconButton
               style={{ backgroundColor: bgColor["4"] }}
               onClick={() => setBgcolor({ 4: "#f6f6f6" })}
@@ -93,8 +130,11 @@ function St_dashboard() {
                 />
               </Badge>
             </IconButton>
+            </Tooltip>
           </div>
           <div className="flex items-center justify-center col-span-12 text-center">
+          <Tooltip title="Chat" placement="right-start">
+           
             <IconButton
               style={{ backgroundColor: bgColor["5"] }}
               onClick={() => setBgcolor({ 5: "#f6f6f6" })}
@@ -106,18 +146,28 @@ function St_dashboard() {
                 }}
               />
             </IconButton>
+            </Tooltip>
           </div>
           <div className="flex items-center justify-center col-span-12 text-center">
+            
             <Link href="/" passHref>
+          <Tooltip title="Log Out" placement="right-start">
+
               <IconButton>
                 <ExitToAppOutlinedIcon className='hover:animate-bounce' style={{ color: "white" }} />
               </IconButton>
+              </Tooltip>
             </Link>
+            
           </div>
         </div>
       </div>
       <div className="w-full h-full col-span-11 col-start-2 rounded-tr-3xl shadow rounded-br-3xl bg-[#f6f6f6] border-gray-300">
-        <StHome />
+        {rightPage.map((item,i)=>(
+          <div key={i}>
+          {bgColor[`${i+1}`]==="#f6f6f6"?item['page']:''}
+          </div>
+        ))}
       </div>
     </div>
   );

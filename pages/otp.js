@@ -13,11 +13,11 @@ const LoginComponent = () => {
     setShow(false);
   };
   const submit = () => {
-    if (!email.includes("@")) {
-      setShow(true);
-      console.log("INsideIF");
-    }
-    console.log("INside");
+    router.push('/completeprofile')
+    // if (!email.includes("@")) {
+    //   setShow(true);
+    //   console.log("INsideIF");
+    // }
   };
   console.log(email);
   return (
