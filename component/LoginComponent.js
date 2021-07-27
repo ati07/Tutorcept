@@ -7,10 +7,13 @@ const LoginComponent = () => {
   const router = useRouter()
   const [email, setEmail] = useState("");
   const [show, setShow] = useState(false);
+  const [cshow, setCshow] = useState(false);
+
 
   const handleChange = (e) => {
     setEmail(e.target.value);
     setShow(false);
+    setCshow(false)
   };
   
   const submit = async () => {
@@ -28,6 +31,8 @@ const LoginComponent = () => {
     }else{
       if(userEmails.includes(email)){
         router.push('/std/st_dashboard')
+      }else{
+        setCshow(true);
       }
       
     }
@@ -80,6 +85,9 @@ const LoginComponent = () => {
                 Forgot Password?
               </button>
             </div>
+            <p className={cshow ? "text-red-600" : "hidden"}>
+                Credential Not found.
+              </p>
             <div className="col-span-12 w-full h-[30px]">
               <button
                 onClick={submit}

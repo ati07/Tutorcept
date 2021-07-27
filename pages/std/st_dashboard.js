@@ -68,7 +68,7 @@ function St_dashboard() {
             />
           </div>
           <div className="flex items-center justify-center col-span-12 text-center">
-          <Tooltip title="Home" placement="right-start">
+          <Tooltip title="Home" placement="right-start" style={{backgroundColor:'#1e56a0', color:'red'}}>
             <IconButton
               style={{ backgroundColor: bgColor["1"] }}
               onClick={() => setBgcolor({ 1: "#f6f6f6" })}
