@@ -25,27 +25,50 @@ function ParentsDetail() {
   const [selectedDate, setSelectedDate] = useState(
     new Date("2014-08-18T21:11:54")
   );
+  const [Input, setInput] = useState({
+    FirstName: "",
+    LastName: "",
+    Email: "",
+    MobileNumber: "",
+    Occupation: "",
+  });
+  const handleChange = (e) => {
+    // Computed property names
+    // keys of the objects are computed dynamically
+    setInput({
+      ...Input,
+      [e.target.name]: e.target.value,
+    });
+  };
 
+  useEffect(()=>{
+    localStorage.setItem('ParentsDetail',JSON.stringify(Input));
+    console.log("Input",Input)
+  },[Input])
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
-  const handleChange = () => {};
+  // const handleChange = () => {};
 
   return (
     <div className="grid grid-cols-12 gap-5 pt-2 pb-2 px-8 bg-white h-[200px]">
       <div className="col-span-6">
         <input
+        name='FirstName'
           onChange={handleChange}
           type="text"
           Placeholder="First Name"
+          value={Input['FirstName']}
           className="w-full h-8 pl-5 border-b-2 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
       </div>
       <div className="col-span-6">
         <input
+        name='LastName'
           onChange={handleChange}
           type="text"
           Placeholder="Last Name"
+          value={Input['LastName']}
           className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
       </div>
@@ -62,25 +85,31 @@ function ParentsDetail() {
       </div> */}
       <div className="col-span-6">
         <input
+        name='Email'
           onChange={handleChange}
           type="Email"
           Placeholder="Email"
+          value={Input['Email']}
           className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
       </div>
       <div className="col-span-6">
         <input
+        name='MobileNumber'
           onChange={handleChange}
           type="number"
           Placeholder="Mobile Number"
+          value={Input['MobileNumber']}
           className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
       </div>
       <div className="col-span-6">
         <input
+        name='Occupation'
           onChange={handleChange}
           type="text"
           Placeholder="Occupation"
+          value={Input['Occupation']}
           className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
       </div>

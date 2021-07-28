@@ -1,12 +1,12 @@
 [{
     "id": 1,
-    "first Name": "Atiurrahman",
-    "Last name":
+    "FirstName": "Atiurrahman",
+    "LastName":
       "Ansari",
-      "DOB":"03/02/1995",
+      "DateOfBirth":"03-02-1995",
       "Email":"atiurrahman.ansari@gmail.com",
       
-      "mobile number":"7565091186",
+      "MobileNumber":"7565091186",
       "Board":"UP Board",
       "Address":"Belwa Alam Das",
       "Pin":"274401",

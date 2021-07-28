@@ -1,9 +1,21 @@
+import {useState, useEffect} from 'react'
 function StHome() {
+  const [user, setUser] = useState('')
+
+  useEffect(()=>{
+    if(localStorage.getItem('PersonalDetail')){
+    const user = JSON.parse(localStorage.getItem('PersonalDetail'))
+    setUser(user)
+  }
+  })
+  
+  
+
   return (
     <div className="grid grid-cols-12 gap-6 pt-5 px-5">
       <div className="col-span-12">
         <p className="uppercase text-xs opacity-70">Welcome</p>
-        <h1 className="text-xl opacity-80 ">Atiurrahman</h1>
+        <h1 className="text-xl opacity-80 ">{user? user.FirstName:''}</h1>
       </div>
       <div className="col-span-8 bg-white rounded-xl shadow h-[200px]">
         <div className="uppercase text-xs opacity-70 px-2 pt-4 font-bold">

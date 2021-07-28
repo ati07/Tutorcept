@@ -16,26 +16,29 @@ const LoginComponent = () => {
     setCshow(false)
   };
   
+  
   const submit = async () => {
     const res = await fetch('http://localhost:3000/api/hello')
     const user = await res.json()
     console.log("user",user)
     const userEmails =[]
-    user.map((user,i)=>(
-      userEmails.push(user.Email)
-    ))
-    if (!email.includes("@")) {
-      setShow(true);
-      
-      console.log("INsideIF");
-    }else{
-      if(userEmails.includes(email)){
+    user.map((student,i)=>{
+      if(student.Email=== email){
+        localStorage.setItem('PersonalDetail',JSON.stringify(student));
         router.push('/std/st_dashboard')
       }else{
         setCshow(true);
       }
+      // userEmails.push(user.Email)
+  })
+    // if (!email.includes("@")) {
+    //   setShow(true);
       
-    }
+    //   console.log("INsideIF");
+    // }else{
+      
+      
+    // }
     console.log("INside");
   };
   console.log(email);

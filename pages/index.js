@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import {useEffect} from 'react'
 import Banner from '../component/Banner'
 import CurriculumSlider from '../component/CurriculumSlider'
 import Footer from '../component/Footer'
@@ -10,6 +11,9 @@ import TopHeader from '../component/TopHeader'
 import Testemonial from '../component/Testemonial'
 import Timer from '../component/Timer'
 export default function Home() {
+  useEffect(()=>{
+    localStorage.clear();
+  })
   return (
     <div className="flex flex-col items-center justify-center">
       <Head>

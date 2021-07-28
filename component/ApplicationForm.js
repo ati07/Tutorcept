@@ -94,7 +94,7 @@ export default function ApplicationForm() {
 
   const handleReset = () => {
     router.push('/std/st_dashboard')
-    setActiveStep(0);
+    // setActiveStep(0);
   };
 
   return (
