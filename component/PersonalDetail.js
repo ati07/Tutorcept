@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import Image from 'next/image'
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from "@material-ui/core/styles";
 
 function PersonalDetail() {
@@ -10,8 +13,7 @@ function PersonalDetail() {
     new Date("2014-08-18T21:11:54")
   );
   const [Input, setInput] = useState({
-    FirstName: "",
-    LastName: "",
+    FullName: "",
     DateOfBirth: "",
     Email: "",
     MobileNumber: "",
@@ -23,6 +25,23 @@ function PersonalDetail() {
     Class: "",
 
   });
+  const [show, setShow] =useState(false)
+  const showdropdown =()=>{
+    setShow(true)
+  }
+  const [showCountry, setShowCountry] =useState(false)
+
+  const showdropdownCountry=()=>{
+    setShowCountry(true)
+  }
+  const countryBlurFunction=()=>{
+    setShowCountry(false)
+    
+  }
+  const blurFunction=()=>{
+    setShow(false)
+    
+  }
   const handleChange = (e) => {
     // Computed property names
     // keys of the objects are computed dynamically
@@ -30,6 +49,7 @@ function PersonalDetail() {
       ...Input,
       [e.target.name]: e.target.value,
     });
+    
   };
 
   useEffect(()=>{
@@ -45,36 +65,13 @@ function PersonalDetail() {
     <div className="grid grid-cols-12 gap-5 pt-2 pb-2 px-8 bg-white h-[400px]">
       <div className="col-span-6">
         <input
-        name='FirstName'
+        name='FullName'
           onChange={handleChange}
           type="text"
-          Placeholder="First Name"
-          value={Input['FirstName']}
+          Placeholder="Full Name"
+          value={Input['FullName']}
           className="w-full h-8 pl-5 border-b-2 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
-      </div>
-      <div className="col-span-6">
-        <input
-        name='LastName'
-          onChange={handleChange}
-          type="text"
-          Placeholder="Last Name"
-          value={Input['LastName']}
-          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
-        />
-      </div>
-      <div className="col-span-6">
-        <lable className='flex items-center justify-between text-sm focus:outline-none '>
-            <span>Date of Birth:</span>
-        <input
-        name='DateOfBirth'
-          onChange={handleChange}
-          type="date"
-          Placeholder="Enter Your Date of Birth"
-          value={Input['DateOfBirth']}
-          className="w-[70%] h-8 pl-5 border-b-2 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
-        />
-        </lable>
       </div>
       <div className="col-span-6">
         <input
@@ -93,6 +90,68 @@ function PersonalDetail() {
           type="number"
           value={Input['MobileNumber']}
           Placeholder="Mobile Number"
+          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
+        />
+      </div>
+      {/* <div className="col-span-6">
+        <input
+        name='LastName'
+          onChange={handleChange}
+          type="text"
+          Placeholder="Last Name"
+          value={Input['LastName']}
+          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
+        />
+      </div> */}
+      <div className="col-span-6">
+        <lable className='flex items-center justify-between text-sm focus:outline-none '>
+            <span>Date of Birth:</span>
+        <input
+        name='DateOfBirth'
+          onChange={handleChange}
+          type="date"
+          Placeholder="Enter Your Date of Birth"
+          value={Input['DateOfBirth']}
+          className="w-[70%] h-8 pl-5 border-b-2 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
+        />
+        </lable>
+      </div>
+      <div className="col-span-12">
+        <div 
+          className="flex border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
+
+        // className="flex w-full"
+        >
+        <input
+        name='School'
+          onChange={handleChange}
+          type="text"
+          Placeholder="School"
+          value={Input['School']}
+          onFocus={showdropdown}
+          onBlur={blurFunction}
+          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-tl-lg focus:rounded-tr-lg"
+        />
+        <ArrowDropDownIcon
+        style={{position:'relative',color:'#1e56a0', zIndex:1,marginLeft:-25}}
+        />
+        </div>
+        <div className={show?"absolute z-10 pl-5 text-left bg-white h-[150px] ml-[-1px] overflow-y-scroll w-[639px] border-2 border-t-0 rounded border-purple-600 ":'hidden'}>
+          <p>Type your School</p>
+          {[1,2,3,4,5,6,7,8,9].map((item,i)=>(
+            <p key={i} className='opacity-50 cursor-pointer'>{item}</p>
+          ))}
+          <p className='opacity-50 cursor-pointer'>Create School:{Input['School']}</p>
+        </div>
+      </div>
+      
+      <div className="col-span-6">
+        <input
+        name='Class'
+          onChange={handleChange}
+          type="text"
+          Placeholder="Class"
+          value={Input['Class']}
           className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
       </div>
@@ -127,6 +186,44 @@ function PersonalDetail() {
         />
       </div>
       <div className="col-span-4">
+        <div 
+          className="flex border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
+
+        // className="flex w-full"
+        >
+        <input
+        name='Country'
+          onChange={handleChange}
+          type="text"
+          Placeholder="Country"
+          value={Input['Country']}
+          onFocus={showdropdownCountry}
+          onBlur={countryBlurFunction}
+          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-tl-lg focus:rounded-tr-lg"
+        />
+        <ArrowDropDownIcon
+        style={{position:'relative', zIndex:1,marginLeft:-25,color:'#1e56a0'}}
+        />
+        </div>
+        <div className={showCountry?"absolute z-10 pl-5 text-left bg-white h-[150px] ml-[-1px] overflow-y-scroll w-[201px] border-2 border-t-0 rounded border-purple-600 ":'hidden'}>
+          <p>Type your Country Name</p>
+          {['INDIA',2,3,4,5,6,7,8,9].map((item,i)=>(
+            <p key={i} className='opacity-50 cursor-pointer'>{item}</p>
+          ))}
+          <p className='opacity-50 cursor-pointer'>Add Country:{Input['Country']}</p>
+        </div>
+      </div>
+      {/* <div className="col-span-4">
+        <input
+        name='Country'
+          onChange={handleChange}
+          type="text"
+          Placeholder="Country"
+          value={Input['Country']}
+          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
+        />
+      </div> */}
+      <div className="col-span-4">
         <input
         name='City'
           onChange={handleChange}
@@ -136,36 +233,9 @@ function PersonalDetail() {
           className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
       </div>
-      <div className="col-span-4">
-        <input
-        name='Country'
-          onChange={handleChange}
-          type="text"
-          Placeholder="Country"
-          value={Input['Country']}
-          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
-        />
-      </div>
-      <div className="col-span-6">
-        <input
-        name='School'
-          onChange={handleChange}
-          type="text"
-          Placeholder="School"
-          value={Input['School']}
-          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
-        />
-      </div>
-      <div className="col-span-6">
-        <input
-        name='Class'
-          onChange={handleChange}
-          type="text"
-          Placeholder="Class"
-          value={Input['Class']}
-          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
-        />
-      </div>
+      
+      
+      
       
       <div className="flex items-center justify-between w-full col-span-6 row-span-2">
         <input
