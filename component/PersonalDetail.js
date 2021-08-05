@@ -9,10 +9,24 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from "@material-ui/core/styles";
 import axios from 'axios'
 
-function PersonalDetail() {
-  const [selectedDate, setSelectedDate] = useState(
-    new Date("2014-08-18T21:11:54")
-  );
+
+// export async function getStaticProps() {
+//   const res = await fetch("https://cdn-tutorcept.herokuapp.com/schools/v1/get")
+//     const schoolData = await res.json()
+//   // console.log(res.data)
+//   // if (!schoolData) {
+//   //   return {
+//   //     notFound: true,
+//   //   }
+//   // }
+//   console.log("SChoolData",schoolData)
+//   return {
+//     props: { schoolData }, // will be passed to the page component as props
+//   }
+// }
+
+
+function PersonalDetail({schoolData}) {
   const [Input, setInput] = useState({
     FullName: "",
     DateOfBirth: "",
@@ -26,10 +40,7 @@ function PersonalDetail() {
     Class: "",
 
   });
-  const [show, setShow] =useState(false)
-  const showdropdown =()=>{
-    setShow(true)
-  }
+  
   const [showCountry, setShowCountry] =useState(false)
   const [showCity, setShowCity] =useState(false)
 
@@ -59,36 +70,68 @@ function PersonalDetail() {
       ...Input,
       [e.target.name]: e.target.value,
     });
-    
+    const filterData =[]
+    if(school.length > 2 && Input['School'] !== ''){
+     school.map((item,i)=>{
+       if(item.name){
+        console.log("item",item.name)
+        const schoolName = item.name.toLowerCase();
+         const value  = Input['School'].toLowerCase()
+         if(schoolName.indexOf(value) !==  -1){
+           filterData.push(schoolName)
+         }
+       }
+     })
+     setSchool(filterData)
+    }
   };
+  const schoolName=(name)=>{
+    setInput({
+      ...Input,
+      'School': name,
+    });
+    setShow(false)
+    console.log("Nmae",name)
+  }
 
-  useEffect(()=>{
-    localStorage.setItem('PersonalDetail',JSON.stringify(Input));
-    console.log("Input",Input)
-  },[Input])
+  // useEffect(()=>{
+  //   localStorage.setItem('PersonalDetail',JSON.stringify(Input));
+  //   console.log("Input",Input)
+  // },[Input])
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
   // const handleChange = () => {};
   // const school = []
   // const [schools] = school
-  const [school,setSchool] =useState([])
+  const [school,setSchool] =useState([{name:'Loading'}])
   const [city,setCity] =useState([])
   const [country,setCountry] = useState([])
-  // const schools = []
-  // const [school] = schools
-useEffect(()=>{
-  async function fetchData() {
-    // You can await here
-    // const response = await MyAPI.getData(someId);
-    const res = await axios.get("https://cdn-tutorcept.herokuapp.com/schools/v1/get")
-    const schoolData = res.data.data
-    console.log("schooldata",schoolData)
-    // schools.push(schoolData.data)
-    setSchool(schoolData)
+  const [show, setShow] =useState(false)
+  const showdropdown = ()=>{
+    setShow(true)
+    // const res = await axios.get("https://cdn-tutorcept.herokuapp.com/schools/v1/get")
+    // const schoolData = res.data.data
+    // console.log("schooldata",schoolData)
+    // schools.push(schoolData)
+    // setSchool(schoolData)
   }
-  fetchData();
-},[])
+  //Search Keyword
+  
+
+  useEffect(()=>{
+      async function fetchData() {
+        // You can await here
+        // const response = await MyAPI.getData(someId);
+        const res = await axios.get("https://cdn-tutorcept.herokuapp.com/schools/v1/get")
+        const schoolData = res.data.data
+        console.log("schooldata",schoolData)
+        // schools.push(schoolData)
+        setSchool(schoolData)
+        // ...
+      }
+      fetchData();
+    },[])
 // useEffect(()=>{
 //   async function fetchData() {
 //     // You can await here
@@ -119,6 +162,8 @@ useEffect(()=>{
 // if(schools){
 
 // }
+//DetaillSchool
+const [showSchool,setShowSchool] =useState(false)
 
   return (
     <div className="grid grid-cols-12 gap-5 pt-2 pb-2 px-8 bg-white h-[400px]">
@@ -188,19 +233,64 @@ useEffect(()=>{
           Placeholder="School"
           value={Input['School']}
           onFocus={showdropdown}
-          onBlur={blurFunction}
+          // onBlur={blurFunction}
           className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-tl-lg focus:rounded-tr-lg"
         />
         <ArrowDropDownIcon
         style={{position:'relative',color:'#1e56a0', zIndex:1,marginLeft:-25}}
         />
         </div>
-        <div className={show?"absolute z-10 pl-5 text-left bg-white h-[150px] ml-[-1px] overflow-y-scroll w-[639px] border-2 border-t-0 rounded border-purple-600 ":'hidden'}>
+        <div className={show?"absolute pl-5 z-10 text-left bg-white h-[150px] ml-[-1px] overflow-y-scroll w-[639px] border-2 border-t-0 rounded border-purple-600 ":'hidden'}>
           <p>Type your School</p>
-          {school.map((item,i)=>(
-            <p key={i} className='opacity-50 cursor-pointer'>{item.name}</p>
+          <div>
+            {school.map((item,i)=>(
+            <p key={i} onClick={()=>schoolName(item.name)} className='opacity-50 cursor-pointer'>{item.name}</p>
+            // <p key={i} className='opacity-50 cursor-pointer'>{item}</p>
+
           ))}
-          <p className='opacity-50 cursor-pointer'>Create School:{Input['School']}</p>
+          </div>
+          
+          <p onClick={()=> setShowSchool(true)}className='sticky bottom-0 z-10 bg-white cursor-pointer opacity-70'>Other</p>
+          <div className={showSchool?'grid grid-col-12 gap-5 pt-3':" hidden"}>
+            <div className='col-span-6'><input
+        name='SchoolName'
+          onChange={handleChange}
+          type="text"
+          value={Input['SchoolName']}
+          Placeholder="School Name"
+          className="w-full h-8 pl-5 border-b-2 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
+        /></div>
+            <div className='col-span-6'><input
+        name='SchoolAddress'
+          onChange={handleChange}
+          type="text"
+          value={Input['SchoolAddress']}
+          Placeholder="School Address"
+          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
+        /></div>
+            <div className='col-span-6'><input
+        name='SchoolDistrict'
+          onChange={handleChange}
+          type="text"
+          value={Input['SchoolDistrict']}
+          Placeholder="School District"
+          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
+        /></div>
+            <div className='col-span-6'><input
+        name='SchoolState'
+          onChange={handleChange}
+          type="text"
+          value={Input['SchoolState']}
+          Placeholder="School State"
+          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
+        /></div>
+            <div className='col-span-12 pb-2'>
+              <button className='w-full text-white bg-[#3f51b5] rounded-lg' onClick={()=>setShowSchool(false)}>
+                Save
+              </button>
+            </div>
+
+          </div>
         </div>
       </div>
       
@@ -323,10 +413,6 @@ useEffect(()=>{
         style={{position:'relative', zIndex:1,marginLeft:-25,color:'#1e56a0'}}
         />
       </div> */}
-      
-      
-      
-      
       <div className="flex items-center justify-between w-full col-span-6 row-span-2">
         <input
           accept="image/*"
