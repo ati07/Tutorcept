@@ -7,6 +7,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from "@material-ui/core/styles";
+import axios from 'axios'
 
 function PersonalDetail() {
   const [selectedDate, setSelectedDate] = useState(
@@ -30,12 +31,21 @@ function PersonalDetail() {
     setShow(true)
   }
   const [showCountry, setShowCountry] =useState(false)
+  const [showCity, setShowCity] =useState(false)
 
   const showdropdownCountry=()=>{
     setShowCountry(true)
   }
   const countryBlurFunction=()=>{
     setShowCountry(false)
+    
+  }
+
+  const showdropdownCity=()=>{
+    setShowCity(true)
+  }
+  const cityBlurFunction=()=>{
+    setShowCity(false)
     
   }
   const blurFunction=()=>{
@@ -60,6 +70,55 @@ function PersonalDetail() {
     setSelectedDate(date);
   };
   // const handleChange = () => {};
+  // const school = []
+  // const [schools] = school
+  const [school,setSchool] =useState([])
+  const [city,setCity] =useState([])
+  const [country,setCountry] = useState([])
+  // const schools = []
+  // const [school] = schools
+useEffect(()=>{
+  async function fetchData() {
+    // You can await here
+    // const response = await MyAPI.getData(someId);
+    const res = await axios.get("https://cdn-tutorcept.herokuapp.com/schools/v1/get")
+    const schoolData = res.data.data
+    console.log("schooldata",schoolData)
+    // schools.push(schoolData.data)
+    setSchool(schoolData)
+  }
+  fetchData();
+},[])
+// useEffect(()=>{
+//   async function fetchData() {
+//     // You can await here
+//     // const response = await MyAPI.getData(someId);
+//     const resCountry = await fetch("https://cdn-tutorcept.herokuapp.com/country/v1/get")
+//     const countryData = await resCountry.json()
+//     setCountry(countryData.data)
+//     // ...
+//   }
+//   fetchData();
+// },[])
+// useEffect(()=>{
+//   async function fetchData() {
+//     // You can await here
+//     // const response = await MyAPI.getData(someId);
+//     const resCity = await fetch("https://cdn-tutorcept.herokuapp.com/city/v1/get")
+//     const cityData = await resCity.json()
+//     setCity(cityData.data)
+//     // ...
+//   }
+//   fetchData();
+// },[])
+// useEffect(()=>{
+//   console.log("schools",city)
+//   console.log("schoolslength",city.length)
+
+// },[city])
+// if(schools){
+
+// }
 
   return (
     <div className="grid grid-cols-12 gap-5 pt-2 pb-2 px-8 bg-white h-[400px]">
@@ -138,8 +197,8 @@ function PersonalDetail() {
         </div>
         <div className={show?"absolute z-10 pl-5 text-left bg-white h-[150px] ml-[-1px] overflow-y-scroll w-[639px] border-2 border-t-0 rounded border-purple-600 ":'hidden'}>
           <p>Type your School</p>
-          {[1,2,3,4,5,6,7,8,9].map((item,i)=>(
-            <p key={i} className='opacity-50 cursor-pointer'>{item}</p>
+          {school.map((item,i)=>(
+            <p key={i} className='opacity-50 cursor-pointer'>{item.name}</p>
           ))}
           <p className='opacity-50 cursor-pointer'>Create School:{Input['School']}</p>
         </div>
@@ -207,8 +266,8 @@ function PersonalDetail() {
         </div>
         <div className={showCountry?"absolute z-10 pl-5 text-left bg-white h-[150px] ml-[-1px] overflow-y-scroll w-[201px] border-2 border-t-0 rounded border-purple-600 ":'hidden'}>
           <p>Type your Country Name</p>
-          {['INDIA',2,3,4,5,6,7,8,9].map((item,i)=>(
-            <p key={i} className='opacity-50 cursor-pointer'>{item}</p>
+          {country.map((item,i)=>(
+            <p key={i} className='opacity-50 cursor-pointer'>{item.name}</p>
           ))}
           <p className='opacity-50 cursor-pointer'>Add Country:{Input['Country']}</p>
         </div>
@@ -224,6 +283,34 @@ function PersonalDetail() {
         />
       </div> */}
       <div className="col-span-4">
+        <div 
+          className="flex border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
+
+        // className="flex w-full"
+        >
+        <input
+        name='City'
+          onChange={handleChange}
+          type="text"
+          Placeholder="City"
+          value={Input['City']}
+          onFocus={showdropdownCity}
+          onBlur={cityBlurFunction}
+          className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-tl-lg focus:rounded-tr-lg"
+        />
+        <ArrowDropDownIcon
+        style={{position:'relative', zIndex:1,marginLeft:-25,color:'#1e56a0'}}
+        />
+        </div>
+        <div className={showCity?"absolute z-10 pl-5 text-left bg-white h-[150px] ml-[-1px] overflow-y-scroll w-[201px] border-2 border-t-0 rounded border-purple-600 ":'hidden'}>
+          <p>Type your City</p>
+          {city.map((item,i)=>(
+            <p key={i} className='opacity-50 cursor-pointer'>{item.city}</p>
+          ))}
+          <p className='opacity-50 cursor-pointer'>Add Country:{Input['Country']}</p>
+        </div>
+      </div>
+      {/* <div className="col-span-4">
         <input
         name='City'
           onChange={handleChange}
@@ -232,7 +319,10 @@ function PersonalDetail() {
           value={Input['City']}
           className="pl-5 border-b-2 w-full h-8 border-[] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent focus:rounded-lg"
         />
-      </div>
+        <ArrowDropDownIcon
+        style={{position:'relative', zIndex:1,marginLeft:-25,color:'#1e56a0'}}
+        />
+      </div> */}
       
       
       
