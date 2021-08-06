@@ -61,7 +61,7 @@ export default function Testemonial() {
                 />
                 <div className="flex flex-col pl-2 text-left">
                   <h1 className="text-md">Atiurrahman</h1>
-                  <p className="text-sm">Btech Mechanical engimnerering</p>
+                  <p className="text-sm">Btech Mechanical Engineering</p>
                 </div>
               </div>
             </div>

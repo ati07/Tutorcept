@@ -41,9 +41,9 @@ function WhiteHeader() {
   const handleClose1=()=>{
     setOpen(false);
   }
-  const HeaderItems = ["Home", "Pricing", "How It Works", "Contact Us"];
-  const Cred = ["Sign In", "Become A Tutor", "FAQs"];
-  const Headerlink = ["/", "/pricing", "/howitworks", "/contactus"];
+  const HeaderItems = ["Home", "Pricing", "About Us", "Contact Us"];
+  const Cred = ["", "Become A Tutor", "FAQs"];
+  const Headerlink = ["/", "/pricing", "", "/contactus"];
   const RightHeaderlink = ["/", "/becometutor", "/faqs"];
   const Icons = [
     "CreditCardOutlinedIcon",

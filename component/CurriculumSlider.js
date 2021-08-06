@@ -28,11 +28,12 @@ const CurriculumSlider = () => {
     AOS.init({duration:3000,
       once: true});
   })
-    const board = ['/Board/UP.jpg','/Board/Bihar.jpg','/Board/NIOP.jpg','/Board/kv.png','/Board/mhboard.gif','/Board/Delhi Board.png','/Board/AMU logo.png',
-                    '/Board/JMI.jpg','/Board/CBSE.jpg','/Board/IB.jpg',
-                    '/Board/ICSE.jpg','/Board/IGCSE.jpg',]
+    const board = ['/Board/CBSE.jpg','/Board/ICSE.jpg','/Board/IGCSE.jpg','/Board/IB.jpg','/Board/JMI(1).png',
+    '/Board/AMU logo.png','/Board/kv.png','/Board/Bihar.jpg','/Board/UP (1).jpg','/Board/NIOP.jpg','/Board/mhboard.gif','/Board/Delhi Board.png',
+                    
+                    ]
   return (
-    <div className="flex flex-col justify-center items-center bg-[#fff] w-full h-[800px] ">
+    <div className="flex flex-col justify-center items-center bg-[#fff] w-full h-[500px] ">
       {/* #d6dce2 */}
       {/* <div className="grid grid-cols-12 gap-4 px-4 mt-52">
         
@@ -70,7 +71,7 @@ const CurriculumSlider = () => {
         ))}
 
       </div>
-      <div className='flex pb-5 mt-10 '>
+      {/* <div className='flex pb-5 mt-10 '>
         <Flags.US title="United States" className="w-[60px] px-2"/>
           <h1 className="text-4xl text-black">
           
@@ -86,7 +87,7 @@ const CurriculumSlider = () => {
           </div>
         ))}
 
-      </div>
+      </div> */}
       
       
       {/* <Pentagon/> */}

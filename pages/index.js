@@ -23,13 +23,15 @@ export default function Home() {
       {/* <TopHeader/>      */}
       <Header cr={false}/>
      <Banner Title="Comming Soon"/>
+     
      <HowItWorks/>
+     <Timer/>
      <WhyUs/>
      <CurriculumSlider/>
      {/* <Testing/> */}
-     <Timer/>
+     
      <Testemonial/>
-     <div className='mt-[-80px] w-full'>
+     <div className='mt-[-90px] w-full'>
        <Footer/>
      </div>
      

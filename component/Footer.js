@@ -182,7 +182,7 @@ function Footer() {
           </p> */}
           <p className="py-1 text-sm font-thin leading-9 lg:text-base">
             <LocationOnIcon/>
-            <span className='pl-2'>Address,202260</span>
+            <span className='pl-2'>Address: India</span>
           </p>
           <p className="py-1 text-sm font-thin leading-9 lg:text-base">
             <LinkIcon/>
@@ -190,7 +190,7 @@ function Footer() {
           </p>
           <p className="py-1 text-sm font-thin leading-9 lg:text-base">
             <PhonelinkRingIcon/>
-            <span className='pl-2'>+91 7565091186, +91 8181060600</span>
+            <span className='pl-2'>+91 7003014691, +91 7523951200</span>
           </p>
           {/* <p className="py-1 text-sm font-thin leading-9 lg:text-base">
             Made in INDIA by Atiurrahman
@@ -201,8 +201,10 @@ function Footer() {
           <div key={i} className="px-1">
             <h2 key={i} className="py-1 text-xl font-bold ">{item.Title}</h2>
             {item["pages"].map((pg, j) => (
-              <p key={j} className="text-sm font-thin leading-6 opacity-70 hover:font-bold hover:opacity-100 lg:leading-8 text-aqua lg:text-base">
-                <Link href="/">{pg}</Link>
+              <p key={j} className="text-sm font-thin cursor-not-allowed leading-6 opacity-70 hover:font-bold hover:opacity-100 lg:leading-8 text-aqua lg:text-base">
+                {pg}
+                {/* <Link href="/">{pg}</Link> */}
+
               </p>
             ))}
           </div>

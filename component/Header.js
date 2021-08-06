@@ -41,9 +41,13 @@ function Header() {
   const handleClose1=()=>{
     setOpen(false);
   }
-  const HeaderItems = ["Home", "Pricing", "How It Works", "Contact Us"];
-  const Cred = ["Sign In", "Become A Tutor", "FAQs"];
-  const Headerlink = ["/", "/pricing", "", "/contactus"];
+  // const HeaderItems = ["Home", "Pricing", "How It Works","About Us","Contact Us"];
+  const HeaderItems = ["Home", "Pricing", "How It Works","About Us"];
+
+  const Cred = ["Request Demo", "Become A Tutor", "FAQs"];
+  // const Headerlink = ["/", "/pricing", "","","/contactus"];
+  const Headerlink = ["/", "/pricing", "","",""];
+
   const RightHeaderlink = ["/", "/becometutor", "/faqs"];
   const Icons = [
     "CreditCardOutlinedIcon",
