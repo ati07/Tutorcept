@@ -33,24 +33,20 @@ export default function Testemonial() {
                   }}
                 />
               </div>
-              <div>
-                <h1 className="lg:md:text-4xl text-lg">Student says about us</h1>
+              <div className='mb-5'>
+                <h1 className="lg:md:text-2xl text-lg">Your words of love for us</h1>
               </div>
 
-              <div className="h-[150px] flex justify-center text-xs lg:md:text-xl items-center text-justify lg:md:w-[615px] w-auto lg:md:mt-[20px]">
-                <p>
+              <div className="h-[150px] flex justify-center text-xs lg:md:text-4xl text-justify lg:md:w-[615px] w-auto lg:md:mt-[10px]">
+                <p>Waiting anxiously to hear from you</p>
+                {/* <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry
                   standard dummy text ever since the 1500s, when an unknown
                   printer took a galley of type and scrambled it to make a type
                   specimen book.
-                  {/* <FormatQuoteIcon
-                    style={{
-                      marginBottom: "6px",
-                      opacity: 0.6,
-                    }}
-                  /> */}
-                </p>
+                  
+                </p> */}
               </div>
               <div className="flex items-center justify-center">
                 <Image
@@ -60,7 +56,7 @@ export default function Testemonial() {
                   alt="Avatar"
                 />
                 <div className="flex flex-col pl-2 text-left">
-                  <h1 className="text-md">Atiurrahman</h1>
+                  <h1 className="text-md">Your Name</h1>
                   <p className="text-sm">Btech Mechanical Engineering</p>
                 </div>
               </div>
