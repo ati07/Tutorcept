@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{ useState,useEffect} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,15 +13,15 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {useRouter} from 'next/router'
-// import Footer from '../component/Footer'
-// import Link from 'next/link'
+import axios from 'axios'
 
-function Subscribe() {
+function Copyright() {
+    
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://www.jiitms.com/">
-        Jamia Imam Ibn Taimia
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -42,116 +42,174 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(3),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
 }));
 
-export default function SignIn() {
-    const router = useRouter()
+export default function SignUp() {
   const classes = useStyles();
- const [css, setCss] = useState(classes)
- const [show, setShow] = useState(false);
- const [credential,setCredential] = useState({
-     email:'',
-     password:''
-})
-const handleChange= (e)=>{
-    e.preventDefault()
-    setShow(false)
-setCredential({
-    ...credential,
-      [e.target.name]: e.target.value,
-      
-})
+  const router = useRouter();
 
-}
-const submit=(e)=>{
+  const [input, setInput] =useState({
+    name:'',
+      mobile:'',
+      email:'',
+      parentContact:'',
+  })
+  const handleChange = (e)=>{
+    setShow(false)
+      setInput({
+          ...input,
+        [e.target.name]: e.target.value,
+        })
+  }
+  const [error,setError] = useState(false)
+  const [show,setShow] = useState(null)
+
+  const submit = async (e)=>{
     e.preventDefault()
-    if((credential.email === 'india@jrms.com') || (credential.email === 'ksa@jrms.com') && (credential.password === 'superadmin@jmiit')){
-        localStorage.setItem('Credential',JSON.stringify(credential));
+      console.log("mobileNo",input.mobile.length)
+      console.log('email',input.email)
+      if(input.email.includes('@') || input.mobile.length === 10){
+          //Using Axios
+        // await axios.post('https://cdn-tutorcept.herokuapp.com/subscription/v1/orientation', input)
+        //   .then(function (response) {
+        //     console.log(response);
+        //   })
+        //   .catch((error)=>{
+        //       console.log("error",error)
+        //   })
+
+          //Using Fetch
+          await fetch("https://cdn-tutorcept.herokuapp.com/subscription/v1/orientation", {
+    // Adding method type
+            method: "POST",
+      
+    // Adding body or contents to send
+             body: JSON.stringify(input),
+      
+    // Adding headers to the request
+            headers: {
+        "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+  
+// Converting to JSON
+        .then(response => response.json())
+  
+// Displaying results to console
+        .then(json => {
+            setShow(json)
+            console.log(json)})
+        .catch(err => console.error(err));
+
+        setTimeout(function(){router.push('/') }, 3000);
         
-        router.push('/marketmanagment')
-    }else{
-        setShow(true)
-    }
-}
-//  console.log("credential", credential)
+            }else{
+          setError(true)
+      }
+  }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
-      <div className={css.paper}>
-        <Avatar className={css.avatar}>
-          <LockOutlinedIcon  className='cursor-pointer' onClick={()=>router.push('/')}/>
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon onClick={()=> router.push('/')}/>
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign up
         </Typography>
-        <p className={show ? "text-red-600" : "hidden"}>
-                Credential Not found.
-              </p>
-        <form className={css.form} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-            onChange={handleChange}
-            value={credential['email']}
-            // value={'india@jrms.com'}
-          />
-          <TextField
-          onChange={handleChange}
-          value={credential['password']}
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            // value={'superadmin@jmiit'}
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
+        {!show=== null?<p className='text-green-600 text-xs'>{show.message}</p>:''}
+        {error?<p className='text-red-600 text-xs'>Please Enter valid Email or Mobile Number</p>:''}
+        <form className={classes.form} noValidate>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+              onChange={handleChange}
+              value={input['name']}
+                autoComplete="fname"
+                name="name"
+                variant="outlined"
+                required
+                fullWidth
+                id="Name"
+                label="Name"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+              onChange={handleChange}
+              value={input['mobile']}
+
+                variant="outlined"
+                required
+                fullWidth
+                id="mobile"
+                label="Mobile Number"
+                name="mobile"
+                type='number'
+                autoComplete="mobile"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+              onChange={handleChange}
+                variant="outlined"
+                required
+                fullWidth
+                id="email"
+                label="Email"
+                name="email"
+                autoComplete="email"
+                value={input['email']}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+              onChange={handleChange}
+                variant="outlined"
+                required
+                fullWidth
+                name="parentContact"
+                label="Parents Mobile Number"
+                type="number"
+                id="number"
+                value={input['parentContact']}
+                autoComplete="parentContact"
+              />
+            </Grid>
+            {/* <Grid item xs={12}>
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                label="Remember Me"
+              />
+            </Grid> */}
+          </Grid>
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
-            className={css.submit}
+            className={classes.submit}
             onClick={submit}
           >
-            Sign In
+            Sign Up
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
+          {/* <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
+                Already have an account? Sign in
               </Link>
             </Grid>
-          </Grid>
+          </Grid> */}
         </form>
       </div>
-      <Box mt={18}>
+      <Box mt={5}>
         {/* <Copyright /> */}
-        {/* <Footer/> */}
       </Box>
     </Container>
   );

@@ -46,7 +46,7 @@ function Footer() {
     Title: "GET TO KNOW US",
     pages: [
       "Home",
-      "Abous Us",
+      "About Us",
       "Contact Us",
       "Terms of Services",
       "Privacy Policy",
@@ -63,7 +63,7 @@ function Footer() {
       "Subjects",
       "Pricing",
       "Faqs",
-      "Curriculla",
+      "Curriculum",
     ],
     links: ["/", "/", "/", "/", "/"],
   };
@@ -73,7 +73,7 @@ function Footer() {
       // "Ambassadors",
       // "Academic Partners",
       // "Corporate Partners",
-      "Careeres",
+      "Careers",
       "Become A Tutor",
     ],
     links: ["/", "/"],
@@ -211,7 +211,7 @@ function Footer() {
         ))}
       </div>
       <div onClick={scrollToTop} className='w-full text-white flex justify-end pr-[150px]'><ArrowUpwardIcon fontSize='large' className='cursor-pointer animate-bounce' /></div>
-      <div className='flex items-center justify-center w-full mt-10 mb-1 text-lg text-white'>Tutorcept.com @2021, All Right Reserved
+      <div className='flex items-center justify-center w-full mt-10 mb-1 text-lg text-white'>Tutorcept.com @2021, All Rights Reserved
       
       
       </div>

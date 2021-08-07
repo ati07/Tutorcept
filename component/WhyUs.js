@@ -84,9 +84,9 @@ function WhyUs() {
           <div className="grid w-full grid-cols-12 p-4 text-center">
             <div className="w-full col-span-12 pb-5"><LanguageIcon style={{fontSize:60,}}/></div>
             <div className="w-full col-span-12">
-              <h1 className='text-2xl font-medium uppercase opacity-70'>Break The Barriers</h1>
+              <h1 className='text-2xl font-medium uppercase opacity-70'>Accolades & Appreciation</h1>
               <p className='opacity-60'>
-              Let not any language be a barrier in your learning. We&apos;ll teach in the tongue you speak. Currently we offer English and Hindi Tutoring.
+              A highly motivated mind strives for the best grades. Our tutor believes in rewarding the child time to time in order to cherish their efforts and make them confident.
               </p>
             </div>
           </div>
