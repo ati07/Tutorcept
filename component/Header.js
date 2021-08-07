@@ -30,7 +30,7 @@ function Header() {
   const handleClickOpen = () => {
     // setOpen(true);
     window.scrollTo(0, 1330);
-    console.log("clicked")
+    // console.log("clicked")
 
   };
   const handleClickerror=()=>{
@@ -66,7 +66,7 @@ function Header() {
   // },[])
   
   const changeColor = () => {
-    console.log(window.pageYOffset)
+    // console.log(window.pageYOffset)
     if (window.pageYOffset > 10) {
       setClr(true);
     } else {
@@ -86,12 +86,12 @@ function Header() {
   return (
     <div
       className={`${
-        clr ? "w-full px-6 lg:max-w-[100%] fixed top-0 bg-white transition duration-500 ease-in-out header" : "absolute top-[0px] lg:w-[96%]"
-      } lg:py-4 border-b-[1px] border-[#ababab] font-semibold text-base flex items-center justify-between z-20`}
+        clr ? "lg:px-6 lg:max-w-[100%] w-[100%] px-2 fixed top-0 bg-white transition duration-500 ease-in-out header" : "absolute top-[0px] lg:md:w-[96%] w-[97%]"
+      } lg:py-4 border-b-[1px] border-[#ababab] font-semibold lg:text-base text-[6px] flex items-center justify-between z-20`}
     >
       <div className="flex">
         <Link href="/">
-          <h1 className={clr?'text-[#1e56a0] font-bold text-3xl cursor-pointer':'text-white font-bold cursor-pointer text-3xl'}>Tutorcept</h1>
+          <h1 className={clr?'text-[#1e56a0] font-bold lg:md:text-3xl text-xl cursor-pointer':'text-white font-bold cursor-pointer lg:md:text-3xl text-xl'}>Tutorcept</h1>
           {/* <div> */}
           {/* <LogoSvg width={300} height={100} fill={'red'}/> */}
           {/* <ReactLogo /> */}

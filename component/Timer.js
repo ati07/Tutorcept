@@ -57,8 +57,8 @@ function Timer() {
     // },[timerSeconds])
     // #1e56a0
     return (
-        <div className="flex flex-col items-center h-[400px] w-full bg-timerbg timerbg">
-            <div className="text-xl text-white pb-5 mt-20 text-center">
+        <div className="flex flex-col items-center lg:md:h-[400px] h-auto w-full bg-timerbg timerbg">
+            <div className="lg:md:text-xl text-sm text-white pb-5 mt-20 text-center">
                 <p>
                 Get ready to witness a new era in online tutoring! Join us to know more about this exciting new venture! <br/> Tutorcept anxiously waits for your gracious presence.
                 </p>
@@ -73,7 +73,7 @@ function Timer() {
             <div className='col-span-1 pt-1 text-2xl text-center'>:</div>
             <div className='flex flex-col col-span-2 pt-1 text-2xl font-bold text-center border-2'>{timerSeconds}<span className='text-sm font-light text-white'> Secs </span> </div>
             </div>
-            <div className='mt-14'>
+            <div className='lg:md:mt-14 mt-14 mb-5'>
                 {!show?
                 <button onClick={()=>router.push('/subscribe')} className='hover:bg-[#1e56a0] bg-green-500 hover:border-0 border-2 font-semibold uppercase w-[200px] p-2 h-[50px] rounded-lg opacity-100 hover:opacity-100 text-white'>
                 Register Now

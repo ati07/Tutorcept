@@ -22,7 +22,7 @@ function PopUp() {
     }
     let interval = useRef()
     const startTimer = ()=>{
-        const countDownDate = new Date('August 7, 2021 17:30:00').getTime();
+        const countDownDate = new Date('August 8, 2021 14:00:00').getTime();
         
         interval = setInterval(()=>{
             const now = new Date().getTime();
@@ -46,27 +46,40 @@ function PopUp() {
     const [show,setShow] = useState(false)
     useEffect(()=>{
         startTimer();
-        if((timerSeconds === '00') && (timerMinutes === '00') && (timerHours === '00') && (timerDays === '05')){
-            setShow(true);
-            console.log("inside")
+        if( ( timerSeconds < 10 || timerSeconds < '10' ) && (timerMinutes === 0 || timerMinutes === '00')){
+            if((timerHours === 0 || timerHours === '00') && (timerDays === 0 || timerDays === '00')){
+               setShow(true);
+            console.log("inside") 
+            }else{
+                setShow(false);
+            }
+            
+        }else{
+            setShow(false);
         }
+        console.log("timerSeconds",timerSeconds)
+        console.log("timerMinutes",timerMinutes)
+        console.log("Outside")
+        console.log("timerHours",timerHours)
+        console.log("timerDays",timerDays)
+
         return ()=>{
             clearInterval(interval.current);
 
         }
-    })
+    },[timerSeconds])
     // useEffect(()=>{
         
     // },[timerSeconds])
     // #1e56a0
     return (
-        <div data-aos="zoom-in" className="flex flex-col justify-center rounded-3xl p-4 items-center h-[300px] w-[400px] bg-[#473f3c6e] border-2">
-            <div className="text-2xl text-white pb-5 mt-5 text-center">
+        <div data-aos="zoom-in" className="flex flex-col justify-center rounded-3xl p-4 items-center lg:md:h-[300px] lg:md:w-[400px] h-auto w-[250px]  bg-[#473f3c6e] border-2">
+            <div className="lg:md:text-2xl text-lg text-white pb-5 mt-5 text-center">
                 <p className="uppercase font-semibold">
                   Join the Meetup
                 </p>
             </div>
-            <div className="text-white h-[50px] grid grid-cols-12 w-[400px] px-10 mt-5 pb-3">
+            <div className="text-white lg:md:h-[50px] grid grid-cols-12 lg:md:w-[400px] h-[25px] w-[300px] px-10 mt-5 pb-3">
             {/* <Clock endTime={1618237200000} /> */}
             <div className='flex flex-col col-span-3 pt-1 text-2xl font-bold text-center border-2'>{timerDays}<span className='text-sm font-light text-white'>  Days</span> </div>
             <div className='flex flex-col col-span-1 pt-1 text-2xl text-center'>:</div>
@@ -76,14 +89,14 @@ function PopUp() {
             <div className='col-span-1 pt-1 text-2xl text-center'>:</div>
             <div className='flex flex-col col-span-2 pt-1 text-2xl font-bold text-center border-2'>{timerSeconds}<span className='text-sm font-light text-white'> Secs </span> </div>
             </div>
-            <div className='mt-12'>
+            <div className='lg:md:mt-12 mt-12'>
                 {show?
-                <button onClick={()=>console.log("clicked")} className='hover:bg-green-500 bg-[#1e56a0] uppercase w-[200px] p-2 h-[50px] rounded-lg opacity-100 hover:opacity-100 text-white'>
+                <button onClick={()=>console.log("clicked")} className='hover:bg-green-500 bg-[#1e56a0] uppercase w-[200px] p-2 h-[50px] cursor-pointer rounded-lg opacity-100 hover:opacity-100 text-white'>
                 Join the Room
             </button>
                 
                 :<button onMouseEnter={enter} onMouseOut={close} className='hover:bg-green-500 bg-[#1e56a0] cursor-not-allowed uppercase w-[200px] p-2 h-[50px] rounded-lg opacity-100 hover:opacity-100 text-white'>
-                    {!join?'Join the Room':'Wait till time up'}
+                    {join?'Join the Room':'Wait till time up'}
                 </button>}
             </div>
         </div>

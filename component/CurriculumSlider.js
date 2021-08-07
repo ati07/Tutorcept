@@ -33,7 +33,7 @@ const CurriculumSlider = () => {
                     
                     ]
   return (
-    <div className="flex flex-col justify-center items-center bg-[#fff] w-full h-[500px] ">
+    <div className="flex flex-col justify-center items-center bg-[#fff] w-full lg:md:h-[500px] h-auto ">
       {/* #d6dce2 */}
       {/* <div className="grid grid-cols-12 gap-4 px-4 mt-52">
         
@@ -55,18 +55,18 @@ const CurriculumSlider = () => {
       </Button>
       </div>
       </div> */}
-      <div className='flex pb-5'>
-            <Flags.IN title="India" className="w-[60px] px-2"/>
-          <h1 className="flex text-4xl text-black">
+      <div className='flex items-center justify-center mt-5 pb-5'>
+            <Flags.IN title="India" className="lg:md:w-[60px] w-[30px] px-2"/>
+          <h1 className="flex lg:md:text-4xl text-lg text-black">
           Indian Curriculum, Tutorcept Supports</h1>
         </div>
-      <div className="grid grid-cols-12 gap-5 px-28">
+      <div className="grid grid-cols-12 gap-5 px-28 mb-5">
         {board.map((img,i)=>(
           <div key={i} className="col-span-2">
           <Image src={img} width={200} height={125} alt='board'/>
-          {i===11?<div className="relative top-[-40px] h-[35px] text-black bg-[#ffffff40] hover:bg-blue-700 hover:text-white cursor-pointer flex justify-center items-center">
-            <button>View More</button>
-          </div>:''}
+          {/* {i===11?<div className="relative top-[-40px] lg:md:h-[35px] h-auto text-black bg-[#ffffff40] hover:bg-blue-700 hover:text-white cursor-pointer flex justify-center items-center">
+            <button className='lg:md:text-lg text-xs'>View More</button>
+          </div>:''} */}
           </div>
         ))}
 

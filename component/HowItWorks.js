@@ -12,26 +12,26 @@ function HowItWorks() {
             once: true});
     })
     return (
-        <div className='howitworks flex flex-col justify-center items-center bg-[#f3f5f7] w-full h-[700px]'>
-            <div className='flex justify-center w-full font-semibold lg:text-3xl align-center'>
+        <div className='howitworks flex flex-col justify-center items-center bg-[#f3f5f7] w-full lg:h-[700px] md:h-auto h-auto'>
+            <div className='flex justify-center w-full font-semibold mt-3 items-center'>
                 <h1 className='lg:text-4xl text-2xl font-bold text-[#1e56a0]'>How Tutorcept Works</h1>
             </div>
             <div className='lg:flex lg:justify-evenly mt-10 lg:items-center lg:px-[20px]'>
-                <div data-aos="fade-up" data-aos-delay="100" className='lg:p-[30px] p-[10px] text-center lg:w-[350px] w-52'>
+                <div data-aos="fade-up" data-aos-delay="100" className='lg:md:p-[30px] p-[5px] text-center lg:w-[350px] w-52'>
                     <Image src='/request.jpg'
                     width={350}
                     height={275}
                     />
-                    <h1 className='mt-5 text-3xl uppercase opacity-70'>1. Sign In</h1>
+                    <h1 className='mt-5 lg:md:text-3xl text-xl uppercase opacity-70'>1. Sign In</h1>
                     <p>Tell us what you need help with and our smart matching system will connect you with an online tutor. Sign up for a free trial using a debit/credit card.</p>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="500"  className='lg:p-[30px] p-[40px] text-center lg:w-[350px] w-52'>
+                <div data-aos="fade-up" data-aos-delay="500"  className='lg:p-[30px] p-[5px] text-center lg:w-[350px] w-52'>
                     <Image src='/Demo1.png'
                     width={350}
                     height={275}
                     />
                     
-                    <h1 className='mt-5 text-3xl uppercase opacity-70'>2. Request A Demo</h1>
+                    <h1 className='mt-5 lg:md:text-3xl text-xl uppercase opacity-70'>2. Request A Demo</h1>
                     <p>Get live 1-on-1 help in our advanced
 lesson space. Use a virtual whiteboard,
 audio/video chat, screen sharing, text
@@ -43,7 +43,7 @@ editor and much more.</p>
                     width={350}
                     height={275}
                     />
-                    <h1 className='mt-5 text-3xl uppercase opacity-70'>3. Review</h1>
+                    <h1 className='mt-5 lg:md:text-3xl text-xl uppercase opacity-70'>3. Review</h1>
                     <p>After the lesson is completed, both the
 tutor and student have the opportunity to
 rate each other, maintaining the quality of
@@ -51,7 +51,7 @@ our community.</p>
                 </div>
                 
             </div>
-            <div data-aos="fade-up" className='border-2 border-[#1e56a0] flex text-[#1e56a0] hover:bg-[#1e56a0] hover:text-white text-center items-center justify-center w-[200px] h-[60px] uppercase bg-[#f3f5f7] rounded-full'>
+            <div data-aos="fade-up" className='border-2 border-[#1e56a0] flex text-[#1e56a0] hover:bg-[#1e56a0] hover:text-white text-center items-center justify-center w-[200px] h-[60px] uppercase bg-[#f3f5f7] mt-5 mb-5 rounded-full'>
                 {/* <Link href='/login'> */}
                 <Link href='/subscribe'>
 

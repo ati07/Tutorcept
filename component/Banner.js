@@ -15,7 +15,7 @@ function Banner({Title}) {
     return (
         <div className="banner flex justify-center items-center bg-banner h-[600px] .bg-center w-full object-cover">
             <div className="w-full text-center">
-                <h1  className='text-white lg:mt-[-30px] lg:text-8xl pb-7 text-5xl '>
+                <h1  className='text-white lg:mt-[-30px] lg:text-8xl lg:pb-7 pb-10 text-4xl '>
                 {/* <Typewriter
                 options={{
                 strings: ['Simplifying Concepts...', '...'],

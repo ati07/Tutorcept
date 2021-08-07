@@ -34,10 +34,10 @@ export default function Testemonial() {
                 />
               </div>
               <div>
-                <h1 className="text-4xl">Student says about us</h1>
+                <h1 className="lg:md:text-4xl text-lg">Student says about us</h1>
               </div>
 
-              <div className="h-[150px] flex justify-center items-center text-justify w-[615px] mt-[20px]">
+              <div className="h-[150px] flex justify-center text-xs lg:md:text-xl items-center text-justify lg:md:w-[615px] w-auto lg:md:mt-[20px]">
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry

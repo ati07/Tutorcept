@@ -18,12 +18,17 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
     
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    // opacity:0.7,
-    // fontSize:50,
+    opacity:0.7,
+    fontSize:50,
+    [theme.breakpoints.down('sm')]: {
+    // backgroundColor: theme.palette.secondary.main,
+    fontSize:25,
+  },
 
   },
+  
   "&:hover": {
     // background: "#efefef"
     // opacity:1,
@@ -31,7 +36,7 @@ const useStyles = makeStyles({
   label: {
     textTransform: 'capitalize',
   },
-});
+}));
 
 function Footer() {
   const [stop,setStop] = useState()
@@ -84,27 +89,27 @@ function Footer() {
   }
   const classes = useStyles();
   return (
-    <div className="relative z-10 footer flex flex-col justify-center align-center w-full h-auto bg-[#1f4c70]">
-      <div className="flex justify-between w-full text-white lg:px-20">
+    <div className="relative z-10 footer flex flex-col justify-center items-center w-full h-auto bg-[#1f4c70]">
+      <div className="flex justify-between lg:md:w-full w-full text-white lg:px-20">
         <div className="w-full px-2 mt-20 lg:px-5">
           <h1 className="pb-3 font-bold lg:text-2xl text-1xl">
             CONNECT WITH US
           </h1>
 
           <div className="flex items-center justify-between w-full">
-            <div className="flex items-center justify-around w-full mt-2">
+            <div className="flex items-center justify-around lg:md:w-full w-full mt-2">
               <Link href="">
                 <a href='https://www.facebook.com/tutorcept' target="_blank" rel="noreferrer">
-                  <div data-aos="fade-up" data-aos-delay="100" className="flex flex-col items-center px-10 mr-5 text-lg ftb opacity-70 hover:opacity-100">
-                    <FacebookIcon fontSize="large" classes={{root: classes.root}} /> <span className='mt-1'>Facebook</span> 
+                  <div data-aos="fade-up" data-aos-delay="100" className="flex flex-col items-center lg:md:px-10 px-2 lg:md:mr-5 mr-0 lg:md:text-lg text-sm ftb opacity-70 hover:opacity-100">
+                    <FacebookIcon classes={{root: classes.root}} /> <span className='mt-1'>Facebook</span> 
                   </div>
                 </a>
               </Link>
               <div data-aos="fade-up" data-aos-delay="200" className='w-[1px] h-[100px] bg-white'></div>
               <Link href="">
                 <a href='https://www.linkedin.com/company/tutorcept' target="_blank" rel="noreferrer">
-                  <div data-aos="fade-up" data-aos-delay="300" className="flex flex-col items-center justify-center px-10 text-lg ftb opacity-70 hover:opacity-100">
-                    <LinkedInIcon fontSize="large" classes={{root: classes.root}} /> <span className='mt-1' >LinkedIn</span>
+                  <div data-aos="fade-up" data-aos-delay="300" className="flex flex-col items-center justify-center lg:md:px-10 px-2 lg:md:text-lg text-sm ftb opacity-70 hover:opacity-100">
+                    <LinkedInIcon  classes={{root: classes.root}} /> <span className='mt-1' >LinkedIn</span>
                   </div>
                 </a>
               </Link>
@@ -112,8 +117,8 @@ function Footer() {
 
               <Link href="">
                 <a href='https://twitter.com/tutorcept' target="_blank" rel="noreferrer">
-                  <div data-aos="fade-up" data-aos-delay="500" className="flex flex-col items-center justify-center px-10 mr-5 text-lg ftb opacity-70 hover:opacity-100">
-                    <TwitterIcon fontSize="large" classes={{root: classes.root}} /> <span className='mt-1'>Twitter</span>
+                  <div data-aos="fade-up" data-aos-delay="500" className="flex flex-col items-center justify-center lg:md:px-10 px-2 lg:md:mr-5 mr-0 lg:md:text-lg text-sm ftb opacity-70 hover:opacity-100">
+                    <TwitterIcon classes={{root: classes.root}} /> <span className='mt-1'>Twitter</span>
                   </div>
                 </a>
               </Link>
@@ -121,7 +126,7 @@ function Footer() {
 
               <Link href="">
                 <a href='https://www.youtube.com/channel/UC3iY0YCVHD7UwqZqlDYpEQw' target="_blank" rel="noreferrer">
-                  <div data-aos="fade-up" data-aos-delay="700" className="flex flex-col items-center justify-center px-10 text-lg ftb opacity-70 hover:opacity-100">
+                  <div data-aos="fade-up" data-aos-delay="700" className="flex flex-col items-center justify-center lg:md:px-10 px-2 lg:md:text-lg text-sm ftb opacity-70 hover:opacity-100">
                     <YouTubeIcon classes={{root: classes.root}} /> <span className='mt-1'>Youtube</span>
                   </div>
                 </a>
@@ -129,7 +134,7 @@ function Footer() {
               <div data-aos="fade-up" data-aos-delay="800" className='w-[1px] h-[100px] bg-white'></div>
               <Link href="">
                 <a href='https://t.me/tutorcept' target="_blank" rel="noreferrer">
-                  <div data-aos="fade-up" data-aos-delay="900" className="flex flex-col items-center justify-center px-10 text-lg ftb opacity-70 hover:opacity-100">
+                  <div data-aos="fade-up" data-aos-delay="900" className="flex flex-col items-center justify-center lg:md:px-10 px-2 lg:md:text-lg text-sm ftb opacity-70 hover:opacity-100">
                     <TelegramIcon classes={{root: classes.root}} /> <span className='mt-1'>Telegram</span>
                   </div>
                 </a>
@@ -138,8 +143,8 @@ function Footer() {
 
               <Link href="">
                 <a href='https://www.instagram.com/tutorcept' target="_blank" rel="noreferrer">
-                  <div  data-aos="fade-up" data-aos-delay="1100" className="flex flex-col items-center justify-center px-10 text-lg ftb opacity-70 hover:opacity-100">
-                    <InstagramIcon fontSize="large" classes={{root: classes.root}}/> <span className='mt-1'>Instagram</span>
+                  <div  data-aos="fade-up" data-aos-delay="1100" className="flex flex-col items-center justify-center lg:md:px-10 px-2 lg:md:text-lg text-sm ftb opacity-70 hover:opacity-100">
+                    <InstagramIcon  classes={{root: classes.root}}/> <span className='mt-1'>Instagram</span>
                   </div>
                 </a>
               </Link>
@@ -176,21 +181,21 @@ function Footer() {
       </div>
       <div className="flex justify-between w-full mt-10 text-white lg:mt-20 lg:px-20">
         <div className="px-2 lg:px-5">
-          <h1 className="pb-3 text-5xl font-bold lg:text-6xl">Tutorcept</h1>
+          <h1 className="pb-3 text-4xl font-bold lg:md:text-6xl">Tutorcept</h1>
           {/* <p className="py-3 text-sm font-thin leading-6 opacity-70 lg:text-base">
             Terms of Service | Privacy Policy
           </p> */}
-          <p className="py-1 text-sm font-thin leading-9 lg:text-base">
+          <p className="py-1 lg:md:text-sm text-xs font-thin leading-9 lg:text-base">
             <LocationOnIcon/>
-            <span className='pl-2'>Address: India</span>
+            <span className='lg:md:pl-2 pl-1'>Address: India</span>
           </p>
-          <p className="py-1 text-sm font-thin leading-9 lg:text-base">
+          <p className="py-1 lg:md:text-sm text-xs font-thin leading-9 lg:text-base">
             <LinkIcon/>
-            <span className='pl-2'>www.tutorcept.com</span>
+            <span className='lg:md:pl-2 pl-1'>www.tutorcept.com</span>
           </p>
-          <p className="py-1 text-sm font-thin leading-9 lg:text-base">
+          <p className="py-1 lg:md:text-sm text-xs font-thin leading-9 lg:text-base">
             <PhonelinkRingIcon/>
-            <span className='pl-2'>+91 7003014691, +91 7523951200</span>
+            <span className='lg:md:pl-2 pl-1'>+91 7003014691, +91 7523951200</span>
           </p>
           {/* <p className="py-1 text-sm font-thin leading-9 lg:text-base">
             Made in INDIA by Atiurrahman
@@ -199,9 +204,9 @@ function Footer() {
         </div>
         {footerContent.map((item, i) => (
           <div key={i} className="px-1">
-            <h2 key={i} className="py-1 text-xl font-bold ">{item.Title}</h2>
+            <h2 key={i} className="py-1 lg:md:text-xl text-sm font-bold ">{item.Title}</h2>
             {item["pages"].map((pg, j) => (
-              <p key={j} className="text-sm font-thin cursor-not-allowed leading-6 opacity-70 hover:font-bold hover:opacity-100 lg:leading-8 text-aqua lg:text-base">
+              <p key={j} className="lg:md:text-sm text-xs font-thin cursor-not-allowed leading-6 opacity-70 hover:font-bold hover:opacity-100 lg:leading-8 text-aqua lg:text-base">
                 {pg}
                 {/* <Link href="/">{pg}</Link> */}
 
@@ -210,8 +215,8 @@ function Footer() {
           </div>
         ))}
       </div>
-      <div onClick={scrollToTop} className='w-full text-white flex justify-end pr-[150px]'><ArrowUpwardIcon fontSize='large' className='cursor-pointer animate-bounce' /></div>
-      <div className='flex items-center justify-center w-full mt-10 mb-1 text-lg text-white'>Tutorcept.com @2021, All Rights Reserved
+      <div onClick={scrollToTop} className='w-full text-white flex justify-end lg:md:pr-[150px] pr-[30px]'><ArrowUpwardIcon fontSize='large' className='cursor-pointer animate-bounce' /></div>
+      <div className='flex items-center justify-center w-full mt-10 mb-1 lg:md:text-lg text-sm text-white'>Tutorcept.com @2021, All Rights Reserved
       
       
       </div>
