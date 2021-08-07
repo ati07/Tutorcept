@@ -82,7 +82,7 @@ function WhyUs() {
         </div>
         <div data-aos="fade-up" className="w-full lg:md:col-span-3 col-span-9 lg:md:col-start-7 h-50 gap-y-20">
           <div className="grid w-full grid-cols-12 p-4 text-center">
-            <div className="w-full col-span-12 pb-5"><LanguageIcon style={{fontSize:60,}}/></div>
+            <div className="w-full col-span-12 pb-5"><Image src='/medal.png' width={70} height={60} style={{fontSize:60,}}/></div>
             <div className="w-full col-span-12">
               <h1 className='text-2xl font-medium uppercase opacity-70'>Accolades & Appreciation</h1>
               <p className='opacity-60'>

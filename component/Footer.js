@@ -187,7 +187,7 @@ function Footer() {
           </p> */}
           <p className="py-1 lg:md:text-sm text-xs font-thin leading-9 lg:text-base">
             <LocationOnIcon/>
-            <span className='lg:md:pl-2 pl-1'>Address: India</span>
+            <span className='lg:md:pl-2 pl-1'>India</span>
           </p>
           <p className="py-1 lg:md:text-sm text-xs font-thin leading-9 lg:text-base">
             <LinkIcon/>
