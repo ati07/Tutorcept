@@ -121,7 +121,7 @@ export default function SignUp() {
           <LockOutlinedIcon onClick={()=> router.push('/')}/>
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Register
         </Typography>
         {!show=== null?<p className='text-green-600 text-xs'>{show.message}</p>:''}
         {error?<p className='text-red-600 text-xs'>Please Enter valid Email or Mobile Number</p>:''}
