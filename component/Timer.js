@@ -75,7 +75,7 @@ function Timer() {
             </div>
             <div className='mt-14'>
                 {!show?
-                <button onClick={()=>router.push('/subscribe')} className='hover:bg-[#1e56a0] bg-green-500 hover:border-0 border-2 font-semibold bg-transparent uppercase w-[200px] p-2 h-[50px] rounded-lg opacity-100 hover:opacity-100 text-white'>
+                <button onClick={()=>router.push('/subscribe')} className='hover:bg-[#1e56a0] bg-green-500 hover:border-0 border-2 font-semibold uppercase w-[200px] p-2 h-[50px] rounded-lg opacity-100 hover:opacity-100 text-white'>
                 Register Now
             </button>
                 
