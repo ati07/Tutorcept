@@ -43,7 +43,7 @@ function WhiteHeader() {
   }
   const HeaderItems = ["Home", "Pricing", "About Us", "Contact Us"];
   const Cred = ["", "Become A Tutor", "FAQs"];
-  const Headerlink = ["/", "/pricing", "", "/contactus"];
+  const Headerlink = ["/", "/pricing", "/about", "/contactus"];
   const RightHeaderlink = ["/", "/becometutor", "/faqs"];
   const Icons = [
     "CreditCardOutlinedIcon",

@@ -52,7 +52,9 @@ our community.</p>
                 
             </div>
             <div data-aos="fade-up" className='border-2 border-[#1e56a0] flex text-[#1e56a0] hover:bg-[#1e56a0] hover:text-white text-center items-center justify-center w-[200px] h-[60px] uppercase bg-[#f3f5f7] rounded-full'>
-                <Link href='/login'>
+                {/* <Link href='/login'> */}
+                <Link href='/subscribe'>
+
                     <a>
                 <button className="uppercase"> Request a Demo</button>
                 </a>

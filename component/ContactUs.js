@@ -26,7 +26,7 @@ const ContactUs = () => {
   }
   console.log(email)
   return (
-    <div className="login bg-contact-us object-cover h-[580px] bg-no-repeat overflow-hidden px-50 py-[60px] w-full grid grid-cols-12">
+    <div className="login bg-contact-us object-cover h-[580px] bg-no-repeat mt-20 overflow-hidden px-50 py-[60px] w-full grid grid-cols-12">
       <div data-aos="fade-right" className="col-span-4 col-start-8 rounded-2xl bg-white w-full h-[350px]">
         <div className="grid grid-col-12 px-3 py-6 h-[300px] gap-y-5 text-center">
           <div className="bg-white col-span-12 w-full h-[50px]">

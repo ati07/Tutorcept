@@ -28,7 +28,10 @@ function Header() {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
-    setOpen(true);
+    // setOpen(true);
+    window.scrollTo(0, 1330);
+    console.log("clicked")
+
   };
   const handleClickerror=()=>{
 
@@ -46,9 +49,9 @@ function Header() {
 
   const Cred = ["Request Demo", "Become A Tutor", "FAQs"];
   // const Headerlink = ["/", "/pricing", "","","/contactus"];
-  const Headerlink = ["/", "/pricing", "","",""];
+  const Headerlink = ["/", "/pricing", "","/about",""];
 
-  const RightHeaderlink = ["/", "/becometutor", "/faqs"];
+  const RightHeaderlink = ["", "/becometutor", "/faqs"];
   const Icons = [
     "CreditCardOutlinedIcon",
     "SchoolIcon",
@@ -63,6 +66,7 @@ function Header() {
   // },[])
   
   const changeColor = () => {
+    console.log(window.pageYOffset)
     if (window.pageYOffset > 10) {
       setClr(true);
     } else {
@@ -154,13 +158,21 @@ function Header() {
                     clr ? "text-[#1e56a0]" : "text-[#fff]"
                   } lg:px-5 pl-2 m-1 uppercase`
             }
-          ><div onClick={i===0?handleClickOpen:handleClickerror} >
-            <Link href={i===0?'':RightHeaderlink[i]} >
+          >{i===0?<div onClick={handleClickOpen} className='cursor-pointer' >
+            
+              
+              {item}
+              
+             
+              </div>
+              :
+              <div>
+            <Link href={RightHeaderlink[i]} >
               <a>
               {item}
               </a>
               </Link>
-              </div>
+              </div>}
           </div>
         ))}
       </div>

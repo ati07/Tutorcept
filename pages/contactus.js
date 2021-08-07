@@ -8,7 +8,7 @@ import WhiteHeader from "../component/WhiteHeader";
 function contactus() {
     return (
         <div className='bg-white w-full h-[600px]'>
-            <TopHeader/>     
+            {/* <TopHeader/>      */}
             <WhiteHeader/>
             <ContactUs/>
         </div>
