@@ -3,6 +3,7 @@ import {useState, useEffect,useRef} from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Countdown from "react-countdown";
+import Link from "next/link";
 function PopUp() {
     const [timerDays, setTimerDays]=useState('00')
     const [timerHours, setTimerHours]=useState('00')
@@ -22,7 +23,7 @@ function PopUp() {
     }
     let interval = useRef()
     const startTimer = ()=>{
-        const countDownDate = new Date('August 8, 2021 14:00:00').getTime();
+        const countDownDate = new Date('August 8, 2021 13:05:00').getTime();
         
         interval = setInterval(()=>{
             const now = new Date().getTime();
@@ -76,7 +77,7 @@ function PopUp() {
         <div data-aos="zoom-in" className="flex flex-col justify-center rounded-3xl p-4 items-center lg:md:h-[300px] lg:md:w-[400px] h-auto w-[250px]  bg-[#473f3c6e] border-2">
             <div className="lg:md:text-2xl text-lg text-white pb-5 mt-5 text-center">
                 <p className="uppercase font-semibold">
-                  Join the Meetup
+                  Join the Orientation
                 </p>
             </div>
             <div className="text-white lg:md:h-[50px] grid grid-cols-12 lg:md:w-[400px] h-[25px] w-[300px] px-10 mt-5 pb-3">
@@ -91,9 +92,13 @@ function PopUp() {
             </div>
             <div className='lg:md:mt-12 mt-12'>
                 {show?
+                <Link href=''>
+                <a href='https://zoom.us/j/6152607417?pwd=bzVMSTNiWTlTQXZHTmhrVmY1em41UT09' target="_blank" rel="noreferrer">
                 <button onClick={()=>console.log("clicked")} className='hover:bg-green-500 bg-[#1e56a0] uppercase w-[200px] p-2 h-[50px] cursor-pointer rounded-lg opacity-100 hover:opacity-100 text-white'>
                 Join the Room
             </button>
+            </a>
+            </Link>
                 
                 :<button onMouseEnter={enter} onMouseOut={close} className='hover:bg-green-500 bg-[#1e56a0] cursor-not-allowed uppercase w-[200px] p-2 h-[50px] rounded-lg opacity-100 hover:opacity-100 text-white'>
                     {join?'Join the Room':'Wait till time up'}
