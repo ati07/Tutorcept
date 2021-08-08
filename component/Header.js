@@ -49,9 +49,11 @@ function Header() {
 
   const Cred = ["Request Demo", "Become A Tutor", "FAQs"];
   // const Headerlink = ["/", "/pricing", "","","/contactus"];
-  const Headerlink = ["/", "/pricing", "","/about",""];
+  const Headerlink = ["/", "/", "","/about",""];
 
-  const RightHeaderlink = ["", "/becometutor", "/faqs"];
+  // const RightHeaderlink = ["", "/becometutor", "/faqs"];
+  const RightHeaderlink = ["", "/", "/faqs"];
+
   const Icons = [
     "CreditCardOutlinedIcon",
     "SchoolIcon",

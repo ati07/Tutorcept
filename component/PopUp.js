@@ -23,7 +23,7 @@ function PopUp() {
     }
     let interval = useRef()
     const startTimer = ()=>{
-        const countDownDate = new Date('August 8, 2021 13:05:00').getTime();
+        const countDownDate = new Date('August 8, 2021 13:40:00').getTime();
         
         interval = setInterval(()=>{
             const now = new Date().getTime();
