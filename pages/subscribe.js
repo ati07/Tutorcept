@@ -14,6 +14,16 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {useRouter} from 'next/router'
 import axios from 'axios'
+import clsx from 'clsx';
+import { useTheme } from '@material-ui/core/styles';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import ListItemText from '@material-ui/core/ListItemText';
+import Select from '@material-ui/core/Select';
+// import Checkbox from '@material-ui/core/Checkbox';
+import Chip from '@material-ui/core/Chip';
 
 function Copyright() {
     
@@ -48,17 +58,48 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  formControl: {
+    // margin: theme.spacing(1),
+    // border:1,
+    // borderRadius:4,
+    minWidth: '100%',
+    // maxWidth: 300,
+  },
+  chips: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  chip: {
+    margin: 2,
+  },
+  noLabel: {
+    marginTop: theme.spacing(3),
+  },
 }));
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
 
 export default function SignUp() {
   const classes = useStyles();
   const router = useRouter();
-
+  
   const [input, setInput] =useState({
     name:'',
       mobile:'',
       email:'',
       parentContact:'',
+      subjectId:[],
+      class:'10th',
+      school:'',
   })
   const handleChange = (e)=>{
     setShow(false)
@@ -67,6 +108,7 @@ export default function SignUp() {
         [e.target.name]: e.target.value,
         })
   }
+  console.log("Input",input)
   const [error,setError] = useState(false)
   const [show,setShow] = useState(null)
 
@@ -104,6 +146,7 @@ export default function SignUp() {
 // Displaying results to console
         .then(json => {
             setShow(json)
+            alert(json.message)
             console.log(json)})
         .catch(err => console.error(err));
 
@@ -113,6 +156,56 @@ export default function SignUp() {
           setError(true)
       }
   }
+  // subject API
+  const [subject,setSubject] = useState([])
+  const [subjectName,setSubjectName] = useState([])
+  const [personName, setPersonName] = React.useState([]);
+  const [ids,setIds] = useState([])
+  // const ids = []
+  const handleChangeSubject = (event) => {
+    setPersonName(event.target.value);
+    
+  };
+  const _ids =[]
+  useEffect(()=>{
+    subjectName.map((name,i)=>{
+          subject.map((item,j)=>{
+            if(item.name === name){
+              // ids.push(item._id)
+              console.log("item._id",item._id)
+              _ids.push(item._id)
+              // setIds([
+              //   ...ids,
+              //   item._id
+              // ])
+              
+              // console.log("ids",ids)
+          }
+          
+          })
+         setInput({
+      ...input,
+      subjectId: _ids,
+    }) 
+        })
+    
+  },[subjectName])
+    console.log("INput",input)
+
+  console.log("personName",personName)
+    useEffect(()=>{
+      async function fetchData() {
+        // You can await here
+        // const response = await MyAPI.getData(someId);
+        const resSubject = await fetch("https://cdn-tutorcept.herokuapp.com/subject/v1/get")
+        const subjectData = await resSubject.json()
+        setSubject(subjectData.data)
+        // ...
+        console.log("subject",subjectData.data)
+      }
+      fetchData();
+    },[])
+  
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -183,6 +276,88 @@ export default function SignUp() {
                 autoComplete="parentContact"
               />
             </Grid>
+            <Grid item xs={12}>
+              <TextField
+              onChange={handleChange}
+                variant="outlined"
+                required
+                fullWidth
+                name="school"
+                label="School"
+                type="text"
+                id="text"
+                value={input['school']}
+                autoComplete="school"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+              onChange={handleChange}
+                variant="outlined"
+                required
+                fullWidth
+                name="class"
+                label="Class"
+                type="text"
+                id="text"
+                defaultValue='10th'
+                autoComplete="class"
+                className='cursor cursor-not-allowed'
+                disabled
+              />
+            </Grid>
+            <Grid item xs={12}>
+            <FormControl variant="outlined" className={classes.formControl}>
+        <InputLabel htmlFor="outlined-age-native-simple" >Subject</InputLabel>
+        <Select
+          // labelId="demo-mutiple-checkbox-label"
+          id="outlined-age-native-simple"
+          // native
+                required
+                fullWidth
+          multiple
+          label="Subject"
+          value={personName}
+          onChange={handleChangeSubject}
+          // input={<Input />}
+          inputProps={{
+            name: 'Subject',
+            id: 'outlined-age-native-simple',
+          }}
+          // renderValue={(selected) => selected.join(', ')}
+          renderValue={(selected) => <div className={classes.chips}>
+          {selected.map((value) => {
+            // console.log("selected",selected)
+            setSubjectName(selected)
+           return <Chip key={value} label={value} className={classes.chip} />
+          })}
+        </div>}
+
+          MenuProps={MenuProps}
+        >
+          {subject.map((name) => (
+            <MenuItem key={name.name} value={name.name}>
+              <Checkbox checked={personName.indexOf(name.name) > -1} />
+              <ListItemText primary={name.name} />
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+              {/* <TextField
+              onChange={handleChange}
+                variant="outlined"
+                required
+                fullWidth
+                name="school"
+                label="School"
+                type="text"
+                id="text"
+                value={input['school']}
+                autoComplete="school"
+              /> */}
+            </Grid>
+            
+
             {/* <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}

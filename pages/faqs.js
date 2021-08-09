@@ -64,12 +64,12 @@ function Faqs() {
       {/* <TopHeader /> */}
       <WhiteHeader />
 
-      <div className="w-full h-auto flex flex-col mt-[150px] px-52 py-8">
+      <div className="w-full h-auto flex flex-col lg:md:mt-[150px] mt-[20px] lg:md:px-52 py-8">
         <div className="pb-10 text-center">
-          <h1 className="text-5xl text-[#1e56a0] font-bold pb-7">
+          <h1 className="lg:md:text-5xl text-xl text-[#1e56a0] font-bold pb-7">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl opacity-80">
+          <p className="lg:md:text-xl text-sm opacity-80">
             Please reach us at <u onClick={email} style={{color:'#1e56a0',cursor:"pointer"}}>tutorcept@gmail.com</u> if you cannot find an
             answer to your question.
           </p>
@@ -77,8 +77,8 @@ function Faqs() {
         <div>
           <div className='flex items-center justify-center pb-10'>
                   {/* <TextField className='w-[600px] rounded-r-none bg-[#fff]' id="outlined-search" label="Find Out Your Question" type="search" variant="outlined" /> */}
-                  <input placeholder='Find Out Your Question' className="pl-5 w-[600px] h-[54px] shadow border border-transparent focus:outline-none focus:rounded-bl-lg focus:rounded-tl-lg focus:ring-2 focus:ring-[#1e56a0] focus:border-transparent"></input>
-                  <SearchIcon className='bg-[#5cb85c] cursor-pointer rounded-r-md hover:bg-[#1e56a0]' style={{height:58,width:70,color:"white",padding:10}}/>
+                  <input placeholder='Find Out Your Question' className="pl-5 lg:md:w-[600px] w-[500px] lg:md:h-[54px] h-[54px] shadow border border-transparent focus:outline-none focus:rounded-bl-lg focus:rounded-tl-lg focus:ring-2 focus:ring-[#1e56a0] focus:border-transparent"></input>
+                  <SearchIcon className='bg-[#5cb85c] cursor-pointer h-[25px] rounded-r-md hover:bg-[#1e56a0]' style={{height:58,width:70,color:"white",padding:10}}/>
           </div>
         </div>
         {datajson.map((item, i) => (
@@ -93,13 +93,16 @@ function Faqs() {
               id={`panel${i}bh-header`}
             >
               <Typography className={expanded === `panel${i + 1}`?`${classes.heading}`:`${classes.headingWithNoColor}`}>
-                {item["question"]}
+                <p className='text-[10px] lg:md:text-xl'>{item["question"]}</p>
+                
               </Typography>
               {/* <Typography >I am an accordion</Typography> */}
             </AccordionSummary>
             <AccordionDetails>
-              <Typography className='opacity-70' dangerouslySetInnerHTML={{__html: item["answer"]}}>
-               
+              <Typography >
+               <p className='opacity-70 text-sm lg:md:text-base' dangerouslySetInnerHTML={{__html: item["answer"]}}>
+
+               </p>
               </Typography>
             </AccordionDetails>
           </Accordion>

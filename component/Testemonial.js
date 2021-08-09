@@ -34,7 +34,7 @@ export default function Testemonial() {
                 />
               </div>
               <div className='mb-5'>
-                <h1 className="lg:md:text-2xl text-lg">Your words of love for us</h1>
+                <h1 className="lg:md:text-2xl text-sm">Your words of love for us</h1>
               </div>
 
               <div className="h-[150px] flex justify-center text-xs lg:md:text-4xl text-justify lg:md:w-[615px] w-auto lg:md:mt-[10px]">

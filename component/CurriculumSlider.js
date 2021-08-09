@@ -57,7 +57,7 @@ const CurriculumSlider = () => {
       </div> */}
       <div className='flex items-center justify-center mt-5 pb-5'>
             <Flags.IN title="India" className="lg:md:w-[60px] w-[30px] px-2"/>
-          <h1 className="flex lg:md:text-4xl text-lg text-black">
+          <h1 className="flex lg:md:text-4xl text-sm text-black">
           Indian Curriculum, Tutorcept Supports</h1>
         </div>
       <div className="grid grid-cols-12 gap-5 px-28 mb-5">

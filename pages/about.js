@@ -25,7 +25,7 @@ const About = () => {
   return (
     <div className="flex flex-col items-center justify-center h-auto m-auto lg:md:flex lg:md:items-center lg:md:justify-center">
       <WhiteHeader/>
-      <div className="grid lg:md:m-0 w-full h-[600px] grid-cols-12 gap-4 lg:px-5 lg:md:sm:mt-[100px] lg:md:mb-[80px]">
+      <div className="grid lg:md:m-0 w-full lg:md:h-[600px] h-auto grid-cols-12 gap-4 lg:px-5 lg:md:mt-[100px] mt-[50px] lg:md:mb-[80px]">
         {/* <div className='lgshape w-[100px] h-[100px] bg-red-400'></div> */}
 
         {/* <div className='animate-spin lgsquare w-[100px] h-[100px] bg-gray-400'></div> */}
@@ -33,11 +33,11 @@ const About = () => {
           <Image src='/about.jpg' className='' width={800} height={600} alt='ABoutImage'/>
         </div>
         <div className="flex justify-center w-full h-auto col-span-12 lg:md:flex lg:md:justify-center md:col-span-4 lg:col-span-6 rounded-2xl">
-          <div className="grid h-[400px] px-5 py-2 text-center grid-col-12">
+          <div className="grid lg:md:h-[400px] h-auto px-5 py-2 text-center grid-col-12">
             <div className="col-span-12 pb-5">
                 <h1 className='text-6xl font-medium text-gray-500'>About Us</h1>
             </div>
-            <div className="col-span-12 text-left text-base">
+            <div className="col-span-12 text-justify text-base">
                 <p>
                 Tutorcept was founded with the sole objective of helping students achieve their full potential. Our honest and dedicated tutors strive to maximize academic potential and promote student’s success in a safe and welcoming environment. <br/><br/>
 

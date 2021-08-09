@@ -44,6 +44,8 @@ function WhiteHeader() {
   const HeaderItems = ["Home", "Pricing", "About Us", "Contact Us"];
   const Cred = ["", "Become A Tutor", "FAQs"];
   const Headerlink = ["/", "/pricing", "/about", "/contactus"];
+  // const Headerlink = ["/", "/pricing", "/about", "/contactus"];
+
   const RightHeaderlink = ["/", "/becometutor", "/faqs"];
   const Icons = [
     "CreditCardOutlinedIcon",
@@ -73,11 +75,11 @@ function WhiteHeader() {
     <div
       className={`${
         clr ? "fixed top-0 lg:pl-5 bg-white transition duration-700 ease-in-out header" : "absolute top-[50px]"
-      } lg:py-5 font-semibold text-base w-full flex items-center justify-between z-20`}
+      } lg:py-5 font-semibold lg:md:text-base text-[6px] w-full flex items-center justify-between z-20`}
     >
       <div className="flex">
         <Link href="/">
-        <h1 className={clr?'text-[#1e56a0] font-bold text-3xl cursor-pointer':'text-white cursor-pointer font-bold text-3xl'}>Tutorcept</h1>
+        <h1 className={clr?'text-[#1e56a0] font-bold lg:md:text-3xl text-sm cursor-pointer':'text-white cursor-pointer font-bold lg:md:text-3xl text-lg'}>Tutorcept</h1>
 
           {/* <div> */}
           {/* <LogoSvg width={300} height={100} fill={'red'}/> */}

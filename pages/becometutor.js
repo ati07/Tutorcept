@@ -11,12 +11,12 @@ function becomeTutor() {
       {/* <TopHeader /> */}
       <WhiteHeader/>
      {/* <ComingSoon content='it'/> */}
-     <div className='flex mt-32 justify-around items-center h-[500px] w-[70%] p-10 rounded-lg shadow-lg'>
+     <div className='flex lg:flex-row flex-col lg:md:mt-32 mt-3 justify-around items-center lg:md:h-[500px] h-auto lg:md:w-[70%] w-full p-10 rounded-lg shadow-lg'>
        <div className='flex flex-col'>
-         <h1 className='text-lg text-gray-500 font-medium mt-3'>Is teaching your passion?</h1>
-         <h1 className='text-lg text-gray-500 font-medium'>Do you desire to become a part of the shift towards virtual tutoring?</h1>
-         <h1 className='text-lg text-gray-500 font-medium'>Is flexible remote tutoringyour cup of tea?</h1>
-         <h1 className='text-lg text-gray-500 font-medium'>You have reached the right destination.</h1>
+         <h1 className='lg:md:text-lg text-sm leading-1 text-gray-500 font-medium mt-3'>Is teaching your passion?</h1>
+         <h1 className='lg:md:text-lg text-sm leading-1 text-gray-500 font-medium'>Do you desire to become a part of the shift towards virtual tutoring?</h1>
+         <h1 className='lg:md:text-lg text-sm leading-1 text-gray-500 font-medium'>Is flexible remote tutoringyour cup of tea?</h1>
+         <h1 className='lg:md:text-lg text-sm leading-1 text-gray-500 font-medium'>You have reached the right destination.</h1>
         
        </div>
        <div className='rounded-lg shadow-lg flex flex-col mt-5 justify-center items-center h-[150px] w-[300px] bg-[#1f4c70]'>
