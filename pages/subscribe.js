@@ -24,7 +24,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Select from '@material-ui/core/Select';
 // import Checkbox from '@material-ui/core/Checkbox';
 import Chip from '@material-ui/core/Chip';
-
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Message from '../component/Message'
 function Copyright() {
     
   return (
@@ -110,9 +111,12 @@ export default function SignUp() {
   }
   console.log("Input",input)
   const [error,setError] = useState(false)
+  const [showMsg,setShowMsg] = useState(false)
   const [show,setShow] = useState(null)
+  const [loading,setLoading] = useState(false)
 
   const submit = async (e)=>{
+    setLoading(true)
     e.preventDefault()
       console.log("mobileNo",input.mobile.length)
       console.log('email',input.email)
@@ -145,12 +149,15 @@ export default function SignUp() {
   
 // Displaying results to console
         .then(json => {
+          setLoading(false)
             setShow(json)
-            alert(json.message)
+            setShowMsg(true)
+
+            // alert(json.message)
             console.log(json)})
         .catch(err => console.error(err));
 
-        setTimeout(function(){router.push('/') }, 3000);
+        // setTimeout(function(){router.push('/') }, 3000);
         
             }else{
           setError(true)
@@ -207,8 +214,16 @@ export default function SignUp() {
     },[])
   
   return (
+    < >
+    {loading?
+    <div className="flex justify-center h-[100vh] items-center">
+    <CircularProgress />
+    </div>
+    :
     <Container component="main" maxWidth="xs">
       <CssBaseline />
+      {showMsg?<Message message={show.message}/>:
+      <>
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon onClick={()=> router.push('/')}/>
@@ -387,6 +402,10 @@ export default function SignUp() {
       <Box mt={5}>
         {/* <Copyright /> */}
       </Box>
+    </>
+    }
     </Container>
+  }
+  </>
   );
 }
