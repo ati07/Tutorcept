@@ -26,6 +26,10 @@ import Select from '@material-ui/core/Select';
 import Chip from '@material-ui/core/Chip';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Message from '../component/Message'
+import Snackbar from '@material-ui/core/Snackbar';
+import Backdrop from '@material-ui/core/Backdrop';
+// import CircularProgress from '@material-ui/core/CircularProgress';
+
 function Copyright() {
     
   return (
@@ -41,6 +45,10 @@ function Copyright() {
 }
 
 const useStyles = makeStyles((theme) => ({
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
@@ -104,22 +112,48 @@ export default function SignUp() {
   })
   const handleChange = (e)=>{
     setShow(false)
+    setE(false)
+          // setOpen(false)
       setInput({
           ...input,
         [e.target.name]: e.target.value,
         })
   }
   console.log("Input",input)
-  const [error,setError] = useState(false)
+  const [e,setE] = useState(false)
+  const [alert,setAlert] = useState(false)
   const [showMsg,setShowMsg] = useState(false)
   const [show,setShow] = useState(null)
   const [loading,setLoading] = useState(false)
+  //handle Snackbar
+  const [state, setState] = React.useState({
+    openS: true,
+    vertical: 'top',
+    horizontal: 'right',
+  });
 
+  const { vertical, horizontal, openS } = state;
+
+  const handleClick = (newState) => () => {
+    setState({ openS: true, ...newState });
+  };
+
+  const handleCloseS = () => {
+    setState({ ...state, openS: false });
+  };
+  // Loading application
+  const [open, setOpen] = React.useState(true);
+  const handleClose = () => {
+    // setOpen(false);
+  };
+  const handleToggle = () => {
+    // setOpen(!open);
+  };
   const submit = async (e)=>{
     setLoading(true)
     e.preventDefault()
-      console.log("mobileNo",input.mobile.length)
-      console.log('email',input.email)
+      // console.log("mobileNo",input.mobile.length)
+      // console.log('email',input.email)
       if(input.email.includes('@') || input.mobile.length === 10){
           //Using Axios
         // await axios.post('https://cdn-tutorcept.herokuapp.com/subscription/v1/orientation', input)
@@ -129,7 +163,7 @@ export default function SignUp() {
         //   .catch((error)=>{
         //       console.log("error",error)
         //   })
-
+//
           //Using Fetch
           await fetch("https://cdn-tutorcept.herokuapp.com/subscription/v1/orientation", {
     // Adding method type
@@ -149,18 +183,28 @@ export default function SignUp() {
   
 // Displaying results to console
         .then(json => {
+          setShow(json)
+          if(json.error===true){
+            console.log('errr',json.error)
+            setAlert(true)
           setLoading(false)
-            setShow(json)
-            setShowMsg(true)
 
+          }else{
+          setLoading(false)
+            setShowMsg(true)
+            setOpen(!open)
+          }
             // alert(json.message)
-            console.log(json)})
+            console.log(json)
+          })
         .catch(err => console.error(err));
 
         // setTimeout(function(){router.push('/') }, 3000);
         
             }else{
-          setError(true)
+          setE(true)
+          setOpen(false)
+
       }
   }
   // subject API
@@ -197,9 +241,9 @@ export default function SignUp() {
         })
     
   },[subjectName])
-    console.log("INput",input)
+    // console.log("INput",input)
 
-  console.log("personName",personName)
+  // console.log("personName",personName)
     useEffect(()=>{
       async function fetchData() {
         // You can await here
@@ -212,18 +256,17 @@ export default function SignUp() {
       }
       fetchData();
     },[])
-  
+    
   return (
     < >
-    {loading?
-    <div className="flex justify-center h-[100vh] items-center">
-    <CircularProgress />
-    </div>
-    :
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       {showMsg?<Message message={show.message}/>:
       <>
+      {loading?
+      <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
+  <CircularProgress color="inherit" />
+</Backdrop>:''}
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon onClick={()=> router.push('/')}/>
@@ -232,7 +275,16 @@ export default function SignUp() {
           Register
         </Typography>
         {!show=== null?<p className='text-green-600 text-xs'>{show.message}</p>:''}
-        {error?<p className='text-red-600 text-xs'>Please Enter valid Email or Mobile Number</p>:''}
+        {e?<p className='text-red-600 text-xs'>Please Enter valid Email or Mobile Number</p>:''}
+        {alert?
+        <Snackbar
+        anchorOrigin={{ vertical, horizontal }}
+        open={openS}
+        onClose={handleCloseS}
+        message={show.message}
+        key={vertical + horizontal}
+      />
+        :''}
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -405,7 +457,7 @@ export default function SignUp() {
     </>
     }
     </Container>
-  }
+  
   </>
   );
 }

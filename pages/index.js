@@ -12,7 +12,7 @@ import Testemonial from '../component/Testemonial'
 import Timer from '../component/Timer'
 export default function Home() {
   useEffect(()=>{
-    localStorage.clear();
+    // localStorage.clear();
   })
   return (
     <div className="flex flex-col items-center justify-center">
