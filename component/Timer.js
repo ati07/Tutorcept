@@ -74,8 +74,9 @@ function Timer() {
             <div className='flex flex-col col-span-2 pt-1 text-2xl font-bold text-center border-2'>{timerSeconds}<span className='text-sm font-light text-white'> Secs </span> </div>
             </div>
             <div className='lg:md:mt-14 mt-14 mb-5'>
+            {/* onClick={()=>router.push('/subscribe')} */}
                 {!show?
-                <button onClick={()=>router.push('/subscribe')} className='hover:bg-[#1e56a0] bg-green-500 hover:border-0 border-2 font-semibold uppercase w-[200px] p-2 h-[50px] rounded-lg opacity-100 hover:opacity-100 text-white'>
+                <button className='hover:bg-[#1e56a0] bg-green-500 cursor-not-allowed hover:border-0 border-2 font-semibold uppercase w-[200px] p-2 h-[50px] rounded-lg opacity-100 hover:opacity-100 text-white'>
                 Register Now
             </button>
                 

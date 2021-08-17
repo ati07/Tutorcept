@@ -59,7 +59,7 @@ function Footer() {
       // "Accessibility",
       // "Press",
     ],
-    links: ["/", "/", "/", "/", "/"],
+    links: ["/", "/about", "/contactus", "/", "/"],
   };
   const LearnUS = {
     Title: "LEARN WITH US",
@@ -70,7 +70,7 @@ function Footer() {
       "Faqs",
       "Curriculum",
     ],
-    links: ["/", "/", "/", "/", "/"],
+    links: ["/", "/", "/pricing", "/faqs", "/"],
   };
   const PartnerUS = {
     Title: "PARTNER WITH US",
@@ -206,9 +206,17 @@ function Footer() {
           <div key={i} className="px-1">
             <h2 key={i} className="py-1 lg:md:text-xl text-sm font-bold ">{item.Title}</h2>
             {item["pages"].map((pg, j) => (
-              <p key={j} className="lg:md:text-sm text-xs font-thin cursor-not-allowed leading-6 opacity-70 hover:font-bold hover:opacity-100 lg:leading-8 text-aqua lg:text-base">
-                {pg}
-                {/* <Link href="/">{pg}</Link> */}
+              <p key={j} className={`${ ['Home','About Us','Contact Us','Pricing','Faqs'].includes(pg) ?"":'cursor-not-allowed'} lg:md:text-sm text-xs font-thin leading-6 opacity-70 hover:font-bold hover:opacity-100 lg:leading-8 text-aqua lg:text-base`}>
+                {/* {pg} */}
+                {['Home','About Us','Contact Us','Pricing','Faqs'].includes(pg) ? <Link href={item['links'][j]}>
+                  <a >
+                    {/* {console.log("j",j)} */}
+                   {pg} 
+                  </a>
+                  </Link>
+                  :
+                pg 
+                  }
 
               </p>
             ))}

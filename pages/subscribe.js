@@ -244,6 +244,8 @@ export default function SignUp() {
     // console.log("INput",input)
 
   // console.log("personName",personName)
+
+  // subject API
     useEffect(()=>{
       async function fetchData() {
         // You can await here

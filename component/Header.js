@@ -49,7 +49,7 @@ function Header() {
 
   const Cred = ["Request Demo", "Become A Tutor", "FAQs"];
   // const Headerlink = ["/", "/pricing", "","","/contactus"];
-  const Headerlink = ["/", "/", "","/about",""];
+  const Headerlink = ["/", "/pricing", "","/about",""];
 
   const RightHeaderlink = ["", "/becometutor", "/faqs"];
   // const RightHeaderlink = ["", "/", "/faqs"];

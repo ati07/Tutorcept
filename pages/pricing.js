@@ -63,11 +63,13 @@ function Pricing() {
   const datajson =[
       {},{},{}
   ]
+  const [show,setShow] = useState(false)
   return (
     <div className="w-full h-auto">
       {/* <TopHeader /> */}
       <WhiteHeader />
-
+      {!show?<ComingSoon content='pricing plan'/>: 
+      
       <div className="w-full h-auto flex flex-col mt-[80px] px-52 py-8">
           <div className='w-full text-center pb-20'>
               <p className="text-2xl text-gray-500 font-medium">
@@ -250,6 +252,7 @@ function Pricing() {
   {/* ))} */}
 
       </div>
+      }
       <Footer />
     </div>
   );
