@@ -21,12 +21,14 @@ function becomeTutor() {
        </div>
        <div className='rounded-lg shadow-lg flex flex-col mt-5 justify-center items-center h-[150px] w-[300px] bg-[#1f4c70]'>
           <h1 className='text-2xl text-white font-medium pb-3'>Join Our Community</h1>
-          <button className='bg-green-500 rounded-lg text-white w-[100px] h-[50px]'>
+          <a href='https://t.me/tutorcept' target='_blank' rel="noreferrer">
+          <button className='bg-green-500 rounded-lg text-white w-[100px] h-[50px] opacity-90 hover:opacity-100'>
             Join Now
           </button>
+          </a>
         </div>
      </div>
-     <Footer/>
+     {/* <Footer/> */}
     </div>
   );
 }

@@ -51,15 +51,16 @@ our community.</p>
                 </div>
                 
             </div>
-            <div data-aos="fade-up" className='border-2 border-[#1e56a0] flex text-[#1e56a0] hover:bg-[#1e56a0] hover:text-white text-center items-center justify-center w-[200px] h-[60px] uppercase bg-[#f3f5f7] mt-5 mb-5 rounded-full'>
+            <Link href='/subscribe'>
+            <div data-aos="fade-up" data-aos-delay="100" className='cursor-pointer border-2 border-[#1e56a0] flex text-[#1e56a0] hover:bg-[#1e56a0] hover:text-white text-center items-center justify-center w-[200px] h-[60px] uppercase bg-[#f3f5f7] mt-5 mb-5 rounded-full'>
                 {/* <Link href='/login'> */}
-                <Link href='/subscribe'>
+                
 
                     <a>
                 <button className="uppercase"> Request a Demo</button>
                 </a>
-                </Link>
-            </div>
+                
+            </div></Link>
         </div>
     )
 }

@@ -168,18 +168,8 @@ function Footer() {
           </div>
         </div>
         
-        {/* {footerContent.map((item, i) => (
-          <div key={i} className="px-1">
-            <h2 key={i} className="py-1 text-xl font-bold ">{item.Title}</h2>
-            {item["pages"].map((pg, j) => (
-              <p key={j} className="text-sm font-thin leading-6 opacity-70 hover:font-bold hover:opacity-100 lg:leading-8 text-aqua lg:text-base">
-                <Link href="/">{pg}</Link>
-              </p>
-            ))}
-          </div>
-        ))} */}
       </div>
-      <div className="flex justify-between w-full mt-10 text-white lg:mt-20 lg:px-20">
+      <div className="flex justify-between w-full mt-10 text-white lg:md:mt-10 lg:px-20">
         <div className="px-2 lg:px-5">
           <h1 className="pb-3 text-4xl font-bold lg:md:text-6xl">Tutorcept</h1>
           {/* <p className="py-3 text-sm font-thin leading-6 opacity-70 lg:text-base">
@@ -206,7 +196,7 @@ function Footer() {
           <div key={i} className="px-1">
             <h2 key={i} className="py-1 lg:md:text-xl text-sm font-bold ">{item.Title}</h2>
             {item["pages"].map((pg, j) => (
-              <p key={j} className={`${ ['Home','About Us','Contact Us','Pricing','Faqs'].includes(pg) ?"":'cursor-not-allowed'} lg:md:text-sm text-xs font-thin leading-6 opacity-70 hover:font-bold hover:opacity-100 lg:leading-8 text-aqua lg:text-base`}>
+              <p key={j} className={`${ ['Home','About Us','Contact Us','Pricing','Faqs'].includes(pg) ?"":'cursor-not-allowed'} mt-1 lg:md:text-sm text-xs font-thin leading-6 opacity-70 hover:font-bold hover:opacity-100 lg:leading-8 text-aqua lg:text-base`}>
                 {/* {pg} */}
                 {['Home','About Us','Contact Us','Pricing','Faqs'].includes(pg) ? <Link href={item['links'][j]}>
                   <a >

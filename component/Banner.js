@@ -23,11 +23,13 @@ function Banner({Title}) {
             // loop: true,
                 }}
                     /> */}
-                    <TypeWriter
+
+Simplifying Concepts...
+                    {/* <TypeWriter
                     typing={0.5}
                     >Simplifying Concepts...
                         
-                        </TypeWriter>
+                        </TypeWriter> */}
                     
                      <br/></h1>
                 {/* <h1 data-aos="zoom-out" className='mt-5 lg:text-5xl text-3xl text-white'>Instant Online Tutoring</h1> */}
